@@ -1,0 +1,22 @@
+.app {
+	background-color: rgb(250, 238, 224);
+}
+
+.home {
+	position: relative;
+	height: 100vh;
+}
+
+.videoWrapper {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.video {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
