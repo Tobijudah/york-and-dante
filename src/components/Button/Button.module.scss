@@ -1,0 +1,29 @@
+.button {
+	width: 10rem;
+	height: 10rem;
+	border: none;
+	border-radius: 100%;
+}
+
+.large {
+	width: 11rem;
+	height: 11rem;
+}
+
+.red {
+	composes: button;
+	background-color: #ff4040;
+}
+
+.greige {
+	composes: button;
+	background-color: #d0c2c2;
+}
+
+.text {
+  color: #ffffff;
+	font: 700 1.25rem/150% "Neue Haas Grotesk Display Pro", Arial, Helvetica,
+		sans-serif;
+	letter-spacing: 0.265em;
+  text-transform: uppercase;
+}
