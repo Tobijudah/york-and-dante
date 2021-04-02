@@ -5,7 +5,7 @@ import video from "../../videos/home.mp4";
 
 const SectionOne: React.FC = () => {
 	return (
-		<section className={S.section}>
+		<section data-scroll-section className={S.section}>
 			<div className={S.textWrapper}>
 				<h1 className={S.text}>
 					Chairs that <br /> defy the norm.

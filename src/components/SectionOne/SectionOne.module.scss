@@ -1,5 +1,7 @@
 .section {
 	position: relative;
+	width: 100vw;
+  min-width: 1000px;
 	height: 100vh;
 }
 
@@ -16,14 +18,14 @@
 .text {
 	font: 600 4.5rem/98.49% "New York Extra Large", serif;
 	letter-spacing: -0.06em;
-	margin-top: 9.6875rem;
+	margin-top: 15vh;
 	margin-left: 3.625rem;
 }
 
 .button {
 	position: absolute;
-	bottom: 7rem;
-	right: 7.5rem;
+	right: 13.3vh;
+	bottom: 12.5vh;
 }
 
 .videoWrapper {
