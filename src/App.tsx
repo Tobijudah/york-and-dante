@@ -5,6 +5,7 @@ import LocomotiveScroll from 'locomotive-scroll';
 import React, { useEffect, useRef } from "react";
 import SectionOne from "./components/SectionOne/SectionOne";
 import SectionTwo from "./components/SectionTwo/SectionTwo";
+import SectionThree from "./components/SectionThree/SectionThree";
 import "../node_modules/locomotive-scroll/src/locomotive-scroll.scss";
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
 			<div ref={scrollRef} className={S.app} data-scroll-container>
 				<SectionOne />
 				<SectionTwo />
+				<SectionThree />
 			</div>
 		</>
 	);
