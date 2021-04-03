@@ -5,6 +5,7 @@ import LocomotiveScroll from 'locomotive-scroll';
 import React, { useEffect, useRef } from "react";
 import SectionOne from "./components/SectionOne/SectionOne";
 import SectionTwo from "./components/SectionTwo/SectionTwo";
+import SectionFour from "./components/SectionFour/SectionFour";
 import SectionThree from "./components/SectionThree/SectionThree";
 import "../node_modules/locomotive-scroll/src/locomotive-scroll.scss";
 
@@ -27,6 +28,7 @@ function App() {
 				<SectionOne />
 				<SectionTwo />
 				<SectionThree />
+				<SectionFour />
 			</div>
 		</>
 	);

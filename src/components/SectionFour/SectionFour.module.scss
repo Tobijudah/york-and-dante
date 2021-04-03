@@ -1,0 +1,54 @@
+.section {
+	position: relative;
+	width: 94vw;
+	min-width: 1000px;
+	height: 100vh;
+	display: flex;
+	background-color: #ffffff;
+	color: #000000;
+}
+
+.left {
+  position: relative;
+	width: 60%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 19vh 4.6% 18vh 12.87%;
+}
+
+.title {
+	font: 600 4.5rem/98.49% "New York Extra Large", serif;
+	letter-spacing: -0.06em;
+	white-space: pre-wrap;
+}
+
+.bronze {
+	color: #bd9f68;
+}
+
+.scribble {
+  position: absolute;
+  bottom: calc(-4.8rem + 5vh);
+}
+
+.right {
+	width: 40%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 19vh 5% 18vh;
+}
+
+.header {
+	font: 300 3rem/98.49% "New York Extra Large", serif;
+	letter-spacing: -0.06em;
+	white-space: pre-wrap;
+}
+
+.text {
+	font: 500 1.125rem/150% "Neue Haas Grotesk Display Pro", Arial, Helvetica,
+		sans-serif;
+	text-align: justify;
+	white-space: pre-wrap;
+}
