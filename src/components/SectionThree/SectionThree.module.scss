@@ -1,0 +1,55 @@
+.section {
+	position: relative;
+	width: 94vw;
+	min-width: 1000px;
+	height: 100vh;
+	display: flex;
+  justify-content: space-between;
+	background-color: #121212;
+	color: #ffffff;
+}
+
+.textWrapper {
+	height: 100%;
+	width: 51%;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	padding: 20vh 3.625rem 0 7.5625rem;
+  z-index: 1;
+}
+
+.title {
+	font: 600 4.5rem/98.49% "New York Extra Large", serif;
+	letter-spacing: -0.06em;
+	white-space: pre-wrap;
+	margin-bottom: 6.3vh;
+}
+
+.text {
+	font: 500 1.125rem/150% "Neue Haas Grotesk Display Pro", Arial, Helvetica,
+		sans-serif;
+	text-align: justify;
+	white-space: pre-wrap;
+  mix-blend-mode: difference;
+}
+
+.imageWrapper {
+  position: relative;
+  height: 100%;
+  width: fit-content;
+  display: flex;
+  justify-content: flex-end;
+  padding: 20vh 9% 0 0;
+}
+
+.image {
+  width: auto;
+  height: 71.6vh;
+}
+
+.svg {
+  position: absolute;
+  left: -5.5rem;
+  bottom: 10vh;
+}
