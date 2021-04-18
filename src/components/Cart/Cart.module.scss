@@ -1,14 +1,14 @@
 .cart {
-  cursor: pointer;
+	cursor: pointer;
 	position: fixed;
 	top: 2rem;
 	right: 4rem;
-  display: flex;
-  align-items: center;
+	display: flex;
+	align-items: center;
 	font: 600 1.5rem/1.8125rem "Neue Haas Grotesk Display Pro", Arial, Helvetica,
 		sans-serif;
 	letter-spacing: 0.12em;
-	z-index: 2;
+	z-index: 4;
 }
 
 .text {
@@ -19,14 +19,14 @@
 .number {
 	width: 25px;
 	height: 25px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	background: #ff4040;
 	color: #fff;
 	font-size: 0.75rem;
 	line-height: 0.6875rem;
 	letter-spacing: 0;
-  margin-left: 3px;
+	margin-left: 3px;
 	border-radius: 100%;
 }

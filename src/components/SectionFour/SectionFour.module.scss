@@ -9,7 +9,7 @@
 }
 
 .left {
-  position: relative;
+	position: relative;
 	width: 60%;
 	display: flex;
 	flex-direction: column;
@@ -28,8 +28,8 @@
 }
 
 .scribble {
-  position: absolute;
-  bottom: calc(-4.8rem + 5vh);
+	position: absolute;
+	bottom: calc(-4.8rem + 5vh);
 }
 
 .right {

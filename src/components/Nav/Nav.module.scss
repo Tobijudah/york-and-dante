@@ -11,7 +11,7 @@
 	font: 600 1.5rem "Neue Haas Grotesk Display Pro", Arial, Helvetica,
 		sans-serif;
 	filter: drop-shadow(1px 0px 1px rgba(0, 0, 0, 0.05));
-	z-index: 2;
+	z-index: 4;
 }
 
 .upper {
@@ -43,7 +43,7 @@
 }
 
 .and {
-  background: #ff4040;
+	background: #ff4040;
 	color: #fff;
 	padding: 0.1rem 0.5rem;
 	margin: 0 0.3rem;
