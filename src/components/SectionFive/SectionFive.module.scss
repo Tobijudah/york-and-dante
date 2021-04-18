@@ -10,8 +10,8 @@
 
 .marquee {
 	cursor: pointer;
-	position: absolute;
-	height: 8.2rem;
+	position: absolute !important;
+	height: 8.2rem !important;
 	transform: rotate(270deg);
 	transform-origin: 39.9375rem 427%;
 	margin: 4.9375rem 0;
