@@ -1,0 +1,118 @@
+.section {
+	position: relative;
+	width: 194vw;
+	min-width: 1000px;
+	height: 100vh;
+	display: flex;
+	background-color: #4f5964;
+	color: #ffffff;
+}
+
+.marquee {
+	cursor: pointer;
+	position: absolute;
+	height: 8.2rem;
+	transform: rotate(270deg);
+	transform-origin: 39.9375rem 427%;
+	margin: 4.9375rem 0;
+	border: 1px solid #313131;
+	&:hover {
+		color: transparent;
+		text-stroke: 1px rgb(255, 255, 255);
+		-webkit-text-stroke: 1px rgb(255, 255, 255);
+		transition: all 100ms linear;
+	}
+}
+
+.marqueeText {
+	font: 600 4.5rem/8.2rem "New York Extra Large", serif;
+	letter-spacing: -0.06em;
+	padding: 0 3.9vh;
+	transition: all 100ms linear;
+	&:hover {
+		color: inherit;
+		text-stroke: inherit;
+		-webkit-text-stroke: inherit;
+		transition: all 100ms linear;
+	}
+}
+
+.main {
+	position: relative;
+	height: 100vh;
+	width: 1310px;
+	margin-left: 18.1rem;
+}
+
+.title {
+	font: 600 13.5rem/98.49% "New York Extra Large", serif;
+	letter-spacing: -0.06em;
+	white-space: pre-wrap;
+}
+
+.title1 {
+	composes: title;
+	position: absolute;
+	top: 18.56vh;
+	left: 4.0625rem;
+	z-index: 1;
+}
+
+.image {
+	position: absolute;
+	top: 5.33vh;
+	left: 24rem;
+	z-index: 2;
+}
+
+.title2 {
+	composes: title;
+	position: absolute;
+	left: 35rem;
+	bottom: 7.1vh;
+	z-index: 3;
+}
+
+.sub {
+	height: min-content;
+	margin-top: 20vh;
+	display: grid;
+	grid-template-rows: repeat(3, 1fr);
+	row-gap: 6vh;
+}
+
+.subRow {
+	display: flex;
+	align-items: center;
+}
+
+.subText {
+	font: 600 3rem/98.49% "New York Extra Large", serif;
+	letter-spacing: -0.06em;
+	white-space: pre-wrap;
+}
+
+.line1 {
+	margin-right: 40px;
+}
+
+.line2 {
+	margin-left: 40px;
+}
+
+.textWrapper {
+	width: 20%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 2.6%;
+	margin-left: auto;
+}
+
+.text {
+	color: #efefef;
+	font: 500 1.125rem/175% "Neue Haas Grotesk Display Pro", Arial, Helvetica,
+		sans-serif;
+	text-align: justify;
+	white-space: pre-wrap;
+}
