@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "../Button/Button";
 import S from "./SectionOne.module.scss";
-import video from "../../videos/home.mp4";
+import video from "../../videos/section-one.mp4";
 
 const SectionOne: React.FC = () => {
 	return (
