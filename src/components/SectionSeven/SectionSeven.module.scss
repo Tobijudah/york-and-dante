@@ -1,0 +1,96 @@
+.section {
+	position: relative;
+	min-width: 1000px;
+	width: 94vw;
+	height: 100vh;
+	display: flex;
+	background-color: #fff;
+}
+
+.left {
+	position: relative;
+	padding-left: 9%;
+}
+
+.image {
+	height: 75vh;
+	width: auto;
+}
+
+.title {
+	font: 600 3rem/98.49% "New York Extra Large", serif;
+	letter-spacing: -0.06em;
+	margin-top: 5.5vh;
+}
+
+.button {
+	position: absolute;
+	top: 42.2vh;
+	right: -6.5rem;
+}
+
+.right {
+	display: flex;
+	flex-direction: column;
+	height: 75vh;
+	padding-top: 17.78vh;
+	padding-left: 13.77%;
+}
+
+.row {
+	padding-bottom: 2.3125rem;
+}
+
+.text {
+	color: #414141;
+	font: 500 1.25rem/150% "Neue Haas Grotesk Display Pro", Arial, Helvetica,
+		sans-serif;
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	column-gap: 0.5rem;
+	margin-top: 0.75rem;
+}
+
+.box {
+	cursor: pointer;
+	width: 2.5rem;
+	height: 2.5rem;
+}
+
+.muddyWaters {
+	composes: box;
+	background: #ab8450;
+}
+
+.sandDrift {
+	composes: box;
+	background: #b3987a;
+}
+
+.paleSky {
+	composes: box;
+	background: #636f71;
+}
+
+.priceBox {
+	composes: box;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #000000;
+	font: 600 1.25rem/150% "Neue Haas Grotesk Display Pro", Arial, Helvetica,
+		sans-serif;
+	border: 1px solid #000000;
+}
+
+.price {
+	color: #000000;
+	font: 700 2rem/150% "Neue Haas Grotesk Display Pro", Arial, Helvetica,
+		sans-serif;
+	letter-spacing: -0.06em;
+	padding-bottom: 4.56vh;
+	margin-top: auto;
+}

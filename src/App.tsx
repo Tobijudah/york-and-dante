@@ -5,11 +5,12 @@ import LocomotiveScroll from "locomotive-scroll";
 import React, { useEffect, useRef } from "react";
 import SectionOne from "./components/SectionOne/SectionOne";
 import SectionTwo from "./components/SectionTwo/SectionTwo";
+import SectionSix from "./components/SectionSix/SectionSix";
 import SectionFour from "./components/SectionFour/SectionFour";
 import SectionFive from "./components/SectionFive/SectionFive";
 import SectionThree from "./components/SectionThree/SectionThree";
+import SectionSeven from "./components/SectionSeven/SectionSeven";
 import "../node_modules/locomotive-scroll/src/locomotive-scroll.scss";
-import SectionSix from "./components/SectionSix/SectionSix";
 
 function App() {
 	const scrollRef = useRef(null);
@@ -33,6 +34,7 @@ function App() {
 				<SectionFour />
 				<SectionFive />
 				<SectionSix />
+				<SectionSeven />
 			</div>
 		</>
 	);
