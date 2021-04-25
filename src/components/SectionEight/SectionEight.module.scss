@@ -1,0 +1,67 @@
+.section {
+	position: relative;
+	min-width: 1500px;
+	width: 150vw;
+	height: 100vh;
+  display: flex;
+	background-color: #D8D8D8;
+  padding: 0 6%;
+}
+
+.left {
+  width: 21%;
+  padding-top: 20vh;
+  margin-right: 4%;
+}
+
+.text {
+  color: #121212;
+	font: 500 3rem/98.49% "New York Extra Large", serif;
+	letter-spacing: -0.06em;
+  margin-bottom: 9.2vh;
+  white-space: pre-wrap;
+}
+
+.button {
+  width: fit-content;
+  transform: rotate(-30deg);
+}
+
+.right {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  padding-top: 5.2vh;
+}
+
+.image1 {
+  padding-left: 7.25rem;
+  height: 75vh;
+  z-index: 2;
+}
+
+.image {
+  height: 77vh;
+  z-index: 2;
+}
+
+.image2 {
+  composes: image;
+  margin-left: (-8.6%);
+  padding-top: 1.67vh;
+}
+
+.image3 {
+  composes: image;
+  margin-left: -15.2%;
+  padding-top: 1.67vh;
+}
+
+.title {
+  position: absolute;
+  bottom: 7vh;
+  color: #121212;
+	font: 600 13.5rem/98.49% "New York Extra Large", serif;
+	letter-spacing: -0.06em;
+  z-index: 1;
+}

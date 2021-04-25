@@ -10,6 +10,7 @@ import SectionFour from "./components/SectionFour/SectionFour";
 import SectionFive from "./components/SectionFive/SectionFive";
 import SectionThree from "./components/SectionThree/SectionThree";
 import SectionSeven from "./components/SectionSeven/SectionSeven";
+import SectionEight from "./components/SectionEight/SectionEight";
 import "../node_modules/locomotive-scroll/src/locomotive-scroll.scss";
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
 				<SectionFive />
 				<SectionSix />
 				<SectionSeven />
+				<SectionEight />
 			</div>
 		</>
 	);
