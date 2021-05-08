@@ -1,22 +1,21 @@
 .section {
 	position: relative;
-	min-width: 1500px;
-	width: 150vw;
+	width: 250vh;
 	height: 100vh;
   display: flex;
 	background-color: #D8D8D8;
-  padding: 0 6%;
+  padding: 0 13.33vh;
 }
 
 .left {
   width: 21%;
   padding-top: 20vh;
-  margin-right: 4%;
+  margin-right: 8.89vh;
 }
 
 .text {
   color: #121212;
-	font: 500 3rem/98.49% "New York Extra Large", serif;
+	font: 500 5.33vh/98.49% "New York Extra Large", serif;
 	letter-spacing: -0.06em;
   margin-bottom: 9.2vh;
   white-space: pre-wrap;
@@ -35,25 +34,25 @@
 }
 
 .image1 {
-  padding-left: 7.25rem;
-  height: 75vh;
+  padding-left: 12.89vh;
+  height: 74.67vh;
   z-index: 2;
 }
 
 .image {
-  height: 77vh;
+  height: 75vh;
   z-index: 2;
 }
 
 .image2 {
   composes: image;
-  margin-left: (-8.6%);
+  margin-left: -20vh;
   padding-top: 1.67vh;
 }
 
 .image3 {
   composes: image;
-  margin-left: -15.2%;
+  margin-left: -29vh;
   padding-top: 1.67vh;
 }
 
@@ -61,7 +60,7 @@
   position: absolute;
   bottom: 7vh;
   color: #121212;
-	font: 600 13.5rem/98.49% "New York Extra Large", serif;
+	font: 600 24vh/98.49% "New York Extra Large", serif;
 	letter-spacing: -0.06em;
   z-index: 1;
 }
