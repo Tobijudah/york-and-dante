@@ -1,11 +1,11 @@
 .cart {
 	cursor: pointer;
 	position: fixed;
-	top: 2rem;
-	right: 4rem;
+	top: 3.56vh;
+	right: 7.11vh;
 	display: flex;
 	align-items: center;
-	font: 600 1.5rem/1.8125rem "Neue Haas Grotesk Display Pro", Arial, Helvetica,
+	font: 600 2.67vh/3.2vh "Neue Haas Grotesk Display Pro", Arial, Helvetica,
 		sans-serif;
 	letter-spacing: 0.12em;
 	z-index: 4;
@@ -17,16 +17,16 @@
 }
 
 .number {
-	width: 25px;
-	height: 25px;
+	width: 2.78vh;
+	height: 2.78vh;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	background: #ff4040;
 	color: #fff;
-	font-size: 0.75rem;
-	line-height: 0.6875rem;
+	font-size: 1.33vh;
+	line-height: 1.22vh;
 	letter-spacing: 0;
-	margin-left: 3px;
+	margin-left: 0.33vh;
 	border-radius: 100%;
 }

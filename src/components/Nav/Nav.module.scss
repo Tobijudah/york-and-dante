@@ -8,21 +8,21 @@
 	flex-direction: column;
 	background-color: #fff;
 	color: #000;
-	font: 600 1.5rem "Neue Haas Grotesk Display Pro", Arial, Helvetica,
+	font: 600 2.67vh/110.5% "Neue Haas Grotesk Display Pro", Arial, Helvetica,
 		sans-serif;
 	filter: drop-shadow(1px 0px 1px rgba(0, 0, 0, 0.05));
 	z-index: 4;
 }
 
 .upper {
+	cursor: pointer;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	line-height: 110%;
-	letter-spacing: 0.25rem;
+	letter-spacing: 0.44vh;
 	text-transform: uppercase;
-	padding: 1.25rem 0;
+	padding: 2.22vh 0;
 	border-bottom: 1px solid #000000;
 }
 
@@ -35,8 +35,8 @@
 }
 
 .lowerText {
-	line-height: 1.8125rem;
-	letter-spacing: 0.2rem;
+	line-height: 3.22vh;
+	letter-spacing: 0.33vh;
 	text-transform: uppercase;
 	white-space: nowrap;
 	transform: rotate(-90deg);
@@ -45,6 +45,6 @@
 .and {
 	background: #ff4040;
 	color: #fff;
-	padding: 0.1rem 0.5rem;
-	margin: 0 0.3rem;
+	padding: 0.178vh 0.6vh 0.178vh 0.89vh;
+	margin: 0 0.53vh;
 }

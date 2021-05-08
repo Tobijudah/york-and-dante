@@ -20,7 +20,7 @@ const SectionThree: React.FC = () => {
 				</div>
 				<div data-scroll data-speed-3 className={S.imageWrapper}>
 					<img src={image} className={S.image} alt="" />
-					<RotatingText className={S.svg} />
+					<RotatingText width='20.24vh' height='20.24vh' className={S.svg} />
 				</div>
 			</div>
 		</section>

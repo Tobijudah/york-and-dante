@@ -1,7 +1,6 @@
 .section {
 	position: relative;
-	min-width: 1000px;
-	width: 94vw;
+	width: 150vh;
 	height: 100vh;
 	display: flex;
 	background-color: #fff;
@@ -9,7 +8,7 @@
 
 .left {
 	position: relative;
-	padding-left: 9%;
+	padding-left: 13.33vh;
 }
 
 .image {
@@ -18,7 +17,7 @@
 }
 
 .title {
-	font: 600 3rem/98.49% "New York Extra Large", serif;
+	font: 600 5.33vh/98.49% "New York Extra Large", serif;
 	letter-spacing: -0.06em;
 	margin-top: 5.5vh;
 }
@@ -26,7 +25,7 @@
 .button {
 	position: absolute;
 	top: 42.2vh;
-	right: -6.5rem;
+	right: -10vh;
 }
 
 .right {
@@ -34,30 +33,30 @@
 	flex-direction: column;
 	height: 75vh;
 	padding-top: 17.78vh;
-	padding-left: 13.77%;
+	padding-left: 20.22vh;
 }
 
 .row {
-	padding-bottom: 2.3125rem;
+	padding-bottom: 4.11vh;
 }
 
 .text {
 	color: #414141;
-	font: 500 1.25rem/150% "Neue Haas Grotesk Display Pro", Arial, Helvetica,
+	font: 500 2.5vh/150% "Neue Haas Grotesk Display Pro", Arial, Helvetica,
 		sans-serif;
 }
 
 .grid {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	column-gap: 0.5rem;
-	margin-top: 0.75rem;
+	column-gap: 0.89vh;
+	margin-top: 1.33vh;
 }
 
 .box {
 	cursor: pointer;
-	width: 2.5rem;
-	height: 2.5rem;
+	width: 4.44vh;
+	height: 4.44vh;
 }
 
 .muddyWaters {
@@ -81,14 +80,14 @@
 	align-items: center;
 	justify-content: center;
 	color: #000000;
-	font: 600 1.25rem/150% "Neue Haas Grotesk Display Pro", Arial, Helvetica,
+	font: 600 2.22vh/150% "Neue Haas Grotesk Display Pro", Arial, Helvetica,
 		sans-serif;
 	border: 1px solid #000000;
 }
 
 .price {
 	color: #000000;
-	font: 700 2rem/150% "Neue Haas Grotesk Display Pro", Arial, Helvetica,
+	font: 700 3.56vh/150% "Neue Haas Grotesk Display Pro", Arial, Helvetica,
 		sans-serif;
 	letter-spacing: -0.06em;
 	padding-bottom: 4.56vh;
