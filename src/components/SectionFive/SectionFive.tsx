@@ -27,12 +27,12 @@ const SectionFive: React.FC = () => {
 				<div className={S.sub}>
 					<p className={S.subText}>Comfy sofas</p>
 					<div className={S.subRow}>
-						<Line className={S.line1} />
+						<Line width='11.22vh' height='0.33vh' className={S.line1} />
 						<p className={S.subText}>Cylindrical design</p>
 					</div>
 					<div className={S.subRow}>
 						<p className={S.subText}>Arc back rest</p>
-						<Line className={S.line2} />
+						<Line width='11.22vh' height='0.33vh' className={S.line2} />
 					</div>
 				</div>
 				<div className={S.textWrapper}>

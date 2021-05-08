@@ -8,7 +8,7 @@ const SectionFour: React.FC = () => {
 		<section data-scroll-section>
 			<div className={S.section}>
 				<div className={S.left}>
-					<Corner />
+					<Corner width='5.5vh' height='5.5vh' />
 					<h2 className={S.title}>
 						Closer to <span className={S.bronze}>nature</span> than
 						you imagine
