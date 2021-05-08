@@ -1,7 +1,6 @@
 .section {
 	position: relative;
 	width: 100vw;
-  min-width: 1000px;
 	height: 100vh;
 }
 
@@ -11,15 +10,15 @@
 	left: 0;
 	right: 0;
 	bottom: 0;
-	margin-left: 120px;
+	margin-left: 19.78vh;
 	z-index: 1;
 }
 
 .text {
-	font: 600 4.5rem/98.49% "New York Extra Large", serif;
+	font: 600 10vh/98.49% "New York Extra Large", serif;
 	letter-spacing: -0.06em;
 	margin-top: 15vh;
-	margin-left: 3.625rem;
+	margin-left: 6.5vh;
 }
 
 .button {
