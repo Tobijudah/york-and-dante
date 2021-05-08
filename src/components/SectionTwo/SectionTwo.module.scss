@@ -1,7 +1,6 @@
 .section {
 	position: relative;
-	width: 94vw;
-  min-width: 1000px;
+	width: 150vh;
 	height: 100vh;
   display: flex;
 }
@@ -18,7 +17,7 @@
 
 .title {
   width: 60%;
-	font: 500 3rem/98.49% "New York Extra Large", serif;
+	font: 500 5.33vh/98.49% "New York Extra Large", serif;
 	letter-spacing: -0.06em;
   white-space: pre-wrap;
   margin-bottom: 7.3vh;
@@ -26,7 +25,7 @@
 
 .text {
   width: 60%;
-	font: 500 1.125rem/150% "Neue Haas Grotesk Display Pro", Arial, Helvetica,
+	font: 500 2.5vh/150% "Neue Haas Grotesk Display Pro", Arial, Helvetica,
   sans-serif;
   white-space: pre-wrap;
   margin-bottom: 3vh;
