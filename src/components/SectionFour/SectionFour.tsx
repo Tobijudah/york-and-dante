@@ -13,7 +13,7 @@ const SectionFour: React.FC = () => {
 						Closer to <span className={S.bronze}>nature</span> than
 						you imagine
 					</h2>
-					<Scribble className={S.scribble} />
+					<Scribble width='43.68vh' height='23.59vh' className={S.scribble} />
 				</div>
 				<div className={S.right}>
 					<h3 className={S.header}>

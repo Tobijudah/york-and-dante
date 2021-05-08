@@ -1,7 +1,6 @@
 .section {
 	position: relative;
-	width: 94vw;
-	min-width: 1000px;
+	width: 150vh;
 	height: 100vh;
 	display: flex;
 	background-color: #ffffff;
@@ -10,15 +9,15 @@
 
 .left {
 	position: relative;
-	width: 60%;
+	width: 58%;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	padding: 19vh 4.6% 18vh 12.87%;
+	padding: 20.22vh 6.78vh 20vh 18.89vh;
 }
 
 .title {
-	font: 600 4.5rem/98.49% "New York Extra Large", serif;
+	font: 600 8vh/98.49% "New York Extra Large", serif;
 	letter-spacing: -0.06em;
 	white-space: pre-wrap;
 }
@@ -29,25 +28,26 @@
 
 .scribble {
 	position: absolute;
-	bottom: calc(-4.8rem + 5vh);
+	left: 22.87vh;
+	bottom: -3vh;
 }
 
 .right {
-	width: 40%;
+	width: 42%;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	padding: 19vh 5% 18vh;
+	padding: 19vh 8vh 18vh;
 }
 
 .header {
-	font: 300 3rem/98.49% "New York Extra Large", serif;
+	font: 300 5.33vh/98.49% "New York Extra Large", serif;
 	letter-spacing: -0.06em;
 	white-space: pre-wrap;
 }
 
 .text {
-	font: 500 1.125rem/150% "Neue Haas Grotesk Display Pro", Arial, Helvetica,
+	font: 500 2.5vh/150% "Neue Haas Grotesk Display Pro", Arial, Helvetica,
 		sans-serif;
 	text-align: justify;
 	white-space: pre-wrap;
