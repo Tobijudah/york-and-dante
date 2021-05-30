@@ -13,10 +13,10 @@
   justify-content: center;
   flex-direction: column;
   background-color: #fff;
+  padding: 0 13.3vh;
 }
 
 .title {
-  width: 60%;
 	font: 500 5.33vh/98.49% "New York Extra Large", serif;
 	letter-spacing: -0.06em;
   white-space: pre-wrap;
@@ -24,11 +24,21 @@
 }
 
 .text {
-  width: 60%;
-	font: 500 2.5vh/150% "Neue Haas Grotesk Display Pro", Arial, Helvetica,
+	font: 500 2.35vh/150% "Neue Haas Grotesk Display Pro", Arial, Helvetica,
   sans-serif;
   white-space: pre-wrap;
   margin-bottom: 3vh;
+}
+
+.signature {
+  align-self: flex-start;
+  margin-top: 0.556vh;
+}
+
+.person {
+	font: 500 1.56vh/150% "Neue Haas Grotesk Display Pro", Arial, Helvetica, sans-serif;
+  align-self: flex-start;
+  margin-top: 0.77vh;
 }
 
 .imageWrapper {

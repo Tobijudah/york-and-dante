@@ -1,5 +1,6 @@
 import React from "react";
 import S from "./SectionTwo.module.scss";
+import { ReactComponent as Signature } from "../../svgs/signature.svg";
 
 const SectionTwo = () => {
 	return (
@@ -8,19 +9,18 @@ const SectionTwo = () => {
 				<div data-scroll className={S.textWrapper}>
 					<h2 className={S.title}>The story behind the piece</h2>
 					<p className={S.text}>
-						Top Cat! The most effectual Top Cat! Who’s intellectual
-						close friends get to call him T.C., providing it’s with
-						dignity. Top Cat! The indisputable leader of the gang.
-						He’s the boss, he’s a pip, he’s the championship. He’s
-						the most tip top, Top Cat.
+						Barn & Bed is the first environmentally friendly chair
+						in the world with minimal design and modern pop-appeal.
+						It is made from recycled off-cuts of wood, a material
+						that is not harmful to human health or the regeneration
+						of nature. The chair has a cross-like profile, making it
+						a great shape for gathering around. It can be used both
+						indoors and outdoors and its simple contours fit so
+						harmoniously into the natural environment that it almost
+						seems to blend in with nature altogether.
 					</p>
-					<p className={S.text}>
-						There’s a voice that keeps on calling me. Down the road,
-						that’s where I’ll always be. Every stop I make, I make a
-						new friend. Can’t stay for long, just turn around and
-						I’m gone again. Maybe tomorrow, I’ll want to settle
-						down, Until tomorrow, I’ll just keep moving on.
-					</p>
+					<Signature className={S.signature} />
+					<p className={S.person}>Lead designer</p>
 				</div>
 				<div data-scroll className={S.imageWrapper}></div>
 			</div>

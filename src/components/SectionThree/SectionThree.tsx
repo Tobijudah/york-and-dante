@@ -9,18 +9,24 @@ const SectionThree: React.FC = () => {
 			<div className={S.section}>
 				<div data-scroll data-speed-2 className={S.textWrapper}>
 					<h2 className={S.title}>
-						A minmalistic approach to design
+						A minmalistic approach to chair design
 					</h2>
 					<p className={S.text}>
-						Mutley, you snickering, floppy eared hound. When courage
-						is needed, you’re never around. Those medals you wear on
-						your moth-eaten chest should be there for bungling at
-						which you are best.
+						Barn & Bed  is a chair without any unnecessary details
+						or materials: it features a seat in molded polyurethane
+						with a simple steel structure. This flexible, stackable
+						chair can be used both indoors and outdoors, and has the
+						potential to establish a new way of defining furniture
+						for public spaces.
 					</p>
 				</div>
 				<div data-scroll data-speed-3 className={S.imageWrapper}>
 					<img src={image} className={S.image} alt="" />
-					<RotatingText width='20.24vh' height='20.24vh' className={S.svg} />
+					<RotatingText
+						width="20.24vh"
+						height="20.24vh"
+						className={S.svg}
+					/>
 				</div>
 			</div>
 		</section>
