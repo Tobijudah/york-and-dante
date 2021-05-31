@@ -1,7 +1,13 @@
+@import "../../common/include-media";
+
 .section {
 	position: relative;
 	width: 100vw;
 	height: 100vh;
+	
+	@include media("<=mobile") {
+		margin-top: 3rem;
+	}
 }
 
 .textWrapper {
@@ -10,21 +16,36 @@
 	left: 0;
 	right: 0;
 	bottom: 0;
-	margin-left: 19.78vh;
 	z-index: 1;
+
+	@include media(">mobile") {
+		margin-left: 19.78vh;
+	}
 }
 
 .text {
 	font: 600 10vh/98.49% "New York Extra Large", serif;
 	letter-spacing: -0.06em;
-	margin-top: 15vh;
-	margin-left: 6.5vh;
+
+	@include media(">mobile") {
+		margin-top: 15vh;
+		margin-left: 6.5vh;
+	}
+	@include media("<=mobile") {
+		font-size: 3rem;
+		margin-top: 1.9375rem;
+		margin-left: 1.5rem;
+	}
 }
 
 .button {
 	position: absolute;
 	right: 13.3vh;
 	bottom: 12.5vh;
+	
+	@include media('<=mobile') {
+		display: none;
+	};
 }
 
 .videoWrapper {
