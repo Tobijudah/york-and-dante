@@ -13,6 +13,7 @@ const Nav: React.FC = () => {
 					Barn <span className={S.and}>&</span> Bed
 				</p>
 			</div>
+			<div className={S.div} />
 		</nav>
 	);
 };

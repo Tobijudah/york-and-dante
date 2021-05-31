@@ -1,17 +1,27 @@
+@import "../../common/include-media";
+
 .nav {
 	position: fixed;
 	top: 0;
 	left: 0;
-	height: 100vh;
-	width: 6vw;
 	display: flex;
-	flex-direction: column;
 	background-color: #fff;
 	color: #000;
 	font: 600 2.67vh/110.5% "Neue Haas Grotesk Display Pro", Arial, Helvetica,
 		sans-serif;
 	filter: drop-shadow(1px 0px 1px rgba(0, 0, 0, 0.05));
 	z-index: 4;
+
+	@include media(">mobile") {
+		width: 6vw;
+		height: 100vh;
+		flex-direction: column;
+	}
+	@include media("<=mobile") {
+		width: 100vw;
+		height: 3.75rem;
+		padding-right: 1.5rem;
+	}
 }
 
 .upper {
@@ -20,10 +30,20 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	letter-spacing: 0.44vh;
 	text-transform: uppercase;
-	padding: 2.22vh 0;
-	border-bottom: 1px solid #000000;
+
+	@include media(">mobile") {
+		letter-spacing: 0.44vh;
+		padding: 2.22vh 0;
+		border-bottom: 1px solid #000000;
+	}
+	@include media("<=mobile") {
+		font-size: 0.75rem;
+		line-height: 110.5%;
+		letter-spacing: 0.025em;
+		padding: 0 1rem;
+		border-right: 1px solid #000000;
+	}
 }
 
 .lower {
@@ -32,19 +52,44 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+
+	@include media("<=mobile") {
+		margin: auto;
+	}
 }
 
 .lowerText {
-	line-height: 3.22vh;
-	letter-spacing: 0.33vh;
 	text-transform: uppercase;
 	white-space: nowrap;
-	transform: rotate(-90deg);
+
+	@include media(">mobile") {
+		line-height: 3.22vh;
+		letter-spacing: 0.33vh;
+		transform: rotate(-90deg);
+	}
+	@include media("<=mobile") {
+		font-size: 1rem;
+		line-height: 1.1875rem;
+		letter-spacing: 0.185em;
+	}
 }
 
 .and {
 	background: #ff4040;
 	color: #fff;
-	padding: 0.178vh 0.6vh 0.178vh 0.89vh;
-	margin: 0 0.53vh;
+	
+	@include media(">mobile") {
+		margin: 0 0.53vh;
+		padding: 0.178vh 0.6vh 0.178vh 0.89vh;
+	}
+	@include media('<=mobile') {
+		padding: 0.05rem 0.3rem 0;
+		letter-spacing: 0;
+	};
+}
+
+.div {
+	@include media("<=mobile") {
+		width: 3rem;
+	}
 }
