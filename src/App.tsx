@@ -21,6 +21,12 @@ function App() {
 			smooth: true,
 			el: scrollRef.current,
 			direction: "horizontal",
+			tablet: {
+				smooth: true
+			},
+			mobile: {
+				smooth: true,
+			},
 		});
 	});
 
