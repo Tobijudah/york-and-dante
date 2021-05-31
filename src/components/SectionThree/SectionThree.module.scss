@@ -1,55 +1,101 @@
+@import "../../common/include-media";
+
 .section {
 	position: relative;
-	width: 150vh;
-	height: 100vh;
 	display: flex;
-  justify-content: space-between;
 	background-color: #121212;
 	color: #ffffff;
+
+	@include media(">mobile") {
+		height: 100vh;
+		width: 150vh;
+		justify-content: space-between;
+	}
+	@include media("<=mobile") {
+		flex-direction: column;
+	}
 }
 
 .textWrapper {
-	height: 100%;
-	width: 51%;
 	display: flex;
 	align-items: center;
 	flex-direction: column;
-	padding: 20vh 6.44vh 0 13.44vh;
-  z-index: 1;
+	z-index: 1;
+
+	@include media(">mobile") {
+		height: 100%;
+		width: 51%;
+		padding: 20vh 6.44vh 0 13.44vh;
+	}
+	@include media("<=mobile") {
+		padding: 2.5rem 1.5rem 2rem;
+	}
 }
 
 .title {
 	font: 600 8vh/98.49% "New York Extra Large", serif;
 	letter-spacing: -0.06em;
 	white-space: pre-wrap;
-	margin-bottom: 6.3vh;
+
+	@include media(">mobile") {
+		margin-bottom: 6.3vh;
+	}
+	@include media("<=mobile") {
+		font-size: 3rem;
+		margin-bottom: 2.5rem;
+	}
 }
 
 .text {
-	color: #DDDDDD;
+	color: #dddddd;
 	font: 500 2.35vh/150% "Neue Haas Grotesk Display Pro", Arial, Helvetica,
 		sans-serif;
 	text-align: justify;
 	white-space: pre-wrap;
-  mix-blend-mode: difference;
+
+	@include media("<=mobile") {
+		font-size: 1rem;
+	}
 }
 
 .imageWrapper {
-  position: relative;
-  height: 100%;
-  width: fit-content;
-  display: flex;
-  justify-content: flex-end;
-  padding: 20vh 13.33vh 0 0;
+	position: relative;
+	height: 100%;
+	width: fit-content;
+	display: flex;
+	justify-content: flex-end;
+
+	@include media(">mobile") {
+		padding: 20vh 13.33vh 0 0;
+	}
+	@include media("<=mobile") {
+		padding: 0 1.5rem 7.625rem;
+	}
 }
 
 .image {
-  width: auto;
-  height: 71.6vh;
+	width: auto;
+
+	@include media(">mobile") {
+		height: 71.6vh;
+	}
+	@include media("<=mobile") {
+		width: 100%;
+		padding-left: 4rem;
+	}
 }
 
 .svg {
-  position: absolute;
-  left: -10.12vh;
-  bottom: 10vh;
+	position: absolute;
+
+	@include media(">mobile") {
+		left: -10.12vh;
+		bottom: 10vh;
+	}
+	@include media('<=mobile') {
+		width: 8.25rem;
+		height: 8.25rem;
+		left: 1.5rem;
+		bottom: 3.92rem;
+	};
 }
