@@ -1,19 +1,23 @@
+@import "../../common/include-media";
+
 .section {
 	position: relative;
-	width: 310vh;
-	height: 100vh;
 	display: flex;
 	background-color: #4f5964;
 	color: #ffffff;
+
+	@include media(">mobile") {
+		width: 310vh;
+		height: 100vh;
+	}
+	@include media("<=mobile") {
+		flex-direction: column;
+		padding-top: 2.8125rem;
+	}
 }
 
 .marquee {
 	cursor: pointer;
-	position: absolute !important;
-	height: 14.578vh !important;
-	transform: rotate(270deg);
-	transform-origin: 71vh 427%;
-	margin: 8.78vh 0;
 	border: 1px solid #313131;
 	&:hover {
 		color: transparent;
@@ -21,12 +25,19 @@
 		-webkit-text-stroke: 1px rgb(255, 255, 255);
 		transition: all 100ms linear;
 	}
+
+	@include media(">mobile") {
+		position: absolute !important;
+		height: 14.578vh !important;
+		transform: rotate(270deg);
+		transform-origin: 71vh 427%;
+		margin: 8.78vh 0;
+	}
 }
 
 .marqueeText {
 	font: 600 8vh/14.578vh "New York Extra Large", serif;
 	letter-spacing: -0.06em;
-	padding: 0 3.9vh;
 	transition: all 100ms linear;
 	&:hover {
 		color: inherit;
@@ -34,86 +45,166 @@
 		-webkit-text-stroke: inherit;
 		transition: all 100ms linear;
 	}
+
+	@include media(">mobile") {
+		padding: 0 3.9vh;
+	}
+	@include media("<=mobile") {
+		font-size: 2.25rem;
+		line-height: 98.49%;
+		padding: 1.25rem 3.46875rem;
+	}
 }
 
 .main {
 	position: relative;
-	height: 100vh;
-	width: 143vh;
-	margin-left: 32.178vh;
+
+	@include media(">mobile") {
+		height: 100vh;
+		width: 143vh;
+		margin-left: 32.178vh;
+	}
+	@include media("<=mobile") {
+		padding-top: 5.1875rem;
+	}
 }
 
 .title {
 	font: 600 24vh/98.49% "New York Extra Large", serif;
 	letter-spacing: -0.06em;
 	white-space: pre-wrap;
+
+	@include media("<=mobile") {
+		font-size: 9rem;
+	}
 }
 
 .title1 {
 	composes: title;
-	position: absolute;
-	top: 18.56vh;
-	left: 7.22vh;
 	z-index: 1;
+
+	@include media(">mobile") {
+		position: absolute;
+		top: 18.56vh;
+		left: 7.22vh;
+	}
 }
 
 .image {
-	position: absolute;
-	top: 5.33vh;
-	left: 42.67vh;
-	width: 80vh;
-	height: 74.78vh;
 	z-index: 2;
+
+	@include media(">mobile") {
+		position: absolute;
+		top: 5.33vh;
+		left: 42.67vh;
+		width: 80vh;
+		height: 74.78vh;
+	}
+	@include media("<=mobile") {
+		width: 100%;
+		padding: 0 1.5rem;
+		margin: -2.6875rem 0 -3.9375rem;
+	}
 }
 
 .title2 {
 	composes: title;
-	position: absolute;
-	left: 62.22vh;
-	bottom: 7.1vh;
 	z-index: 3;
+
+	@include media(">mobile") {
+		position: absolute;
+		left: 62.22vh;
+		bottom: 7.1vh;
+	}
+	@include media("<=mobile") {
+		padding-left: 2rem;
+	}
 }
 
 .sub {
 	height: min-content;
-	margin-top: 20vh;
 	display: grid;
 	grid-template-rows: repeat(3, 1fr);
-	row-gap: 6vh;
+
+	@include media(">mobile") {
+		row-gap: 6vh;
+		margin-top: 20vh;
+	}
+	@include media("<=mobile") {
+		row-gap: 3.5rem;
+		padding: 0 1.5rem;
+		margin-top: 5rem;
+	}
 }
 
 .subRow {
 	display: flex;
 	align-items: center;
+	&:last-of-type {
+		@include media("<=mobile") {
+			margin-left: auto;
+		}
+	}
 }
 
 .subText {
 	font: 600 5.33vh/98.49% "New York Extra Large", serif;
 	letter-spacing: -0.06em;
 	white-space: nowrap;
+
+	@include media("<=mobile") {
+		font-size: 2.25rem;
+		font-weight: 500;
+	}
 }
 
 .line1 {
-	margin-right: 4.44vh;
+	@include media(">mobile") {
+		margin-right: 4.44vh;
+	}
+	@include media("<=mobile") {
+		width: 3.1875rem;
+		height: 0.1875rem;
+		margin-right: 1.125rem;
+	}
 }
 
 .line2 {
-	margin-left: 4.44vh;
+	@include media(">mobile") {
+		margin-left: 4.44vh;
+	}
+	@include media("<=mobile") {
+		width: 3.1875rem;
+		height: 0.1875rem;
+		margin-left: 1.125rem;
+	}
 }
 
 .textWrapper {
-	width: 20%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	padding: 8vh;
-	margin-left: auto;
+
+	@include media(">mobile") {
+		width: 20%;
+		padding: 8vh;
+		margin-left: auto;
+	}
+	@include media("<=mobile") {
+		padding: 4.5rem 1.5rem;
+	}
 }
 
 .text {
 	color: #efefef;
 	font: 500 2.35vh/150% "Neue Haas Grotesk Display Pro", Arial, Helvetica,
 		sans-serif;
-	text-align: justify;
 	white-space: pre-wrap;
+
+	@include media(">mobile") {
+		text-align: justify;
+	}
+	@include media("<=mobile") {
+		font-size: 1rem;
+	}
 }

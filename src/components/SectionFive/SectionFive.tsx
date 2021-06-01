@@ -31,7 +31,7 @@ const SectionFive: React.FC = () => {
 						<p className={S.subText}>Cylindrical design</p>
 					</div>
 					<div className={S.subRow}>
-						<p className={S.subText}>Arc back rest</p>
+						<p className={S.subText}>Arc back hinge</p>
 						<Line width='11.22vh' height='0.33vh' className={S.line2} />
 					</div>
 				</div>
