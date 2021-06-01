@@ -1,25 +1,52 @@
+@import "../../common/include-media";
+
 .section {
 	position: relative;
-	width: 150vh;
-	height: 100vh;
 	display: flex;
 	background-color: #ffffff;
 	color: #000000;
+
+	@include media(">mobile") {
+		height: 100vh;
+		width: 150vh;
+		justify-content: space-between;
+	}
+	@include media("<=mobile") {
+		flex-direction: column-reverse;
+	}
 }
 
 .left {
 	position: relative;
-	width: 58%;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	padding: 20.22vh 6.78vh 20vh 18.89vh;
+
+	@include media(">mobile") {
+		width: 58%;
+		padding: 20.22vh 6.78vh 20vh 18.89vh;
+	}
+	@include media("<=mobile") {
+		padding: 2.25rem 1.5rem 0;
+	}
+}
+
+.corner {
+	@include media("<=mobile") {
+		display: none;
+	}
 }
 
 .title {
+	color: #121212;
 	font: 600 8vh/98.49% "New York Extra Large", serif;
 	letter-spacing: -0.06em;
 	white-space: pre-wrap;
+
+	@include media("<=mobile") {
+		font-size: 3rem;
+		margin-bottom: 2.25rem;
+	}
 }
 
 .bronze {
@@ -27,27 +54,49 @@
 }
 
 .scribble {
-	position: absolute;
-	left: 22.87vh;
-	bottom: -3vh;
+	@include media(">mobile") {
+		position: absolute;
+		left: 22.87vh;
+		bottom: -3vh;
+	}
+	@include media("<=mobile") {
+		width: 294px;
+		height: 158px;
+		margin-bottom: -0.875rem;
+	}
 }
 
 .right {
-	width: 42%;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	padding: 19vh 8vh 18vh;
+
+	@include media(">mobile") {
+		width: 42%;
+		padding: 19vh 8vh 18vh;
+	}
+	@include media("<=mobile") {
+		padding: 3rem 1.5rem 0;
+	}
 }
 
 .header {
-	font: 300 5.33vh/98.49% "New York Extra Large", serif;
+	color: #121212;
+	font: 500 5.33vh/98.49% "New York Extra Large", serif;
 	letter-spacing: -0.06em;
 	white-space: pre-wrap;
+
+	@include media("<=mobile") {
+		font-size: 2.25rem;
+		margin-bottom: 3rem;
+	}
 }
 
 .line {
 	align-self: center;
+	@include media("<=mobile") {
+		display: none;
+	}
 }
 
 .text {
@@ -55,4 +104,8 @@
 		sans-serif;
 	text-align: justify;
 	white-space: pre-wrap;
+
+	@include media("<=mobile") {
+		font-size: 1rem;
+	}
 }
