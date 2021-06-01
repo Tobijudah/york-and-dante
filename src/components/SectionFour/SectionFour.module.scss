@@ -102,9 +102,11 @@
 .text {
 	font: 500 2.35vh/150% "Neue Haas Grotesk Display Pro", Arial, Helvetica,
 		sans-serif;
-	text-align: justify;
 	white-space: pre-wrap;
 
+	@include media(">mobile") {
+		text-align: justify;
+	}
 	@include media("<=mobile") {
 		font-size: 1rem;
 	}
