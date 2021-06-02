@@ -24,7 +24,7 @@ function App() {
 			tablet: {
 				smooth: true
 			},
-			mobile: {
+			smartphone: {
 				smooth: true,
 			},
 		});
