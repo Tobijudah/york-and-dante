@@ -1,7 +1,13 @@
+@import "../../common/include-media";
+
 .section {
 	position: relative;
 	width: 175vh;
 	height: 100vh;
+
+	@include media("<=mobile") {
+		display: none;
+	}
 }
 
 .videoWrapper {
