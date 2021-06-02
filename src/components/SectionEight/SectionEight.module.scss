@@ -1,66 +1,125 @@
+@import "../../common/include-media";
+
 .section {
 	position: relative;
-	width: 250vh;
-	height: 100vh;
-  display: flex;
-	background-color: #D8D8D8;
-  padding: 0 13.33vh;
+	display: flex;
+	background-color: #d8d8d8;
+
+	@include media(">mobile") {
+		width: 250vh;
+		height: 100vh;
+		padding: 0 13.33vh;
+	}
+	@include media("<=mobile") {
+		flex-direction: column;
+	}
 }
 
 .left {
-  width: 21%;
-  padding-top: 20vh;
-  margin-right: 8.89vh;
+	@include media(">mobile") {
+		width: 21%;
+		padding-top: 20vh;
+		margin-right: 8.89vh;
+	}
+	@include media("<=mobile") {
+		padding: 2.25rem 1.5rem 0;
+	}
 }
 
 .text {
-  color: #121212;
+	color: #121212;
 	font: 500 5.33vh/98.49% "New York Extra Large", serif;
 	letter-spacing: -0.06em;
-  margin-bottom: 9.2vh;
-  white-space: pre-wrap;
+	white-space: pre-wrap;
+
+	@include media(">mobile") {
+		margin-bottom: 9.2vh;
+	}
+	@include media("<=mobile") {
+		font-size: 2.25rem;
+		margin-bottom: 2.5rem;
+	}
 }
 
 .button {
-  width: fit-content;
-  transform: rotate(-30deg);
+	width: fit-content;
+	transform: rotate(-30deg);
 }
 
 .right {
-  position: relative;
-  display: flex;
-  align-items: flex-start;
-  padding-top: 5.2vh;
+	position: relative;
+	display: flex;
+	align-items: flex-start;
+
+	@include media(">mobile") {
+		padding-top: 5.2vh;
+	}
+	@include media("<=mobile") {
+		flex-direction: column;
+		padding: 4.5rem 0 7.625rem;
+	}
 }
 
 .image1 {
-  padding-left: 12.89vh;
-  height: 74.67vh;
-  z-index: 2;
+	z-index: 2;
+
+	@include media(">mobile") {
+		padding-left: 12.89vh;
+		height: 74.67vh;
+	}
+	@include media("<=mobile") {
+		width: 100%;
+		padding: 0 1.5rem;
+	}
 }
 
 .image {
-  height: 75vh;
-  z-index: 2;
+	z-index: 2;
+
+	@include media(">mobile") {
+		height: 75vh;
+	}
 }
 
 .image2 {
-  composes: image;
-  margin-left: -20vh;
-  padding-top: 1.67vh;
+	composes: image;
+
+	@include media(">mobile") {
+		margin-left: -20vh;
+		padding-top: 1.67vh;
+	}
+	@include media("<=mobile") {
+		width: 105%;
+		margin: -7.3125rem -1.5rem -5rem 1.5rem;
+	}
 }
 
 .image3 {
-  composes: image;
-  margin-left: -29vh;
-  padding-top: 1.67vh;
+	composes: image;
+
+	@include media(">mobile") {
+		margin-left: -29vh;
+		padding-top: 1.67vh;
+	}
+	@include media("<=mobile") {
+		width: 110%;
+		margin: 0 1.5rem 0 -2.75rem;
+	}
 }
 
 .title {
-  position: absolute;
-  bottom: 7vh;
-  color: #121212;
+	color: #121212;
 	font: 600 24vh/98.49% "New York Extra Large", serif;
 	letter-spacing: -0.06em;
-  z-index: 1;
+	z-index: 1;
+
+	@include media(">mobile") {
+		position: absolute;
+		bottom: 7vh;
+	}
+	@include media("<=mobile") {
+		font-size: 9rem;
+		white-space: nowrap;
+		margin-top: -4rem;
+	}
 }
