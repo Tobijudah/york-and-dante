@@ -1,62 +1,141 @@
+@import "../../common/include-media";
+
 .section {
 	position: relative;
-	width: 150vh;
-	height: 100vh;
 	display: flex;
 	background-color: #fff;
+
+	@include media(">mobile") {
+		width: 150vh;
+		height: 100vh;
+	}
+	@include media("<=mobile") {
+		flex-direction: column;
+		padding-top: 2.5rem;
+	}
 }
 
 .left {
 	position: relative;
-	padding-left: 13.33vh;
+
+	@include media(">mobile") {
+		padding-left: 13.33vh;
+	}
+	@include media("<=mobile") {
+		display: flex;
+		flex-direction: column;
+		padding-right: 1.5rem;
+	}
 }
 
 .image {
-	height: 75vh;
-	width: auto;
+	@include media(">mobile") {
+		height: 75vh;
+		width: auto;
+	}
+	@include media("<=mobile") {
+		width: 100%;
+	}
+}
+
+.button {
+	@include media(">mobile") {
+		position: absolute;
+		top: 42.2vh;
+		right: -10vh;
+	}
+	@include media("<=mobile") {
+		align-self: center;
+		margin-top: -4.8125rem;
+	}
 }
 
 .title {
 	font: 600 5.33vh/98.49% "New York Extra Large", serif;
 	letter-spacing: -0.06em;
-	margin-top: 5.5vh;
-}
 
-.button {
-	position: absolute;
-	top: 42.2vh;
-	right: -10vh;
+	@include media(">mobile") {
+		margin-top: 5.5vh;
+	}
+	@include media("<=mobile") {
+		font-size: 2.25rem;
+		font-weight: 500;
+		padding-left: 1.5rem;
+		margin: 4rem 0;
+	}
 }
 
 .right {
 	display: flex;
 	flex-direction: column;
-	height: 75vh;
-	padding-top: 17.78vh;
-	padding-left: 20.22vh;
+
+	@include media(">mobile") {
+		height: 75vh;
+		padding-top: 17.78vh;
+		padding-left: 20.22vh;
+	}
+	@include media("<=mobile") {
+	}
+}
+
+.rows {
+	@include media(">mobile") {
+		display: flex;
+		flex-direction: column;
+	}
+	@include media("<=mobile") {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		padding: 0 1.5rem 3.6875rem;
+	}
 }
 
 .row {
-	padding-bottom: 4.11vh;
+	@include media(">mobile") {
+		padding-bottom: 4.11vh;
+	}
+	@include media("<=mobile") {
+		&:first-of-type {
+			padding-right: 11.467vw;
+		}
+	}
 }
 
 .text {
 	color: #414141;
 	font: 500 2.5vh/150% "Neue Haas Grotesk Display Pro", Arial, Helvetica,
 		sans-serif;
+
+	@include media("<=mobile") {
+		font-size: 1.25rem;
+	}
 }
 
 .grid {
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	column-gap: 0.89vh;
-	margin-top: 1.33vh;
+	grid-template-columns: repeat(3, 2.5rem);
+
+	@include media(">mobile") {
+		column-gap: 0.89vh;
+		margin-top: 1.33vh;
+	}
+	@include media("<=mobile") {
+		column-gap: 0.5rem;
+		margin-top: 0.75rem;
+	}
 }
 
 .box {
 	cursor: pointer;
-	width: 4.44vh;
-	height: 4.44vh;
+
+	@include media(">mobile") {
+		width: 4.44vh;
+		height: 4.44vh;
+	}
+	@include media("<=mobile") {
+		width: 2.5rem;
+		height: 2.5rem;
+	}
 }
 
 .muddyWaters {
@@ -83,6 +162,24 @@
 	font: 600 2.22vh/150% "Neue Haas Grotesk Display Pro", Arial, Helvetica,
 		sans-serif;
 	border: 1px solid #000000;
+
+	@include media("<=mobile") {
+		font-size: 1.5rem;
+	}
+}
+
+.texts {
+	@include media(">mobile") {
+		display: flex;
+		flex-direction: column;
+		margin-top: auto;
+	}
+	@include media("<=mobile") {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		align-items: center;
+		padding: 0 1.5rem 3.6875rem;
+	}
 }
 
 .price {
@@ -90,6 +187,12 @@
 	font: 700 3.56vh/150% "Neue Haas Grotesk Display Pro", Arial, Helvetica,
 		sans-serif;
 	letter-spacing: -0.06em;
-	padding-bottom: 4.56vh;
-	margin-top: auto;
+
+	@include media(">mobile") {
+		padding-bottom: 4.56vh;
+	}
+	@include media("<=mobile") {
+		font-size: 2rem;
+		padding-right: 24vw;
+	}
 }

@@ -19,34 +19,38 @@ const SectionSeven = () => {
 			<div className={S.section}>
 				<div className={S.left}>
 					<img className={S.image} src={image} alt="" />
-					<p className={S.title}>The Credenza</p>
 					<div className={S.button}>
 						<Button text color="red" />
 					</div>
+					<p className={S.title}>The Credenza</p>
 				</div>
 				<div className={S.right}>
-					<div className={S.row}>
-						<p className={S.text}>Color</p>
-						<div className={S.grid}>
-							<div className={S.muddyWaters}></div>
-							<div className={S.sandDrift}></div>
-							<div className={S.paleSky}></div>
-						</div>
-					</div>
-					<div className={S.row}>
-						<p className={S.text}>Quantity</p>
-						<div className={S.grid}>
-							<div onClick={subtract} className={S.priceBox}>
-								-
-							</div>
-							<div className={S.priceBox}>{amount}</div>
-							<div onClick={add} className={S.priceBox}>
-								+
+					<div className={S.rows}>
+						<div className={S.row}>
+							<p className={S.text}>Color</p>
+							<div className={S.grid}>
+								<div className={S.muddyWaters}></div>
+								<div className={S.sandDrift}></div>
+								<div className={S.paleSky}></div>
 							</div>
 						</div>
+						<div className={S.row}>
+							<p className={S.text}>Quantity</p>
+							<div className={S.grid}>
+								<div onClick={subtract} className={S.priceBox}>
+									-
+								</div>
+								<div className={S.priceBox}>{amount}</div>
+								<div onClick={add} className={S.priceBox}>
+									+
+								</div>
+							</div>
+						</div>
 					</div>
-					<p className={S.price}>${amount * 550}</p>
-					<p className={S.text}>See reviews</p>
+					<div className={S.texts}>
+						<p className={S.price}>${amount * 550}</p>
+						<p className={S.text}>See reviews</p>
+					</div>
 				</div>
 			</div>
 		</section>
