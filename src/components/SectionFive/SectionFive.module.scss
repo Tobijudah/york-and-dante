@@ -66,6 +66,7 @@
 	}
 	@include media("<=mobile") {
 		padding-top: 5.1875rem;
+		overflow: hidden;
 	}
 }
 
@@ -117,6 +118,7 @@
 		bottom: 7.1vh;
 	}
 	@include media("<=mobile") {
+		width: 100%;
 		padding-left: 2rem;
 	}
 }

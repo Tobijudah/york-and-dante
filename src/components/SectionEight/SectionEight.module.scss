@@ -57,6 +57,7 @@
 	@include media("<=mobile") {
 		flex-direction: column;
 		padding: 4.5rem 0 7.625rem;
+		overflow-x: hidden;
 	}
 }
 
@@ -118,6 +119,7 @@
 		bottom: 7vh;
 	}
 	@include media("<=mobile") {
+		width: 100%;
 		font-size: 9rem;
 		white-space: nowrap;
 		margin-top: -4rem;
