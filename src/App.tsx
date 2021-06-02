@@ -1,8 +1,9 @@
 import S from "./App.module.scss";
 import Nav from "./components/Nav/Nav";
 import Cart from "./components/Cart/Cart";
+import Menu from "./components/Menu/Menu";
 import LocomotiveScroll from "locomotive-scroll";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import SectionOne from "./components/SectionOne/SectionOne";
 import SectionTwo from "./components/SectionTwo/SectionTwo";
 import SectionSix from "./components/SectionSix/SectionSix";
@@ -22,7 +23,7 @@ function App() {
 			el: scrollRef.current,
 			direction: "horizontal",
 			tablet: {
-				smooth: true
+				smooth: true,
 			},
 			smartphone: {
 				smooth: true,
@@ -30,10 +31,13 @@ function App() {
 		});
 	});
 
+	const [open, setOpen] = useState<boolean>(false);
+
 	return (
 		<>
-			<Nav />
+			<Nav onClick={() => setOpen(!open)} />
 			<Cart />
+			<Menu open={open} onClick={() => setOpen(!open)} />
 			<div ref={scrollRef} className={S.app} data-scroll-container>
 				<SectionOne />
 				<SectionTwo />

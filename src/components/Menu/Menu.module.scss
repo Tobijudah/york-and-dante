@@ -1,0 +1,53 @@
+.menu {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	width: 94vw;
+	height: 100vh;
+	grid-auto-rows: auto;
+	gap: 8.89vh;
+	background-color: #fff;
+	padding: 14.44vh 0 18.44vh 12.56vh;
+	border-left: 1px solid #000;
+	z-index: 5;
+}
+
+.open {
+	display: grid;
+}
+
+.closed {
+	display: none;
+}
+
+.menuItem {
+	cursor: pointer;
+	width: fit-content;
+	font: 600 16.67vh/98.49% "New York Extra Large", serif;
+	letter-spacing: -0.06em;
+	color: transparent;
+	text-stroke: 1.5px rgb(0, 0, 0);
+	-webkit-text-stroke: 1.5px rgb(0, 0, 0);
+	&:hover {
+		color: #000;
+		.icon {
+			display: inline;
+		}
+	}
+}
+
+.icon {
+	display: none;
+	margin-left: 2rem;
+}
+
+.close {
+	cursor: pointer;
+	position: absolute;
+	top: 7.11vh;
+	right: 7.11vh;
+	padding: 4.67vh;
+	border-radius: 100%;
+	border: 1px solid #000;
+}

@@ -1,10 +1,14 @@
 import React from "react";
 import S from "./Nav.module.scss";
 
-const Nav: React.FC = () => {
+type NavProps = {
+	onClick: () => void;
+};
+
+const Nav: React.FC<NavProps> = ({ onClick }) => {
 	return (
 		<nav className={S.nav}>
-			<div className={S.upper}>
+			<div className={S.upper} onClick={onClick}>
 				<p>Me</p>
 				<p>Nu</p>
 			</div>
