@@ -22,6 +22,7 @@ function App() {
 			smooth: true,
 			el: scrollRef.current,
 			direction: "horizontal",
+			gestureDirection: "both",
 			tablet: {
 				smooth: true,
 			},
@@ -29,7 +30,7 @@ function App() {
 				smooth: true,
 			},
 		});
-	});
+	}, []);
 
 	const [open, setOpen] = useState<boolean>(false);
 
