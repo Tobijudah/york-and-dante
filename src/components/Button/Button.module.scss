@@ -1,14 +1,32 @@
+@import "../../common/include-media";
+
 .button {
 	cursor: pointer;
-	width: 18vh;
-	height: 18vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	border: none;
 	border-radius: 100%;
+
+	@include media(">mobile") {
+		width: 18vh;
+		height: 18vh;
+	}
+	@include media("<=mobile") {
+		width: 7.5rem;
+		height: 7.5rem;
+	}
 }
 
 .large {
-	width: 20vh;
-	height: 20vh;
+	@include media(">mobile") {
+		width: 20vh;
+		height: 20vh;
+	}
+	@include media("<=mobile") {
+		width: 9.625rem;
+		height: 9.625rem;
+	}
 }
 
 .red {
@@ -22,9 +40,20 @@
 }
 
 .text {
-  color: #ffffff;
+	width: fit-content;
+	color: #ffffff;
 	font: 700 2.2vh/150% "Neue Haas Grotesk Display Pro", Arial, Helvetica,
 		sans-serif;
 	letter-spacing: 0.265em;
-  text-transform: uppercase;
+	text-transform: uppercase;
+
+	@include media('<=mobile') {
+		font-size: 1.075rem;
+	};
+}
+
+.arrow {
+	@include media('<=mobile') {
+		width: 4.15rem;
+	};
 }

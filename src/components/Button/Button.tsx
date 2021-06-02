@@ -13,7 +13,7 @@ const Button: React.FC<ButtonProps> = ({ text, color }) => {
 			{text ? (
 				<p className={S.text}>Buy</p>
 			) : (
-				<Arrow width='10vh' stroke={color === "greige" ? "#000000" : "#ffffff"} />
+				<Arrow className={S.arrow} width='10vh' stroke={color === "greige" ? "#000000" : "#ffffff"} />
 			)}
 		</button>
 	);
