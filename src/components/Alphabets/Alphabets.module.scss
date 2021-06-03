@@ -1,0 +1,14 @@
+.alphabets {
+  height: fit-content;
+	display: flex;
+	flex-direction: column;
+  align-items: center;
+	padding: 0.77vh 0;
+}
+
+.alphabet {
+  height: 7.2267vh;
+	color: #000000;
+	font: 600 5.33vh/7.2267vh "Neue Haas Grotesk Display Pro", Arial, Helvetica,
+		sans-serif; 
+}
