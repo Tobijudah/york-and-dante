@@ -1,0 +1,38 @@
+.preloader {
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: #d8d8d8;
+}
+
+.barn {
+	display: inline-grid;
+	grid-template-columns: repeat(4, 8.89vh);
+	gap: 0.56vh;
+}
+
+.and {
+	display: inline;
+	background: #ff4040;
+	color: #fff;
+	font: 600 5.33vh/135.5% "Neue Haas Grotesk Display Pro", Arial, Helvetica,
+		sans-serif;
+	padding: 0.89vh 2.67vh;
+	margin: 0 1.67vh;
+}
+
+.bed {
+	display: inline-grid;
+	grid-template-columns: repeat(3, 8.89vh);
+	gap: 0.56vh;
+}
+
+.letter {
+	width: 8.89vh;
+	height: 8.89vh;
+	display: flex;
+  justify-content: center;
+	overflow-y: hidden;
+}
