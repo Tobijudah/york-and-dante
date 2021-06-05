@@ -11,8 +11,9 @@ const SectionSix = () => {
 						loop
 						muted
 						autoPlay
-						src={video}
+						playsInline
 						className={S.video}
+						src='https://res.cloudinary.com/tobijudah/video/upload/v1622885629/barn-and-bed/videos/section-six_cchpou.mp4'
 					></video>
 				</div>
 			</div>

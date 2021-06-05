@@ -19,8 +19,9 @@ const SectionOne: React.FC = () => {
 					loop
 					muted
 					autoPlay
-					src={video}
+					playsInline
 					className={S.video}
+					src='https://res.cloudinary.com/tobijudah/video/upload/v1622885626/barn-and-bed/videos/section-one_vnmqej.mp4'
 				></video>
 			</div>
 		</section>
