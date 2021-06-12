@@ -10,10 +10,12 @@ const AlphabetsAnimation = (
 ) => {
 	const indexNumber = Number(index);
 	const letterNumber = Number(letter);
+	const unit = window.innerWidth > 600 ? 'vh' : 'rem';
+	const translateNumber = window.innerWidth > 600 ? -7.2267 : -1.626;
 	gsap.to(element, {
 		delay: 0.2 * indexNumber,
 		duration: letterNumber < 6 ? 0.3 * letterNumber : 0.1 * letterNumber,
-		transform: `translateY(${-7.2267 * letterNumber}vh)`,
+		transform: `translateY(${translateNumber * letterNumber}${unit})`,
 	});
 };
 
