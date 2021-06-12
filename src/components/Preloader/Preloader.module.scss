@@ -9,8 +9,55 @@
 	background: #d8d8d8;
 }
 
+.preloader:after {
+	content: "";
+	position: fixed;
+	top: -100%;
+	left: -50%;
+	width: 300%;
+	height: 300%;
+	background-image: url("https://res.cloudinary.com/tobijudah/image/upload/v1623502886/barn-and-bed/photos/paper_1__2X_jzxyqb.png");
+	opacity: 0.2;
+	animation: grain 8s steps(10) infinite;
+}
+
+@keyframes grain {
+	0%,
+	100% {
+		transform: translate(0, 0);
+	}
+	10% {
+		transform: translate(-5%, -10%);
+	}
+	20% {
+		transform: translate(-15%, 5%);
+	}
+	30% {
+		transform: translate(7%, -25%);
+	}
+	40% {
+		transform: translate(-5%, 25%);
+	}
+	50% {
+		transform: translate(-15%, 10%);
+	}
+	60% {
+		transform: translate(15%, 0%);
+	}
+	70% {
+		transform: translate(0%, 15%);
+	}
+	80% {
+		transform: translate(3%, 35%);
+	}
+	90% {
+		transform: translate(-10%, 10%);
+	}
+}
+
 .barn {
 	display: inline-grid;
+	z-index: 1;
 
 	@include media(">mobile") {
 		gap: 0.56vh;
@@ -28,21 +75,23 @@
 	color: #fff;
 	font: 600 5.33vh/135.5% "Neue Haas Grotesk Display Pro", Arial, Helvetica,
 		sans-serif;
+	z-index: 1;
 
 	@include media(">mobile") {
 		padding: 0.89vh 2.67vh;
 		margin: 0 1.67vh;
 	}
-	@include media('<=mobile') {
+	@include media("<=mobile") {
 		font-size: 1.2rem;
 		line-height: 1.626rem;
 		padding: 0.1875rem 0.6rem;
 		margin: 0 0.375rem;
-	};
+	}
 }
 
 .bed {
 	display: inline-grid;
+	z-index: 1;
 
 	@include media(">mobile") {
 		gap: 0.56vh;

@@ -18,6 +18,7 @@ const Preloader = () => {
 					);
 				});
 		};
+		window.addEventListener('resize', preload);
 		setTimeout(() => {
 			preload();
 		}, 1500);
