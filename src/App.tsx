@@ -13,42 +13,54 @@ import SectionThree from "./components/SectionThree/SectionThree";
 import SectionSeven from "./components/SectionSeven/SectionSeven";
 import SectionEight from "./components/SectionEight/SectionEight";
 import "../node_modules/locomotive-scroll/src/locomotive-scroll.scss";
+import Preloader from "./components/Preloader/Preloader";
 
 function App() {
 	const scrollRef = useRef(null);
+	const [open, setOpen] = useState<boolean>(false);
+	const [preloaded, setPreloaded] = useState<boolean>(false);
 
 	useEffect(() => {
-		const scroll = new LocomotiveScroll({
-			smooth: true,
-			el: scrollRef.current,
-			direction: "horizontal",
-			gestureDirection: "both",
-			tablet: {
+		if (preloaded) {
+			const scroll = new LocomotiveScroll({
 				smooth: true,
-			},
-			smartphone: {
-				smooth: true,
-			},
-		});
-	}, []);
-
-	const [open, setOpen] = useState<boolean>(false);
+				el: scrollRef.current,
+				direction: "horizontal",
+				gestureDirection: "both",
+				tablet: {
+					smooth: true,
+				},
+				smartphone: {
+					smooth: true,
+				},
+			});
+		}
+	}, [preloaded]);
 
 	return (
 		<>
-			<Nav onClick={() => setOpen(!open)} />
-			<Cart />
-			<Menu open={open} onClick={() => setOpen(!open)} />
-			<div ref={scrollRef} className={S.app} data-scroll-container>
-				<SectionOne />
-				<SectionTwo />
-				<SectionThree />
-				<SectionFour />
-				<SectionFive />
-				<SectionSix />
-				<SectionSeven />
-				<SectionEight />
-			</div>
+			{!preloaded && <Preloader setPreloaded={setPreloaded} />}
+			{preloaded && (
+				<>
+					<Nav onClick={() => setOpen(!open)} />
+					<Cart />
+					<Menu open={open} onClick={() => setOpen(!open)} />
+					<div
+						ref={scrollRef}
+						className={S.app}
+						data-scroll-container
+					>
+						<SectionOne />
+						<SectionTwo />
+						<SectionThree />
+						<SectionFour />
+						<SectionFive />
+						<SectionSix />
+						<SectionSeven />
+						<SectionEight />
+					</div>
+				</>
+			)}
 		</>
 	);
 }
