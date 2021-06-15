@@ -7,7 +7,7 @@ const PreloaderAnimation = (elements: gsap.TweenTarget[]) => {
 	const preloader = gsap.timeline();
 	preloader
 		.to(elements[0], {
-			duration: 1.8,
+			duration: 7.5,
 			width: "100vw",
 		})
 		.to(elements[0], {
