@@ -4,6 +4,7 @@ gsap.config({
 });
 
 const PreloaderAnimation = (elements: gsap.TweenTarget[]) => {
+	gsap.set(elements[0], { visibility: "visible" });
 	const preloader = gsap.timeline();
 	preloader
 		.to(elements[0], {
@@ -15,6 +16,10 @@ const PreloaderAnimation = (elements: gsap.TweenTarget[]) => {
 			duration: 0.8,
 			height: "100vh",
 			ease: "power3.out",
+		})
+		.to(elements[2], {
+			duration: 0.5,
+			opacity: 0.2,
 		})
 		.to(
 			elements[1],
@@ -28,7 +33,7 @@ const PreloaderAnimation = (elements: gsap.TweenTarget[]) => {
 			preloader.kill();
 		});
 
-		return preloader.totalDuration()
+	return preloader.totalDuration();
 };
 
 export default PreloaderAnimation;

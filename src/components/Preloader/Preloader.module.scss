@@ -16,17 +16,17 @@
 	justify-content: center;
 	background: #d8d8d8;
 	overflow: hidden;
+	visibility: hidden;
 }
 
-.preloader:after {
-	content: "";
+.preloaderBg {
 	position: fixed;
 	top: -100%;
 	left: -50%;
 	width: 300%;
 	height: 300%;
 	background-image: url("https://res.cloudinary.com/tobijudah/image/upload/v1623502886/barn-and-bed/photos/paper_1__2X_jzxyqb.png");
-	opacity: 0.2;
+	opacity: 0;
 	animation: grain 8s steps(10) infinite;
 }
 

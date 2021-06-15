@@ -14,6 +14,7 @@ const Preloader = ({ setPreloaded }: PreloaderProps) => {
 	const wordRef = useRef(null);
 	const letterRefs = useRefArray(7);
 	const preloaderRef = useRef(null);
+	const preloaderBgRef = useRef(null);
 	const preloaderContainerRef = useRef(null);
 
 	useEffect(() => {
@@ -21,6 +22,7 @@ const Preloader = ({ setPreloaded }: PreloaderProps) => {
 			const preloaderDuration = PreloaderAnimation([
 				preloaderRef.current,
 				wordRef.current,
+				preloaderBgRef.current,
 			]);
 			let alphabetsDuration: number | undefined;
 			letterRefs &&
@@ -108,6 +110,7 @@ const Preloader = ({ setPreloaded }: PreloaderProps) => {
 					</div>
 				</div>
 			</div>
+			<div ref={preloaderBgRef} className={S.preloaderBg}/>
 		</section>
 	);
 };
