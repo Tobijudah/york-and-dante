@@ -12,6 +12,7 @@
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "react-fast-marquee": "^1.1.2",
+    "splitting": "^1.0.6",
     "vite-plugin-svgr": "^0.2.0"
   },
   "devDependencies": {
