@@ -15,8 +15,6 @@ const FadeOutAnimation = (delay: number, element: gsap.TweenTarget, callback: ()
 			fadeOut.kill();
       callback();
 		});
-
-	return fadeOut.totalDuration();
 };
 
 export default FadeOutAnimation;
