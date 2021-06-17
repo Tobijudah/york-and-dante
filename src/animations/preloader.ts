@@ -17,10 +17,6 @@ const PreloaderAnimation = (elements: gsap.TweenTarget[]) => {
 			height: "100vh",
 			ease: "power3.out",
 		})
-		.to(elements[2], {
-			duration: 0.5,
-			opacity: 0.2,
-		})
 		.to(
 			elements[1],
 			{
@@ -29,6 +25,10 @@ const PreloaderAnimation = (elements: gsap.TweenTarget[]) => {
 			},
 			"-=0.8"
 		)
+		.to(elements[2], {
+			duration: 0.5,
+			opacity: 0.2,
+		})
 		.eventCallback("onComplete", () => {
 			preloader.kill();
 		});
