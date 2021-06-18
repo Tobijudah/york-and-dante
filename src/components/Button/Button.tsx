@@ -9,12 +9,13 @@ type ButtonProps = {
 
 const Button: React.FC<ButtonProps> = ({ text, color }) => {
 	return (
-		<button className={`${S[color]} ${S[text ? "large" : ""]}`}>
+		<button className={`${S[text ? "large" : ""]} ${S.button}`}>
 			{text ? (
 				<p className={S.text}>Buy</p>
 			) : (
 				<Arrow className={S.arrow} width='10vh' stroke={color === "greige" ? "#000000" : "#ffffff"} />
 			)}
+			<div className={`${S[color]} ${S.background}`} />
 		</button>
 	);
 };
