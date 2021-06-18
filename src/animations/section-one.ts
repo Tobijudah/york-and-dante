@@ -5,10 +5,10 @@ gsap.config({
 });
 
 const SectionOneAnimation = (elements: gsap.TweenTarget[], delay: number) => {
-	gsap.utils.selector("#section-one");
-	gsap.set(".hidden-init", { visibility: "visible" });
+	const one = gsap.utils.selector("#section-one");
+	gsap.set(one(".hidden-init"), { visibility: "visible" });
 
-	RevealTextAnimation(".split-text .word > .char, .whitespace", delay);
+	RevealTextAnimation(one(".split-text .word > .char, .whitespace"), delay);
 	gsap.from(elements[0], {
 		delay: delay,
 		duration: 1.5,
