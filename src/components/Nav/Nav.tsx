@@ -5,9 +5,9 @@ type NavProps = {
 	onClick: () => void;
 };
 
-const Nav: React.FC<NavProps> = ({ onClick }) => {
+const Nav = React.forwardRef<HTMLElement, NavProps>(({ onClick }, ref) => {
 	return (
-		<nav className={S.nav}>
+		<nav ref={ref} className={`${S.nav} hidden-init`}>
 			<div className={S.upper} onClick={onClick}>
 				<p>Me</p>
 				<p>Nu</p>
@@ -20,6 +20,6 @@ const Nav: React.FC<NavProps> = ({ onClick }) => {
 			<div className={S.div} />
 		</nav>
 	);
-};
+});
 
 export default Nav;
