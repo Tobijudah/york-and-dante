@@ -5,9 +5,9 @@ import Nav from "./components/Nav/Nav";
 import Cart from "./components/Cart/Cart";
 import Menu from "./components/Menu/Menu";
 import IntroAnimation from "./animations/intro";
-import LocomotiveScroll from "locomotive-scroll";
-import React, { useEffect, useRef, useState } from "react";
+import initSmoothScroll from "./utils/initSmoothScroll";
 import Preloader from "./components/Preloader/Preloader";
+import React, { useEffect, useRef, useState } from "react";
 import SectionOne from "./components/SectionOne/SectionOne";
 import SectionTwo from "./components/SectionTwo/SectionTwo";
 import SectionSix from "./components/SectionSix/SectionSix";
@@ -16,32 +16,20 @@ import SectionFive from "./components/SectionFive/SectionFive";
 import SectionThree from "./components/SectionThree/SectionThree";
 import SectionSeven from "./components/SectionSeven/SectionSeven";
 import SectionEight from "./components/SectionEight/SectionEight";
-import "../node_modules/locomotive-scroll/src/locomotive-scroll.scss";
+import initSmoothHorizontalScroll from "./utils/initSmoothHorizontalScroll";
 
 function App() {
 	const navRef = useRef(null);
 	const cartRef = useRef(null);
-	const scrollRef = useRef(null);
+	const scrollRef = useRef<HTMLDivElement>(null);
 	const [open, setOpen] = useState<boolean>(false);
 	const [preloaded, setPreloaded] = useState<boolean>(false);
 
 	useEffect(() => {
 		if (preloaded) {
-			const scroll = new LocomotiveScroll({
-				smooth: true,
-				el: scrollRef.current,
-				direction: "horizontal",
-				gestureDirection: "both",
-				tablet: {
-					smooth: true,
-				},
-				smartphone: {
-					smooth: true,
-				},
-			});
-			scroll.stop();
+			if (window.innerWidth > 600) initSmoothHorizontalScroll();
+			else scrollRef.current && initSmoothScroll(scrollRef.current);
 			setTimeout(() => {
-				scroll.start();
 				IntroAnimation([navRef.current, cartRef.current]);
 			}, 10000);
 			// 10000: time for section-1 animation to start
@@ -54,15 +42,21 @@ function App() {
 			<Cart ref={cartRef} />
 			<Nav ref={navRef} onClick={() => setOpen(!open)} />
 			<Menu open={open} onClick={() => setOpen(!open)} />
-			<div ref={scrollRef} className={S.app} data-scroll-container>
-				<SectionOne preloaded={preloaded} />
-				<SectionTwo />
-				<SectionThree />
-				<SectionFour />
-				<SectionFive />
-				<SectionSix />
-				<SectionSeven />
-				<SectionEight />
+			<div>
+				<div
+					ref={scrollRef}
+					id="scroll-container"
+					className={`wrapper ${S.app}`}
+				>
+					<SectionOne preloaded={preloaded} />
+					<SectionTwo />
+					<SectionThree />
+					<SectionFour />
+					<SectionFive />
+					<SectionSix />
+					<SectionSeven />
+					<SectionEight />
+				</div>
 			</div>
 		</>
 	);
