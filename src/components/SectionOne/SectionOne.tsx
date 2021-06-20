@@ -15,7 +15,9 @@ const SectionOne: React.FC<SectionOne> = ({ preloaded }) => {
 	useEffect(() => {
 		if (preloaded) {
 			videoRef.current?.play();
-			SectionOneAnimation([subTextRef.current, buttonRef.current], 10);
+			setTimeout(() => {
+				SectionOneAnimation([subTextRef.current, buttonRef.current]);
+			}, 10000);
 		}
 	}, [preloaded]);
 

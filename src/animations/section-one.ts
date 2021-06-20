@@ -4,23 +4,23 @@ gsap.config({
 	force3D: true,
 });
 
-const SectionOneAnimation = (elements: gsap.TweenTarget[], delay: number) => {
+const SectionOneAnimation = (elements: gsap.TweenTarget[]) => {
+	gsap.set("body", { overflowY: "auto" });
+
 	const one = gsap.utils.selector("#section-one");
 	gsap.set(one(".hidden-init"), { visibility: "visible" });
 
-	RevealTextAnimation(one(".split-text .word > .char, .whitespace"), delay);
+	RevealTextAnimation(one(".split-text .word > .char, .whitespace"), 0);
 	gsap.from(elements[0], {
-		delay: delay,
 		duration: 1.5,
 		opacity: 0,
-    ease: "power2.inOut"
+		ease: "power2.inOut",
 	});
-  gsap.from(elements[1], {
-		delay: delay,
+	gsap.from(elements[1], {
 		duration: 1.5,
 		xPercent: 175,
-    ease: "power2.out"
-  })
+		ease: "power2.out",
+	});
 };
 
 export default SectionOneAnimation;
