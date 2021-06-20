@@ -15,7 +15,7 @@ const SectionSeven = () => {
 		});
 
 	return (
-		<section data-scroll-section>
+		<section>
 			<div className={S.section}>
 				<div className={S.left}>
 					<img className={S.image} src={image} alt="" />

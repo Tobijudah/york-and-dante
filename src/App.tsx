@@ -98,6 +98,7 @@ function App() {
 				ref={scrollRef}
 				id="scroll"
 				className={S.app}
+				data-scroll-section
 				data-scroll-container
 			>
 				<SectionOne preloaded={preloaded} />

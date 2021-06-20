@@ -6,7 +6,7 @@ import { ReactComponent as Scribble } from "../../svgs/scribble.svg";
 
 const SectionFour: React.FC = () => {
 	return (
-		<section data-scroll-section>
+		<section>
 			<div className={S.section}>
 				<div className={S.left}>
 					<Corner width="5.5vh" height="5.5vh" className={S.corner} />
@@ -25,7 +25,7 @@ const SectionFour: React.FC = () => {
 						Made of Eco-Friendly materials sewn into the hem of
 						every piece
 					</h3>
-					<Line height='5.67vh' className={S.line} />
+					<Line height="5.67vh" className={S.line} />
 					<p className={S.text}>
 						Our minimalist Barn & Bed chairs is crafted from
 						American poplar and metal tubing with a leather sling.

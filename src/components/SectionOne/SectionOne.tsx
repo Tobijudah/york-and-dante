@@ -20,9 +20,12 @@ const SectionOne: React.FC<SectionOne> = ({ preloaded }) => {
 	}, [preloaded]);
 
 	return (
-		<section id="section-one" data-scroll-section className={S.section}>
+		<section id="section-one" className={S.section}>
 			<div className={S.textWrapper}>
-				<h1 data-splitting="" className={`${S.text} split-text hidden-init`}>
+				<h1
+					data-splitting=""
+					className={`${S.text} split-text hidden-init`}
+				>
 					The Credenza <sup className={S.sup}>&trade;</sup>
 				</h1>
 				<p ref={subTextRef} className={`${S.subText} hidden-init`}>

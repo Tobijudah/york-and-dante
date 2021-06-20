@@ -29,7 +29,7 @@ const SectionThree: React.FC = () => {
 	}, []);
 
 	return (
-		<section data-scroll-section>
+		<section>
 			<div className={S.section}>
 				<div data-scroll data-speed-2 className={S.textWrapper}>
 					<h2 className={S.title}>
