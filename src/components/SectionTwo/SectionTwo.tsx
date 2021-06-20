@@ -4,7 +4,7 @@ import { ReactComponent as Signature } from "../../svgs/signature.svg";
 
 const SectionTwo = () => {
 	return (
-		<section data-scroll-section>
+		<section>
 			<div className={S.section}>
 				<div data-scroll className={S.textWrapper}>
 					<h2 className={S.title}>The story behind the piece</h2>

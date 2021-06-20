@@ -6,7 +6,7 @@ import { ReactComponent as Line } from "../../svgs/line.svg";
 
 const SectionFive: React.FC = () => {
 	return (
-		<section data-scroll-section>
+		<section>
 			<div className={S.section}>
 				<Marquee
 					speed={15}
@@ -27,12 +27,20 @@ const SectionFive: React.FC = () => {
 				<div className={S.sub}>
 					<p className={S.subText}>Comfy sofas</p>
 					<div className={S.subRow}>
-						<Line width='11.22vh' height='0.33vh' className={S.line1} />
+						<Line
+							width="11.22vh"
+							height="0.33vh"
+							className={S.line1}
+						/>
 						<p className={S.subText}>Cylindrical design</p>
 					</div>
 					<div className={S.subRow}>
 						<p className={S.subText}>Arc back hinge</p>
-						<Line width='11.22vh' height='0.33vh' className={S.line2} />
+						<Line
+							width="11.22vh"
+							height="0.33vh"
+							className={S.line2}
+						/>
 					</div>
 				</div>
 				<div className={S.textWrapper}>
