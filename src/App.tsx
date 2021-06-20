@@ -17,11 +17,13 @@ import SectionThree from "./components/SectionThree/SectionThree";
 import SectionSeven from "./components/SectionSeven/SectionSeven";
 import SectionEight from "./components/SectionEight/SectionEight";
 import "../node_modules/locomotive-scroll/src/locomotive-scroll.scss";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
 
 function App() {
 	const navRef = useRef(null);
 	const cartRef = useRef(null);
-	const scrollRef = useRef(null);
+	const scrollRef = useRef<HTMLDivElement>(null);
 	const [open, setOpen] = useState<boolean>(false);
 	const [preloaded, setPreloaded] = useState<boolean>(false);
 
@@ -45,6 +47,44 @@ function App() {
 				IntroAnimation([navRef.current, cartRef.current]);
 			}, 10000);
 			// 10000: time for section-1 animation to start
+			gsap.registerPlugin(ScrollTrigger);
+			scroll.on("scroll", ScrollTrigger.update);
+			ScrollTrigger.scrollerProxy(scrollRef.current, {
+				scrollTop(value) {
+					if (scroll) {
+						return arguments.length
+							? scroll.scrollTo(value, 0, 0)
+							: scroll.scroll.instance.scroll.y;
+					}
+				},
+				scrollLeft(value) {
+					if (scroll) {
+						return arguments.length
+							? scroll.scrollTo(value, 0, 0)
+							: scroll.scroll.instance.scroll.x;
+					}
+				},
+				getBoundingClientRect() {
+					return {
+						top: 0,
+						left: 0,
+						width: window.innerWidth,
+						height: window.innerHeight,
+					};
+				},
+				pinType: scrollRef.current?.style.transform
+					? "transform"
+					: "fixed",
+			});
+
+			const lsUpdate = () => {
+				if (scroll) {
+					scroll.update();
+				}
+			};
+
+			ScrollTrigger.addEventListener("refresh", lsUpdate);
+			ScrollTrigger.refresh();
 		} else Splitting();
 	}, [preloaded]);
 
@@ -54,7 +94,12 @@ function App() {
 			<Cart ref={cartRef} />
 			<Nav ref={navRef} onClick={() => setOpen(!open)} />
 			<Menu open={open} onClick={() => setOpen(!open)} />
-			<div ref={scrollRef} className={S.app} data-scroll-container>
+			<div
+				ref={scrollRef}
+				id="scroll"
+				className={S.app}
+				data-scroll-container
+			>
 				<SectionOne preloaded={preloaded} />
 				<SectionTwo />
 				<SectionThree />

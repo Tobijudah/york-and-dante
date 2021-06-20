@@ -75,6 +75,7 @@
 
 .image {
 	width: auto;
+	clip-path: inset(0% 100% 0% 0%);
 
 	@include media(">mobile") {
 		height: 71.6vh;
