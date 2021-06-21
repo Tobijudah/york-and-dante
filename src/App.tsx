@@ -28,7 +28,7 @@ function App() {
 	useEffect(() => {
 		if (preloaded) {
 			if (window.innerWidth > 600) initSmoothHorizontalScroll();
-			else scrollRef.current && initSmoothScroll(scrollRef.current);
+			else scrollRef.current && initSmoothScroll(scrollRef.current, undefined, 0);
 			setTimeout(() => {
 				IntroAnimation([navRef.current, cartRef.current]);
 			}, 10000);
