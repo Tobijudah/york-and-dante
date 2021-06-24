@@ -17,6 +17,7 @@ import SectionThree from "./components/SectionThree/SectionThree";
 import SectionSeven from "./components/SectionSeven/SectionSeven";
 import SectionEight from "./components/SectionEight/SectionEight";
 import initSmoothHorizontalScroll from "./utils/initSmoothHorizontalScroll";
+import initScroll from "./utils/initScroll";
 
 function App() {
 	const navRef = useRef(null);
@@ -27,38 +28,42 @@ function App() {
 
 	useEffect(() => {
 		if (preloaded) {
-			if (window.innerWidth > 600) initSmoothHorizontalScroll();
-			else scrollRef.current && initSmoothScroll(scrollRef.current, undefined, 0.3);
 			setTimeout(() => {
 				IntroAnimation([navRef.current, cartRef.current]);
 			}, 10000);
 			// 10000: time for section-1 animation to start
-		} else Splitting();
+		} else {
+			Splitting();
+			if (window.innerWidth > 600 && scrollRef.current) {
+				initScroll(scrollRef.current);
+				console.log(scrollRef.current);
+			} else
+				scrollRef.current &&
+					initSmoothScroll(scrollRef.current, undefined, 1);
+		}
 	}, [preloaded]);
 
 	return (
-		<>
+		<div id="viewport">
 			{!preloaded && <Preloader setPreloaded={setPreloaded} />}
 			<Cart ref={cartRef} />
 			<Nav ref={navRef} onClick={() => setOpen(!open)} />
 			<Menu open={open} onClick={() => setOpen(!open)} />
-			<div>
-				<div
-					ref={scrollRef}
-					id="scroll-container"
-					className={`wrapper ${S.app}`}
-				>
-					<SectionOne preloaded={preloaded} />
-					<SectionTwo />
-					<SectionThree />
-					<SectionFour />
-					<SectionFive />
-					<SectionSix />
-					<SectionSeven />
-					<SectionEight />
+			<div ref={scrollRef} id="scroll-container" className={S.app}>
+				<div className={`${S.wrapper} wrapper`}>
+					<div className={`${S.innerWrapper} innerWrapper`}>
+						<SectionOne preloaded={preloaded} />
+						<SectionTwo />
+						<SectionThree />
+						<SectionFour />
+						<SectionFive />
+						<SectionSix />
+						<SectionSeven />
+						<SectionEight />
+					</div>
 				</div>
 			</div>
-		</>
+		</div>
 	);
 }
 

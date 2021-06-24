@@ -1,10 +1,16 @@
-@import "./common/include-media";
-
 .app {
 	background-color: rgb(250, 238, 224);
+}
 
-	@include media(">mobile") {
-		display: flex;
-		flex-wrap: nowrap;
-	}
+.wrapper {
+	position: relative;
+	white-space: nowrap;
+	overflow: auto;
+	// overflow: hidden;
+	width: 100%;
+}
+
+.innerWrapper > * {
+	position: relative;
+	display: inline-block;
 }
