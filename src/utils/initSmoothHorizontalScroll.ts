@@ -37,6 +37,21 @@ const initSmoothHorizontalScroll = () => {
 		invalidateOnRefresh: true,
 	});
 
+	sections.forEach((sct, i) => {
+		ScrollTrigger.create({
+			trigger: sct,
+			markers: true,
+			start: () =>
+				"top top-=" +
+				(sct.offsetLeft - window.innerWidth / 2) *
+					(maxWidth / (maxWidth - window.innerWidth)),
+			end: () =>
+				"+=" +
+				sct.offsetWidth * (maxWidth / (maxWidth - window.innerWidth)),
+			toggleClass: { targets: sct, className: "active" },
+		});
+	});
+
 	function init() {
 		gsap.set(sections, { x: 0 });
 		maxWidth = getMaxWidth();
