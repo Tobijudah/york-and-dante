@@ -1,4 +1,16 @@
 .app {
 	background-color: rgb(250, 238, 224);
-	overflow: hidden;
+}
+
+.wrapper {
+	position: relative;
+	white-space: nowrap;
+	overflow: auto;
+	// overflow: hidden;
+	width: 100%;
+}
+
+.innerWrapper > * {
+	position: relative;
+	display: inline-block;
 }
