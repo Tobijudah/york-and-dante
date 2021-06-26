@@ -73,9 +73,8 @@
 	}
 }
 
-.image {
-	width: auto;
-
+.imageContainer {
+	overflow: hidden;
 	@include media(">mobile") {
 		height: 71.6vh;
 	}
@@ -85,6 +84,13 @@
 	}
 }
 
+.image {
+	width: auto;
+	height: 100%;
+	transform: scale(1.5);
+	clip-path: inset(0% 100% 0% 0%);
+}
+
 .svg {
 	position: absolute;
 
@@ -92,10 +98,10 @@
 		left: -10.12vh;
 		bottom: 10vh;
 	}
-	@include media('<=mobile') {
+	@include media("<=mobile") {
 		width: 8.25rem;
 		height: 8.25rem;
 		left: 1.5rem;
 		bottom: 3.92rem;
-	};
+	}
 }
