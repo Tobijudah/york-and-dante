@@ -81,10 +81,7 @@
 }
 
 .imageWrapper {
-	background-image: url("../../images/section-2.png");
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
+	overflow: hidden;
 
 	@include media(">mobile") {
 		height: 100%;
@@ -92,5 +89,33 @@
 	}
 	@include media("<=mobile") {
 		height: 125vw;
+	}
+}
+
+.imageContainer {
+	width: 100%;
+	height: 100%;
+
+	@include media(">mobile") {
+		transform: translateX(-2.1vw);
+	}
+	@include media("<=mobile") {
+		transform: translateY(-2vh);
+	}
+}
+
+.image {
+	background-image: url("../../images/section-2.png");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+
+	@include media(">mobile") {
+		width: 120%;
+		height: 100%;
+	}
+	@include media("<=mobile") {
+		width: 100%;
+		height: 110%;
 	}
 }

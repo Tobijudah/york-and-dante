@@ -6,7 +6,7 @@ const SectionTwo = () => {
 	return (
 		<section data-scroll-section>
 			<div className={S.section}>
-				<div data-scroll className={S.textWrapper}>
+				<div className={S.textWrapper}>
 					<h2 className={S.title}>The story behind the piece</h2>
 					<p className={S.text}>
 						Barn & Bed is the first environmentally friendly chair
@@ -22,7 +22,15 @@ const SectionTwo = () => {
 					<Signature className={S.signature} />
 					<p className={S.person}>Lead designer</p>
 				</div>
-				<div data-scroll className={S.imageWrapper}></div>
+				<div className={S.imageWrapper}>
+					<div className={S.imageContainer}>
+						<div
+							data-scroll
+							className={S.image}
+							data-scroll-speed="-1"
+						/>
+					</div>
+				</div>
 			</div>
 		</section>
 	);
