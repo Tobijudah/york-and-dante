@@ -22,27 +22,30 @@ function App() {
 	const navRef = useRef(null);
 	const cartRef = useRef(null);
 	const scrollRef = useRef(null);
+	const [scroll, setScroll] = useState<any>();
 	const [open, setOpen] = useState<boolean>(false);
 	const [preloaded, setPreloaded] = useState<boolean>(false);
 
 	useEffect(() => {
 		if (preloaded) {
-			const scroll = new LocomotiveScroll({
-				smooth: true,
-				el: scrollRef.current,
-				direction: "horizontal",
-				gestureDirection: "both",
-				tablet: {
+			setScroll(
+				new LocomotiveScroll({
 					smooth: true,
-				},
-				smartphone: {
-					smooth: true,
-				},
-				reloadOnContextChange: true,
-			});
-			scroll.stop();
+					el: scrollRef.current,
+					direction: "horizontal",
+					gestureDirection: "both",
+					tablet: {
+						smooth: true,
+					},
+					smartphone: {
+						smooth: true,
+					},
+					reloadOnContextChange: true,
+				})
+			);
+			scroll?.stop();
 			setTimeout(() => {
-				scroll.start();
+				scroll?.start();
 				IntroAnimation([navRef.current, cartRef.current]);
 			}, 10000);
 			// 10000: time for section-1 animation to start
@@ -58,7 +61,7 @@ function App() {
 			<div ref={scrollRef} className={S.app} data-scroll-container>
 				<SectionOne preloaded={preloaded} />
 				<SectionTwo />
-				<SectionThree />
+				<SectionThree scroll={scroll} />
 				<SectionFour />
 				<SectionFive />
 				<SectionSix />
