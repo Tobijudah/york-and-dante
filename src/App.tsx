@@ -38,6 +38,7 @@ function App() {
 				smartphone: {
 					smooth: true,
 				},
+				reloadOnContextChange: true,
 			});
 			scroll.stop();
 			setTimeout(() => {
