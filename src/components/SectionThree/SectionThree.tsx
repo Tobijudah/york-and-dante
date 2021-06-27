@@ -2,11 +2,18 @@ import gsap from "gsap";
 import S from "./SectionThree.module.scss";
 import image from "../../images/section-3.png";
 import React, { useEffect, useRef } from "react";
+import locomotiveScrub from "../../animations/utils/locomotive-scrub";
 import useIntersectionObserver from "../../hooks/useIntersectionObserver";
 import { ReactComponent as RotatingText } from "../../svgs/rotating-text.svg";
 
-const SectionThree: React.FC = () => {
+type SectionThreeProps = {
+	scroll: any;
+};
+
+const SectionThree: React.FC<SectionThreeProps> = ({ scroll }) => {
+	let progress: number;
 	const ref = useRef<HTMLDivElement>(null);
+	const SVGRef = useRef<HTMLDivElement>(null);
 	const imageRef = useRef<HTMLImageElement>(null);
 	const isOnScreen = useIntersectionObserver(ref, 0.3);
 
@@ -21,8 +28,19 @@ const SectionThree: React.FC = () => {
 		}
 	}, [isOnScreen, imageRef.current]);
 
+	useEffect(() => {
+		if (scroll) {
+			const tl = gsap.timeline({ paused: true });
+			tl.to(SVGRef.current, {
+				duration: 8,
+				rotate: 720,
+			});
+			locomotiveScrub(scroll, "section-three", progress, tl);
+		}
+	}, [scroll]);
+
 	return (
-		<section data-scroll-section>
+		<section data-scroll data-scroll-section data-scroll-id="section-three">
 			<div className={S.section}>
 				<div className={S.textWrapper}>
 					<h2 className={S.title}>
@@ -46,11 +64,9 @@ const SectionThree: React.FC = () => {
 							className={S.image}
 						/>
 					</div>
-					<RotatingText
-						width="20.24vh"
-						height="20.24vh"
-						className={S.svg}
-					/>
+					<div ref={SVGRef} className={S.svg}>
+						<RotatingText width="100%" height="100%" />
+					</div>
 				</div>
 			</div>
 		</section>

@@ -95,13 +95,15 @@
 	position: absolute;
 
 	@include media(">mobile") {
-		left: -10.12vh;
 		bottom: 10vh;
+		left: -10.12vh;
+		width: 20.24vh;
+		height: 20.24vh;
 	}
 	@include media("<=mobile") {
-		width: 8.25rem;
-		height: 8.25rem;
 		left: 1.5rem;
 		bottom: 3.92rem;
+		width: 8.25rem;
+		height: 8.25rem;
 	}
 }
