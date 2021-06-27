@@ -80,15 +80,21 @@
 	}
 	@include media("<=mobile") {
 		width: 100%;
-		padding-left: 4rem;
+		margin-left: 4rem;
 	}
 }
 
 .image {
-	width: auto;
 	height: 100%;
 	transform: scale(1.5);
 	clip-path: inset(0% 100% 0% 0%);
+
+	@include media(">mobile") {
+		width: auto;
+	}
+	@include media("<=mobile") {
+		width: 100%;
+	}
 }
 
 .svg {
