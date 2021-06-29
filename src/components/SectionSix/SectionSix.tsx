@@ -1,12 +1,11 @@
 import React from "react";
 import S from "./SectionSix.module.scss";
-import video from "../../videos/section-six.mp4";
 
 const SectionSix = () => {
 	return (
 		<section data-scroll-section>
 			<div className={S.section}>
-				<div className={S.videoWrapper}>
+				<div data-scroll data-scroll-speed='-10' className={S.videoWrapper}>
 					<video
 						loop
 						muted
