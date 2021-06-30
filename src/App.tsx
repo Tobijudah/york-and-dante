@@ -27,7 +27,7 @@ function App() {
 	const [preloaded, setPreloaded] = useState<boolean>(false);
 
 	useEffect(() => {
-		if (preloaded) {
+		if (preloaded && !scroll) {
 			setScroll(
 				new LocomotiveScroll({
 					smooth: true,
@@ -43,14 +43,15 @@ function App() {
 					reloadOnContextChange: true,
 				})
 			);
-			scroll?.stop();
+		} else if (preloaded && scroll) {
+			scroll.stop();
 			setTimeout(() => {
-				scroll?.start();
+				scroll.start();
 				IntroAnimation([navRef.current, cartRef.current]);
 			}, 10000);
 			// 10000: time for section-1 animation to start
 		} else Splitting();
-	}, [preloaded]);
+	}, [scroll, preloaded]);
 
 	return (
 		<>
