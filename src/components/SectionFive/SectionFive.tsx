@@ -7,7 +7,7 @@ import { ReactComponent as Line } from "../../svgs/line.svg";
 const SectionFive: React.FC = () => {
 	return (
 		<section data-scroll-section>
-			<div id='parent-element' className={S.section}>
+			<div className={S.section}>
 				<Marquee
 					speed={15}
 					pauseOnHover
@@ -19,10 +19,25 @@ const SectionFive: React.FC = () => {
 					<p className={S.marqueeText}>Products</p>
 					<p className={S.marqueeText}>Products</p>
 				</Marquee>
-				<div className={S.main}>
-					<h2 data-scroll data-scroll-speed={1.2} className={S.title1}>The</h2>
+				<div id="target-element" className={S.main}>
+					<h2
+						data-scroll
+						className={S.title1}
+						data-scroll-speed={1.2}
+						data-scroll-direction="horizontal"
+					>
+						The
+					</h2>
 					<img className={S.image} src={image} alt="" />
-					<h2 data-scroll data-scroll-speed={-1.2} data-scroll-target='#parent-element' className={S.title2}>Credenza</h2>
+					<h2
+						data-scroll
+						className={S.title2}
+						data-scroll-speed={-1.2}
+						data-scroll-direction="horizontal"
+						data-scroll-target="#target-element"
+					>
+						Credenza
+					</h2>
 				</div>
 				<div className={S.sub}>
 					<p className={S.subText}>Comfy sofas</p>
