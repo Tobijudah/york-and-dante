@@ -28,9 +28,23 @@
 	}
 }
 
-.image {
+.imageContainer {
+	overflow: hidden;
+
 	@include media(">mobile") {
 		height: 75vh;
+	}
+	@include media('<=mobile') {
+		width: 100%;
+	};
+}
+
+.image {
+	height: 100%;
+	transform: scale(1.5);
+	clip-path: inset(0% 100% 0% 0%);
+
+	@include media(">mobile") {
 		width: auto;
 	}
 	@include media("<=mobile") {
