@@ -54,6 +54,9 @@
 }
 
 .scribble {
+	stroke-dasharray: 1000;
+	stroke-dashoffset: 1000;
+
 	@include media(">mobile") {
 		position: absolute;
 		left: 22.87vh;
