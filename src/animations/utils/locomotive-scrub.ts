@@ -3,7 +3,6 @@ const locomotiveScrub = (scroll: any, scrollID: string, progress: number, tl: gs
 		if (typeof args.currentElements[scrollID] === "object") {
 			progress = args.currentElements[scrollID].progress;
 			tl.progress(progress).play();
-			console.log(progress);
 			tl.pause();
 		}
 	});

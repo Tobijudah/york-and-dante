@@ -13,6 +13,7 @@ const useIntersectionObserver = (
 			},
 			{
 				threshold,
+				rootMargin: '0px',
 			}
 		);
 		const currentRef = ref.current;

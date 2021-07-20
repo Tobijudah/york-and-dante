@@ -15,14 +15,14 @@ const SectionThree: React.FC<SectionThreeProps> = ({ scroll }) => {
 	const ref = useRef<HTMLDivElement>(null);
 	const SVGRef = useRef<HTMLDivElement>(null);
 	const imageRef = useRef<HTMLImageElement>(null);
-	const isOnScreen = useIntersectionObserver(ref, 0);
+	const isOnScreen = useIntersectionObserver(ref, 0.125);
 
 	useEffect(() => {
 		if (isOnScreen && imageRef.current) {
 			gsap.to(imageRef.current, {
 				scale: 1,
 				duration: 4,
-				ease: "expo.inOut",
+				ease: "expo.out",
 				clipPath: "inset(0% 0% 0% 0%)",
 			});
 		}
