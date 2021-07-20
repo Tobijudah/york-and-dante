@@ -65,6 +65,8 @@
 		margin-left: 32.178vh;
 	}
 	@include media("<=mobile") {
+		display: flex;
+		flex-direction: column;
 		padding-top: 5.1875rem;
 		overflow: hidden;
 	}
@@ -88,6 +90,9 @@
 		position: absolute;
 		top: 18.56vh;
 		left: 7.22vh;
+	}
+	@include media("<=mobile") {
+		margin-left: auto;
 	}
 }
 
@@ -119,7 +124,7 @@
 	}
 	@include media("<=mobile") {
 		width: 100%;
-		padding-left: 2rem;
+		margin-left: -14rem;
 	}
 }
 
@@ -142,6 +147,7 @@
 .subRow {
 	display: flex;
 	align-items: center;
+
 	&:last-of-type {
 		@include media("<=mobile") {
 			margin-left: auto;
