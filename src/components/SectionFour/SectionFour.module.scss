@@ -32,6 +32,11 @@
 }
 
 .corner {
+	& > line {
+		stroke-dasharray: 50;
+		stroke-dashoffset: 50;
+	}
+
 	@include media("<=mobile") {
 		display: none;
 	}
@@ -54,8 +59,8 @@
 }
 
 .scribble {
-	stroke-dasharray: 1000;
-	stroke-dashoffset: 1000;
+	stroke-dasharray: 1002;
+	stroke-dashoffset: 1002;
 
 	@include media(">mobile") {
 		position: absolute;
@@ -97,6 +102,12 @@
 
 .line {
 	align-self: center;
+
+	& > line {
+		stroke-dasharray: 52;
+		stroke-dashoffset: 52;
+	}
+
 	@include media("<=mobile") {
 		display: none;
 	}
