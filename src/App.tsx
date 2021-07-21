@@ -24,7 +24,7 @@ function App() {
 	const cartRef = useRef(null);
 	const scrollRef = useRef(null);
 	const [scroll, setScroll] = useState<any>();
-	const [open, setOpen] = useState<boolean>(false);
+	const [open, setOpen] = useState<boolean>(true);
 	const [preloaded, setPreloaded] = useState<boolean>(false);
 
 	useEffect(() => {

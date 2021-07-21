@@ -5,20 +5,14 @@
 	bottom: 0;
 	width: 94vw;
 	height: 100vh;
+	display: grid;
 	grid-auto-rows: auto;
 	gap: 8.89vh;
 	background-color: #fff;
 	padding: 14.44vh 0 18.44vh 12.56vh;
 	border-left: 1px solid #000;
 	z-index: 5;
-}
-
-.open {
-	display: grid;
-}
-
-.closed {
-	display: none;
+	clip-path: inset(0% 0% 100% 0%);
 }
 
 .menuItem {
@@ -47,7 +41,13 @@
 	position: absolute;
 	top: 7.11vh;
 	right: 7.11vh;
-	padding: 4.67vh;
-	border-radius: 100%;
-	border: 1px solid #000;
+	width: 14.22vh;
+	height: 14.22vh;
+	stroke-dasharray: 130;
+	stroke-dashoffset: 130;
+
+	& > circle {
+		stroke-dasharray: 400;
+		stroke-dashoffset: -400;
+	}
 }
