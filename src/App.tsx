@@ -66,7 +66,7 @@ function App() {
 			<Nav ref={navRef} onClick={() => setOpen(!open)} />
 			<Menu open={open} preloaded={preloaded} onClick={() => setOpen(!open)} />
 			<div ref={scrollRef} className={S.app} data-scroll-container>
-				<SectionOne preloaded={preloaded} />
+				<SectionOne scroll={scroll} preloaded={preloaded} />
 				<SectionTwo />
 				<SectionThree scroll={scroll} />
 				<SectionFour />

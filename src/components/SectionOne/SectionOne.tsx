@@ -4,10 +4,11 @@ import React, { useEffect, useRef } from "react";
 import SectionOneAnimation from "../../animations/section-one";
 
 type SectionOne = {
+	scroll: any;
 	preloaded: boolean;
 };
 
-const SectionOne: React.FC<SectionOne> = ({ preloaded }) => {
+const SectionOne: React.FC<SectionOne> = ({ scroll, preloaded }) => {
 	const buttonRef = useRef<HTMLDivElement>(null);
 	const videoRef = useRef<HTMLVideoElement>(null);
 	const subTextRef = useRef<HTMLParagraphElement>(null);
@@ -22,6 +23,12 @@ const SectionOne: React.FC<SectionOne> = ({ preloaded }) => {
 		}
 	}, [preloaded]);
 
+	const handleOnClick = () => {
+		scroll.scrollTo(document.querySelector("#section-two"), {
+			offset: (window.innerWidth / 100) * -6,
+		});
+	};
+
 	return (
 		<section id="section-one" data-scroll-section className={S.section}>
 			<div className={S.textWrapper}>
@@ -35,7 +42,7 @@ const SectionOne: React.FC<SectionOne> = ({ preloaded }) => {
 					Another piece from award winning furniture maker Barn & Bed
 				</p>
 				<div ref={buttonRef} className={`${S.button} hidden-init`}>
-					<Button color="greige" />
+					<Button onClick={handleOnClick} color="greige" />
 				</div>
 			</div>
 			<div className={S.videoWrapper}>
@@ -49,7 +56,11 @@ const SectionOne: React.FC<SectionOne> = ({ preloaded }) => {
 						src="https://res.cloudinary.com/tobijudah/video/upload/v1622885626/barn-and-bed/videos/section-one_vnmqej.mp4"
 					></video>
 				) : (
-					<img className={S.image} src="https://res.cloudinary.com/tobijudah/image/upload/v1626870879/barn-and-bed/photos/section-1_mftakn.png" alt="" />
+					<img
+						alt=""
+						className={S.image}
+						src="https://res.cloudinary.com/tobijudah/image/upload/v1626870879/barn-and-bed/photos/section-1_mftakn.png"
+					/>
 				)}
 			</div>
 		</section>
