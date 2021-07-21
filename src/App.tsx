@@ -24,7 +24,7 @@ function App() {
 	const cartRef = useRef(null);
 	const scrollRef = useRef(null);
 	const [scroll, setScroll] = useState<any>();
-	const [open, setOpen] = useState<boolean>(true);
+	const [open, setOpen] = useState<boolean>(false);
 	const [preloaded, setPreloaded] = useState<boolean>(false);
 
 	useEffect(() => {
@@ -64,7 +64,7 @@ function App() {
 			{!preloaded && <Preloader setPreloaded={setPreloaded} />}
 			<Cart ref={cartRef} />
 			<Nav ref={navRef} onClick={() => setOpen(!open)} />
-			<Menu open={open} onClick={() => setOpen(!open)} />
+			<Menu open={open} preloaded={preloaded} onClick={() => setOpen(!open)} />
 			<div ref={scrollRef} className={S.app} data-scroll-container>
 				<SectionOne preloaded={preloaded} />
 				<SectionTwo />
