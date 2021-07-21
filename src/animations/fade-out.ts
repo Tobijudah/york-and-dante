@@ -11,9 +11,9 @@ const FadeOutAnimation = (delay: number, element: gsap.TweenTarget, callback: ()
 			duration: 1,
 			opacity: 0,
 		})
+		.call(callback, undefined, delay + 2.8)
 		.eventCallback("onComplete", () => {
 			fadeOut.kill();
-      callback();
 		});
 };
 

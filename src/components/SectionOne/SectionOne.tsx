@@ -39,15 +39,18 @@ const SectionOne: React.FC<SectionOne> = ({ preloaded }) => {
 				</div>
 			</div>
 			<div className={S.videoWrapper}>
-				<video
-					loop
-					muted
-					playsInline
-					ref={videoRef}
-					className={S.video}
-					poster="https://res.cloudinary.com/tobijudah/image/upload/v1626870879/barn-and-bed/photos/section-1_mftakn.png"
-					src="https://res.cloudinary.com/tobijudah/video/upload/v1622885626/barn-and-bed/videos/section-one_vnmqej.mp4"
-				></video>
+				{window.innerWidth > 1024 ? (
+					<video
+						loop
+						muted
+						playsInline
+						ref={videoRef}
+						className={S.video}
+						src="https://res.cloudinary.com/tobijudah/video/upload/v1622885626/barn-and-bed/videos/section-one_vnmqej.mp4"
+					></video>
+				) : (
+					<img className={S.image} src="https://res.cloudinary.com/tobijudah/image/upload/v1626870879/barn-and-bed/photos/section-1_mftakn.png" alt="" />
+				)}
 			</div>
 		</section>
 	);
