@@ -49,13 +49,17 @@ function App() {
 			setTimeout(
 				() => {
 					scroll.start();
-					window.innerWidth > 1024 && IntroAnimation([navRef.current, cartRef.current]);
+					window.innerWidth > 1024 &&
+						IntroAnimation([navRef.current, cartRef.current]);
 				},
 				window.innerWidth < 1024 ? 0 : 10000
 			);
 		} else {
 			Splitting();
-			window.innerWidth > 1024 && [navRef.current, cartRef.current].forEach(el => gsap.set(el, {visibility: 'hidden'}))
+			window.innerWidth > 1024 &&
+				[navRef.current, cartRef.current].forEach((el) =>
+					gsap.set(el, { visibility: "hidden" })
+				);
 		}
 	}, [scroll, preloaded]);
 
