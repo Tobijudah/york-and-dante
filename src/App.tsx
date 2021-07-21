@@ -1,3 +1,4 @@
+import gsap from "gsap";
 import S from "./App.module.scss";
 import Splitting from "splitting";
 import "splitting/dist/splitting.css";
@@ -45,12 +46,17 @@ function App() {
 			);
 		} else if (preloaded && scroll) {
 			scroll.stop();
-			setTimeout(() => {
-				scroll.start();
-				IntroAnimation([navRef.current, cartRef.current]);
-			}, 10000);
-			// 10000: time for section-1 animation to start
-		} else Splitting();
+			setTimeout(
+				() => {
+					scroll.start();
+					window.innerWidth > 1024 && IntroAnimation([navRef.current, cartRef.current]);
+				},
+				window.innerWidth < 1024 ? 0 : 10000
+			);
+		} else {
+			Splitting();
+			window.innerWidth > 1024 && [navRef.current, cartRef.current].forEach(el => gsap.set(el, {visibility: 'hidden'}))
+		}
 	}, [scroll, preloaded]);
 
 	return (

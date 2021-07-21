@@ -15,14 +15,20 @@ const SectionOne: React.FC<SectionOne> = ({ preloaded }) => {
 	useEffect(() => {
 		if (preloaded) {
 			videoRef.current?.play();
-			SectionOneAnimation([subTextRef.current, buttonRef.current], 10);
+			SectionOneAnimation(
+				[subTextRef.current, buttonRef.current],
+				window.innerWidth < 1024 ? 0 : 10
+			);
 		}
 	}, [preloaded]);
 
 	return (
 		<section id="section-one" data-scroll-section className={S.section}>
 			<div className={S.textWrapper}>
-				<h1 data-splitting="" className={`${S.text} split-text hidden-init`}>
+				<h1
+					data-splitting=""
+					className={`${S.text} split-text hidden-init`}
+				>
 					The Credenza <sup className={S.sup}>&trade;</sup>
 				</h1>
 				<p ref={subTextRef} className={`${S.subText} hidden-init`}>
@@ -39,6 +45,7 @@ const SectionOne: React.FC<SectionOne> = ({ preloaded }) => {
 					playsInline
 					ref={videoRef}
 					className={S.video}
+					poster="https://res.cloudinary.com/tobijudah/image/upload/v1626870879/barn-and-bed/photos/section-1_mftakn.png"
 					src="https://res.cloudinary.com/tobijudah/video/upload/v1622885626/barn-and-bed/videos/section-one_vnmqej.mp4"
 				></video>
 			</div>

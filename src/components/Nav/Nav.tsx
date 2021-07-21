@@ -7,7 +7,7 @@ type NavProps = {
 
 const Nav = React.forwardRef<HTMLElement, NavProps>(({ onClick }, ref) => {
 	return (
-		<nav ref={ref} className={`${S.nav} hidden-init`}>
+		<nav ref={ref} className={S.nav}>
 			<div className={S.upper} onClick={onClick}>
 				<p>Me</p>
 				<p>Nu</p>
