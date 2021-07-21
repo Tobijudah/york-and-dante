@@ -17,12 +17,15 @@
 
 .menuItem {
 	cursor: pointer;
+	height: 110%;
 	width: fit-content;
 	font: 600 16.67vh/98.49% "New York Extra Large", serif;
 	letter-spacing: -0.06em;
 	color: transparent;
+	padding-right: 2vh;
 	text-stroke: 1.5px rgb(0, 0, 0);
 	-webkit-text-stroke: 1.5px rgb(0, 0, 0);
+
 	&:hover {
 		color: #000;
 		.icon {
