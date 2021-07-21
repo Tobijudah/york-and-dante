@@ -1,12 +1,27 @@
-import React from "react";
+import gsap from "gsap";
 import Marquee from "react-fast-marquee";
 import S from "./SectionFive.module.scss";
 import image from "../../images/section-5.png";
+import React, { useEffect, useRef } from "react";
 import { ReactComponent as Line } from "../../svgs/line.svg";
+import useIntersectionObserver from "../../hooks/useIntersectionObserver";
 
 const SectionFive: React.FC = () => {
 	const title1ScrollSpeed = window.innerWidth < 1024 ? 2.5 : 1.2;
 	const title2ScrollSpeed = window.innerWidth < 1024 ? -5 : -1.2;
+
+	const ref = useRef<HTMLParagraphElement>(null);
+	const isOnScreen = useIntersectionObserver(ref, 1);
+
+	useEffect(() => {
+		if (isOnScreen) {
+			gsap.to("#lineRef > line", {
+				duration: 2,
+				ease: "expo.out",
+				strokeDashoffset: 0,
+			});
+		}
+	}, [isOnScreen]);
 
 	return (
 		<section data-scroll-section>
@@ -46,15 +61,19 @@ const SectionFive: React.FC = () => {
 					<p className={S.subText}>Comfy sofas</p>
 					<div className={S.subRow}>
 						<Line
+							id={"lineRef"}
 							width="11.22vh"
 							height="0.33vh"
 							className={S.line1}
 						/>
-						<p className={S.subText}>Cylindrical design</p>
+						<p ref={ref} className={S.subText}>
+							Cylindrical design
+						</p>
 					</div>
 					<div className={S.subRow}>
 						<p className={S.subText}>Arc back hinge</p>
 						<Line
+							id={"lineRef"}
 							width="11.22vh"
 							height="0.33vh"
 							className={S.line2}

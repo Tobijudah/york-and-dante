@@ -167,6 +167,11 @@
 }
 
 .line1 {
+	& > line {
+		stroke-dasharray: 105;
+		stroke-dashoffset: -105;
+	}
+
 	@include media(">mobile") {
 		margin-right: 4.44vh;
 	}
@@ -178,6 +183,11 @@
 }
 
 .line2 {
+	& > line {
+		stroke-dasharray: 105;
+		stroke-dashoffset: 105;
+	}
+
 	@include media(">mobile") {
 		margin-left: 4.44vh;
 	}
