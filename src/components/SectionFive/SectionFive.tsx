@@ -24,7 +24,7 @@ const SectionFive: React.FC = () => {
 	}, [isOnScreen]);
 
 	return (
-		<section data-scroll-section>
+		<section id='section-five' data-scroll-section>
 			<div id="target-element" className={S.section}>
 				<Marquee
 					speed={15}

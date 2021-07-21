@@ -64,7 +64,12 @@ function App() {
 			{!preloaded && <Preloader setPreloaded={setPreloaded} />}
 			<Cart ref={cartRef} />
 			<Nav ref={navRef} onClick={() => setOpen(!open)} />
-			<Menu open={open} preloaded={preloaded} onClick={() => setOpen(!open)} />
+			<Menu
+				open={open}
+				scroll={scroll}
+				setOpen={setOpen}
+				preloaded={preloaded}
+			/>
 			<div ref={scrollRef} className={S.app} data-scroll-container>
 				<SectionOne scroll={scroll} preloaded={preloaded} />
 				<SectionTwo />

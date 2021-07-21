@@ -7,7 +7,7 @@ import image3 from '../../images/section-8-3.png';
 
 const SectionEight = () => {
 	return (
-		<section data-scroll-section>
+		<section id='section-eight' data-scroll-section>
 			<div className={S.section}>
 				<div className={S.left}>
 					<p className={S.text}>

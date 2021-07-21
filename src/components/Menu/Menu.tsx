@@ -5,12 +5,13 @@ import { ReactComponent as Close } from "../../svgs/close.svg";
 import { ReactComponent as Icon } from "../../svgs/button-arrow.svg";
 
 type MenuProps = {
+	scroll: any;
 	open: boolean;
 	preloaded: boolean;
-	onClick: () => void;
+	setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-const Menu: React.FC<MenuProps> = ({ open, onClick, preloaded }) => {
+const Menu: React.FC<MenuProps> = ({ open, scroll, setOpen, preloaded }) => {
 	const menuRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
@@ -89,23 +90,37 @@ const Menu: React.FC<MenuProps> = ({ open, onClick, preloaded }) => {
 		}
 	}, [open]);
 
+	const scrollTo = (target: string): void => {
+		scroll.scrollTo(document.querySelector(target), {
+			offset: (window.innerWidth / 100) * -6,
+		});
+		setOpen(false);
+	};
+
 	return (
 		<div id="menu" ref={menuRef} className={S.menu}>
-			<Close id="closeSVG" onClick={onClick} className={S.close} />
+			<Close
+				id="closeSVG"
+				className={S.close}
+				onClick={() => setOpen(false)}
+			/>
 			<p
 				data-splitting=""
+				onClick={() => scrollTo("#section-two")}
 				className={`${S.menuItem} split-text menuItem`}
 			>
 				Our story <Icon className={S.icon} />
 			</p>
 			<p
 				data-splitting=""
+				onClick={() => scrollTo("#section-five")}
 				className={`${S.menuItem} split-text menuItem`}
 			>
 				The credenza <Icon className={S.icon} />
 			</p>
 			<p
 				data-splitting=""
+				onClick={() => scrollTo("#section-eight")}
 				className={`${S.menuItem} split-text menuItem`}
 			>
 				Contact us <Icon className={S.icon} />
