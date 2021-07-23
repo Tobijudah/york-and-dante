@@ -27,15 +27,14 @@
 	-webkit-text-stroke: 1.5px rgb(0, 0, 0);
 
 	&:hover {
-		color: #000;
 		.icon {
-			display: inline;
+			filter: url("#filter-3");
 		}
 	}
 }
 
 .icon {
-	display: none;
+	opacity: 0;
 	margin-left: 2rem;
 }
 

@@ -13,10 +13,16 @@ type MenuProps = {
 
 const Menu: React.FC<MenuProps> = ({ open, scroll, setOpen, preloaded }) => {
 	const menuRef = useRef<HTMLDivElement>(null);
+	const feDisplacementMapRef = useRef<SVGFEDisplacementMapElement>(null);
 
 	useEffect(() => {
 		const scope = gsap.utils.selector("#menu");
-		if (!preloaded) return;
+		if (!preloaded) {
+			[...document.getElementsByClassName("menuItem")].forEach((el) => {
+				el.addEventListener("mouseenter", () => mouseEnter(el));
+			});
+			return;
+		}
 		if (open) {
 			const open = gsap.timeline();
 			open.to(menuRef.current, {
@@ -97,8 +103,66 @@ const Menu: React.FC<MenuProps> = ({ open, scroll, setOpen, preloaded }) => {
 		setOpen(false);
 	};
 
+	const mouseEnter = (el: Element) => {
+		const scale = { scale: 300 };
+		const hoverStart = gsap.timeline();
+		hoverStart.eventCallback("onUpdate", () => {
+			if (feDisplacementMapRef && feDisplacementMapRef.current) {
+				feDisplacementMapRef.current.scale.baseVal = scale.scale;
+			}
+		});
+		hoverStart
+			.to(scale, {
+				duration: 0,
+				startAt: { scale: 0 },
+				scale: 300,
+			})
+			.to(scale, {
+				duration: 0.6,
+				ease: "power2.out",
+				scale: 0,
+			})
+			.to(
+				el,
+				{
+					color: "black",
+					ease: "power2.out",
+				},
+				"-=0.6"
+			)
+			.to(
+				el.children[3],
+				{
+					duration: 0.75,
+					opacity: 1,
+					ease: "power2.out",
+				},
+				"-=0.6"
+			);
+	};
+
 	return (
 		<div id="menu" ref={menuRef} className={S.menu}>
+			<svg className="hidden">
+				<defs>
+					<filter id="filter-3">
+						<feTurbulence
+							result="warp"
+							numOctaves="6"
+							type="fractalNoise"
+							baseFrequency="0.2 0.025"
+						/>
+						<feDisplacementMap
+							scale="0"
+							in2="warp"
+							in="SourceGraphic"
+							xChannelSelector="R"
+							yChannelSelector="G"
+							ref={feDisplacementMapRef}
+						/>
+					</filter>
+				</defs>
+			</svg>
 			<Close
 				id="closeSVG"
 				className={S.close}
