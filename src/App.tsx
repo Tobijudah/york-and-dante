@@ -7,6 +7,7 @@ import Cart from "./components/Cart/Cart";
 import Menu from "./components/Menu/Menu";
 import IntroAnimation from "./animations/intro";
 import LocomotiveScroll from "locomotive-scroll";
+import Credits from "./components/Credits/Credits";
 import React, { useEffect, useRef, useState } from "react";
 import Preloader from "./components/Preloader/Preloader";
 import SectionOne from "./components/SectionOne/SectionOne";
@@ -83,6 +84,7 @@ function App() {
 				<SectionSix />
 				<SectionSeven />
 				<SectionEight />
+				<Credits scroll={scroll} />
 			</div>
 		</>
 	);
