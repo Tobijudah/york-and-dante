@@ -12,7 +12,7 @@ type PreloaderProps = {
 
 const Preloader = ({ setPreloaded }: PreloaderProps) => {
 	const wordRef = useRef(null);
-	const letterRefs = useRefArray(7);
+	const letterRefs = useRefArray<HTMLDivElement>(7);
 	const preloaderRef = useRef(null);
 	const preloaderBgRef = useRef(null);
 	const preloaderContainerRef = useRef(null);
@@ -110,7 +110,7 @@ const Preloader = ({ setPreloaded }: PreloaderProps) => {
 					</div>
 				</div>
 			</div>
-			<div ref={preloaderBgRef} className={S.preloaderBg}/>
+			<div ref={preloaderBgRef} className={S.preloaderBg} />
 		</section>
 	);
 };
