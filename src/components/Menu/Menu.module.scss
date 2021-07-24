@@ -25,12 +25,6 @@
 	padding-right: 2vh;
 	text-stroke: 1.5px rgb(0, 0, 0);
 	-webkit-text-stroke: 1.5px rgb(0, 0, 0);
-
-	&:hover {
-		.icon {
-			filter: url("#filter-3");
-		}
-	}
 }
 
 .icon {

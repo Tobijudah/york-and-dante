@@ -1,6 +1,8 @@
 import gsap from "gsap";
 import S from "./Menu.module.scss";
 import React, { useEffect, useRef } from "react";
+import useStateRef from "../../hooks/useStateRef";
+import useRefArray from "../../hooks/useRefArray";
 import { ReactComponent as Close } from "../../svgs/close.svg";
 import { ReactComponent as Icon } from "../../svgs/button-arrow.svg";
 
@@ -13,13 +15,28 @@ type MenuProps = {
 
 const Menu: React.FC<MenuProps> = ({ open, scroll, setOpen, preloaded }) => {
 	const menuRef = useRef<HTMLDivElement>(null);
-	const feDisplacementMapRef = useRef<SVGFEDisplacementMapElement>(null);
+	const feDisplacementMapRefs = useRefArray<SVGFEDisplacementMapElement>(3);
+	const { ref: enterTimeline, setStateRef: setEnterTimeline } =
+		useStateRef<null | gsap.core.Timeline>(null);
 
 	useEffect(() => {
 		const scope = gsap.utils.selector("#menu");
-		if (!preloaded) {
+		if (!preloaded && feDisplacementMapRefs.length !== 0) {
 			[...document.getElementsByClassName("menuItem")].forEach((el) => {
-				el.addEventListener("mouseenter", () => mouseEnter(el));
+				const id = parseInt(el.getAttribute("data-filter") as string);
+				gsap.set(el.children[3], {
+					filter: `url("#filter-${id}")`,
+				});
+				el.addEventListener("mouseenter", () => {
+					const tl = mouseEnter(el, id);
+					setEnterTimeline(tl);
+				});
+				el.addEventListener("mouseleave", () => {
+					if (enterTimeline) {
+						enterTimeline.current?.progress(1).kill();
+					}
+					mouseLeave(el, id);
+				});
 			});
 			return;
 		}
@@ -94,7 +111,7 @@ const Menu: React.FC<MenuProps> = ({ open, scroll, setOpen, preloaded }) => {
 				)
 				.set("#closeSVG > circle", { strokeDashoffset: -400 });
 		}
-	}, [open]);
+	}, [open, feDisplacementMapRefs]);
 
 	const scrollTo = (target: string): void => {
 		scroll.scrollTo(document.querySelector(target), {
@@ -103,13 +120,18 @@ const Menu: React.FC<MenuProps> = ({ open, scroll, setOpen, preloaded }) => {
 		setOpen(false);
 	};
 
-	const mouseEnter = (el: Element) => {
+	const mouseEnter = (el: Element, id: number) => {
 		const scale = { scale: 300 };
-		const hoverStart = gsap.timeline();
-		hoverStart.eventCallback("onUpdate", () => {
-			if (feDisplacementMapRef && feDisplacementMapRef.current) {
-				feDisplacementMapRef.current.scale.baseVal = scale.scale;
-			}
+		const hoverStart = gsap.timeline({
+			onUpdate: () => {
+				if (
+					feDisplacementMapRefs[id] &&
+					feDisplacementMapRefs[id].current
+				) {
+					feDisplacementMapRefs[id].current.scale.baseVal =
+						scale.scale;
+				}
+			},
 		});
 		hoverStart
 			.to(scale, {
@@ -125,10 +147,11 @@ const Menu: React.FC<MenuProps> = ({ open, scroll, setOpen, preloaded }) => {
 			.to(
 				el,
 				{
+					duration: 0.6,
 					color: "black",
 					ease: "power2.out",
 				},
-				"-=0.6"
+				0
 			)
 			.to(
 				el.children[3],
@@ -137,7 +160,52 @@ const Menu: React.FC<MenuProps> = ({ open, scroll, setOpen, preloaded }) => {
 					opacity: 1,
 					ease: "power2.out",
 				},
-				"-=0.6"
+				0
+			);
+		return hoverStart;
+	};
+
+	const mouseLeave = (el: Element, id: number) => {
+		const scale = { scale: 0 };
+		const hoverEnd = gsap.timeline({
+			onUpdate: () => {
+				if (
+					feDisplacementMapRefs[id] &&
+					feDisplacementMapRefs[id].current
+				) {
+					feDisplacementMapRefs[id].current.scale.baseVal =
+						scale.scale;
+				}
+			},
+		});
+		hoverEnd
+			.to(scale, {
+				duration: 0,
+				startAt: { scale: 300 },
+				scale: 0,
+			})
+			.to(scale, {
+				duration: 0.45,
+				ease: "power2.in",
+				scale: 300,
+			})
+			.to(
+				el,
+				{
+					duration: 0.35,
+					color: "transparent",
+					ease: "power2.in",
+				},
+				0
+			)
+			.to(
+				el.children[3],
+				{
+					duration: 0.35,
+					opacity: 0,
+					ease: "power2.in",
+				},
+				0
 			);
 	};
 
@@ -145,7 +213,7 @@ const Menu: React.FC<MenuProps> = ({ open, scroll, setOpen, preloaded }) => {
 		<div id="menu" ref={menuRef} className={S.menu}>
 			<svg className="hidden">
 				<defs>
-					<filter id="filter-3">
+					<filter id="filter-0">
 						<feTurbulence
 							result="warp"
 							numOctaves="6"
@@ -158,7 +226,39 @@ const Menu: React.FC<MenuProps> = ({ open, scroll, setOpen, preloaded }) => {
 							in="SourceGraphic"
 							xChannelSelector="R"
 							yChannelSelector="G"
-							ref={feDisplacementMapRef}
+							ref={feDisplacementMapRefs[0]}
+						/>
+					</filter>
+					<filter id="filter-1">
+						<feTurbulence
+							result="warp"
+							numOctaves="6"
+							type="fractalNoise"
+							baseFrequency="0.2 0.025"
+						/>
+						<feDisplacementMap
+							scale="0"
+							in2="warp"
+							in="SourceGraphic"
+							xChannelSelector="R"
+							yChannelSelector="G"
+							ref={feDisplacementMapRefs[1]}
+						/>
+					</filter>
+					<filter id="filter-2">
+						<feTurbulence
+							result="warp"
+							numOctaves="6"
+							type="fractalNoise"
+							baseFrequency="0.2 0.025"
+						/>
+						<feDisplacementMap
+							scale="0"
+							in2="warp"
+							in="SourceGraphic"
+							xChannelSelector="R"
+							yChannelSelector="G"
+							ref={feDisplacementMapRefs[2]}
 						/>
 					</filter>
 				</defs>
@@ -169,6 +269,7 @@ const Menu: React.FC<MenuProps> = ({ open, scroll, setOpen, preloaded }) => {
 				onClick={() => setOpen(false)}
 			/>
 			<p
+				data-filter="0"
 				data-splitting=""
 				onClick={() => scrollTo("#section-two")}
 				className={`${S.menuItem} split-text menuItem`}
@@ -176,6 +277,7 @@ const Menu: React.FC<MenuProps> = ({ open, scroll, setOpen, preloaded }) => {
 				Our story <Icon className={S.icon} />
 			</p>
 			<p
+				data-filter="1"
 				data-splitting=""
 				onClick={() => scrollTo("#section-five")}
 				className={`${S.menuItem} split-text menuItem`}
@@ -183,6 +285,7 @@ const Menu: React.FC<MenuProps> = ({ open, scroll, setOpen, preloaded }) => {
 				The credenza <Icon className={S.icon} />
 			</p>
 			<p
+				data-filter="2"
 				data-splitting=""
 				onClick={() => scrollTo("#section-eight")}
 				className={`${S.menuItem} split-text menuItem`}
