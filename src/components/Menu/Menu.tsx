@@ -66,9 +66,9 @@ const Menu: React.FC<MenuProps> = ({ open, scroll, setOpen, preloaded }) => {
 					"-=0.4"
 				)
 				.fromTo(
-					scope(".split-text .word > .char, .whitespace"),
+					scope(".split-text .word > .char, .whitespace, .split-text > svg"),
 					{
-						yPercent: 100,
+						yPercent: 110,
 					},
 					{
 						yPercent: 0,
@@ -93,9 +93,9 @@ const Menu: React.FC<MenuProps> = ({ open, scroll, setOpen, preloaded }) => {
 					"-=0.5"
 				)
 				.to(
-					scope(".split-text .word > .char, .whitespace"),
+					scope(".split-text .word > .char, .whitespace, .split-text > svg"),
 					{
-						yPercent: -100,
+						yPercent: -110,
 						stagger: 0.005,
 						ease: "power2.in",
 					},
@@ -114,10 +114,12 @@ const Menu: React.FC<MenuProps> = ({ open, scroll, setOpen, preloaded }) => {
 	}, [open, feDisplacementMapRefs]);
 
 	const scrollTo = (target: string): void => {
-		scroll.scrollTo(document.querySelector(target), {
-			offset: (window.innerWidth / 100) * -6,
-		});
-		setOpen(false);
+		setTimeout(() => {
+			scroll.scrollTo(document.querySelector(target), {
+				offset: (window.innerWidth / 100) * -6,
+			});
+			setOpen(false);
+		}, window.innerWidth > 1024 ? 0 : 500);
 	};
 
 	const mouseEnter = (el: Element, id: number) => {

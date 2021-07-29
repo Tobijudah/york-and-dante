@@ -1,49 +1,89 @@
+@import "../../common/include-media";
+
 .menu {
 	position: fixed;
-	top: 0;
 	right: 0;
 	bottom: 0;
-	width: 94vw;
-	height: 100vh;
 	display: grid;
-	grid-auto-rows: auto;
-	gap: 8.89vh;
+  grid-auto-rows: minmax(min-content, max-content);
 	background-color: #fff;
-	padding: 14.44vh 0 18.44vh 12.56vh;
-	border-left: 1px solid #000;
 	z-index: 5;
 	clip-path: inset(0% 0% 100% 0%);
+
+	@include media(">mobile") {
+		top: 0;
+		width: 94vw;
+		height: 100vh;
+		gap: 8.89vh;
+		padding: 14.44vh 0 18.44vh 12.56vh;
+		border-left: 1px solid #000;
+	}
+	@include media("<=mobile") {
+		width: 100vw;
+		height: calc(100vh - 3.75rem);
+		gap: 3rem;
+		padding: 8.0625rem 0 18.1875rem 1.5rem;
+		border-top: 1px solid #000;
+	}
 }
 
 .menuItem {
 	cursor: pointer;
-	height: 110%;
 	width: fit-content;
 	font: 600 16.67vh/98.49% "New York Extra Large", serif;
-	letter-spacing: -0.06em;
 	color: transparent;
-	padding-right: 2vh;
-	text-stroke: 1.5px rgb(0, 0, 0);
-	-webkit-text-stroke: 1.5px rgb(0, 0, 0);
+
+	@include media(">mobile") {
+		height: 110%;
+		letter-spacing: -0.06em;
+		padding-right: 2vh;
+		text-stroke: 1.5px rgb(0, 0, 0);
+		-webkit-text-stroke: 1.5px rgb(0, 0, 0);
+	}
+	@include media("<=mobile") {
+		height: fit-content;
+		font-size: 3rem;
+		white-space: nowrap;
+		letter-spacing: -0.03em;
+		text-stroke: 1px rgb(0, 0, 0);
+		-webkit-text-stroke: 1px rgb(0, 0, 0);
+	}
 }
 
 .icon {
 	opacity: 0;
-	margin-left: 2rem;
+
+	@include media(">mobile") {
+		margin-left: 2rem;
+	}
+	@include media("<=mobile") {
+		width: 2.5rem;
+		height: 2.5rem;
+		margin: auto 0 auto 1rem;
+	}
 }
 
 .close {
 	cursor: pointer;
 	position: absolute;
-	top: 7.11vh;
-	right: 7.11vh;
-	width: 14.22vh;
-	height: 14.22vh;
 	stroke-dasharray: 130;
 	stroke-dashoffset: 130;
 
 	& > circle {
 		stroke-dasharray: 400;
 		stroke-dashoffset: -400;
+	}
+
+	@include media(">mobile") {
+		top: 7.11vh;
+		right: 7.11vh;
+		width: 14.22vh;
+		height: 14.22vh;
+	}
+	@include media("<=mobile") {
+		top: 2.375rem;
+		right: 1.5rem;
+		width: 3.75rem;
+		height: 3.75rem;
 	}
 }
