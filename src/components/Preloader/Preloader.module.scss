@@ -13,14 +13,15 @@
 
 .preloader {
 	position: absolute;
-	width: 0px;
-	height: 0.25vh;
+	width: 100vw;
+	height: 100vh;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	background: #d8d8d8;
 	overflow: hidden;
 	visibility: hidden;
+	clip-path: inset(49.85% 100% 49.85% 0%);
 }
 
 .preloaderBg {

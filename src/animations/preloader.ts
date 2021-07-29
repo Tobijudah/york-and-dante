@@ -9,12 +9,12 @@ const PreloaderAnimation = (elements: gsap.TweenTarget[]) => {
 	preloader
 		.to(elements[0], {
 			duration: 7.5,
-			width: "100vw",
+			clipPath: "inset(49.85% 0% 49.85% 0%)",
 		})
 		.to(elements[0], {
 			delay: 0.8,
 			duration: 0.8,
-			height: "100vh",
+			clipPath: "inset(0% 0%)",
 			ease: "power3.out",
 		})
 		.to(
