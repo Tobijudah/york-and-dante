@@ -1,7 +1,8 @@
 import React from "react";
 import Button from "../Button/Button";
 import S from "./Credits.module.scss";
-import { ReactComponent as Web } from "../../svgs/web.svg";
+import { ReactComponent as GitHub } from "../../svgs/github.svg";
+import { ReactComponent as Behance } from "../../svgs/behance.svg";
 import { ReactComponent as Twitter } from "../../svgs/twitter.svg";
 import { ReactComponent as LinkedIn } from "../../svgs/linkedin.svg";
 
@@ -28,18 +29,27 @@ const Credits: React.FC<Credits> = ({ scroll }) => {
 					<Button color="greige" onClick={handleOnClick} />
 				</div>
 				<div className={S.credit1}>
-					<p className={S.creditTitle}>Development</p>
+					<p className={S.creditTitle}>Development & Motion</p>
 					<p className={S.textTypeOne}>Oluwatobiju</p>
 					<p className={S.textTypeOne}>Judah</p>
 					<div className={S.media}>
-						<a href="" className={S.icon}>
+						<a
+							className={S.icon}
+							href="https://twitter.com/tobijudah"
+						>
 							<Twitter />
 						</a>
-						<a href="" className={S.icon}>
+						<a
+							className={S.icon}
+							href="https://www.linkedin.com/in/oluwatobiju-judah-omotosho/"
+						>
 							<LinkedIn />
 						</a>
-						<a href="" className={S.icon}>
-							<Web />
+						<a
+							className={S.icon}
+							href="https://github.com/Tobijudah"
+						>
+							<GitHub />
 						</a>
 					</div>
 				</div>
@@ -48,14 +58,23 @@ const Credits: React.FC<Credits> = ({ scroll }) => {
 					<p className={S.textTypeOne}>Enyinnaya</p>
 					<p className={S.textTypeOne}>Felix</p>
 					<div className={S.media}>
-						<a href="" className={S.icon}>
+						<a
+							className={S.icon}
+							href="https://twitter.com/P_h_i_l_i_x"
+						>
 							<Twitter />
 						</a>
-						<a href="" className={S.icon}>
+						<a
+							className={S.icon}
+							href="https://www.linkedin.com/in/felix-enyinnaya-b2593b173/"
+						>
 							<LinkedIn />
 						</a>
-						<a href="" className={S.icon}>
-							<Web />
+						<a
+							className={S.icon}
+							href="https://www.behance.net/felixenyinnayadesign"
+						>
+							<Behance />
 						</a>
 					</div>
 				</div>
