@@ -51,7 +51,7 @@ const SectionFour: React.FC = () => {
 						className={S.corner}
 					/>
 					<h2 ref={ref1} className={S.title}>
-						Closer to <span className={S.bronze}>nature</span> than
+						Closer to <span className={S.green}>nature</span> than
 						you imagine
 					</h2>
 					<Scribble
