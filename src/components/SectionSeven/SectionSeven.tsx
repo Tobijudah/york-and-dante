@@ -1,79 +1,67 @@
-import gsap from "gsap";
-import Button from "../Button/Button";
+import React from "react";
+import Marquee from "react-fast-marquee";
 import S from "./SectionSeven.module.scss";
-import image from "../../images/section-7.png";
-import React, { useEffect, useRef, useState } from "react";
-import useIntersectionObserver from "../../hooks/useIntersectionObserver";
+import { ReactComponent as Line } from "../../svgs/line.svg";
+import { ReactComponent as Plus } from "../../svgs/plus.svg";
 
 const SectionSeven = () => {
-	const ref = useRef<HTMLDivElement>(null);
-	const imageRef = useRef<HTMLImageElement>(null);
-	const [amount, setAmount] = useState<number>(1);
-	const isOnScreen = useIntersectionObserver(ref, 0.25);
-
-	useEffect(() => {
-		if (isOnScreen && imageRef.current) {
-			gsap.to(imageRef.current, {
-				scale: 1,
-				duration: 4,
-				ease: "expo.out",
-				clipPath: "inset(0% 0% 0% 0%)",
-			});
-		}
-	}, [isOnScreen, imageRef.current]);
-
-	const add = () => setAmount((amount) => amount + 1);
-
-	const subtract = () =>
-		setAmount((amount) => {
-			if (amount === 0) return amount;
-			return amount - 1;
-		});
-
 	return (
 		<section data-scroll-section>
 			<div className={S.section}>
-				<div className={S.left}>
-					<div ref={ref} className={S.imageContainer}>
-						<img
-							alt=""
-							src={image}
-							ref={imageRef}
-							className={S.image}
-						/>
-					</div>
-
-					<div className={S.button}>
-						<Button text color="red" />
-					</div>
-					<p className={S.title}>The Credenza</p>
+				<div className={S.marqueeSection}>
+					<Marquee
+						speed={15}
+						pauseOnHover
+						gradient={false}
+						className={S.marquee}
+					>
+						<p className={S.marqueeText}>Finesse</p>
+						<p className={S.marqueeText}>Finesse</p>
+						<p className={S.marqueeText}>Finesse</p>
+						<p className={S.marqueeText}>Finesse</p>
+						<p className={S.marqueeText}>Finesse</p>
+					</Marquee>
 				</div>
-				<div className={S.right}>
-					<div className={S.rows}>
-						<div className={S.row}>
-							<p className={S.text}>Color</p>
-							<div className={S.grid}>
-								<div className={S.muddyWaters}></div>
-								<div className={S.sandDrift}></div>
-								<div className={S.paleSky}></div>
+				<div className={S.main}>
+					<div className={S.up}>
+						<div className={S.left}>
+							<div className={S.row}>
+								<Line
+									id={"lineRef"}
+									width="5vh"
+									height="0.33vh"
+									className={S.line1}
+								/>
+								<p className={S.largeText}>Casual</p>
+							</div>
+							<div className={S.row2}>
+								<Plus />
+							</div>
+							<div className={S.row3}>
+								<p className={S.largeText}>Street Style</p>
+								<Line
+									id={"lineRef"}
+									width="5vh"
+									height="0.33vh"
+									className={S.line2}
+								/>
 							</div>
 						</div>
-						<div className={S.row}>
-							<p className={S.text}>Quantity</p>
-							<div className={S.grid}>
-								<div onClick={subtract} className={S.priceBox}>
-									-
-								</div>
-								<div className={S.priceBox}>{amount}</div>
-								<div onClick={add} className={S.priceBox}>
-									+
-								</div>
-							</div>
+						<div className={S.right}>
+							<p className={S.smallText}>
+								Our minimalist Barn & Bed chairs is crafted from
+								American poplar and metal tubing with a leather
+								sling. The frame is powder-coated steel coated
+								in environmentally friendly, lead-free paint.{" "}
+							</p>
 						</div>
 					</div>
-					<div className={S.texts}>
-						<p className={S.price}>${amount * 550}</p>
-						<p className={S.text}>See reviews</p>
+					<div className={S.down}>
+						<img
+							className={S.img}
+							src="https://res.cloudinary.com/tobijudah/image/upload/q_auto,f_auto/v1637522594/it/6_eda4xd.png"
+							alt=""
+						/>
 					</div>
 				</div>
 			</div>
