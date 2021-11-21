@@ -3,7 +3,6 @@ import S from "./App.module.scss";
 import Splitting from "splitting";
 import "splitting/dist/splitting.css";
 import Nav from "./components/Nav/Nav";
-import Cart from "./components/Cart/Cart";
 import Menu from "./components/Menu/Menu";
 import IntroAnimation from "./animations/intro";
 import LocomotiveScroll from "locomotive-scroll";
@@ -22,7 +21,6 @@ import "../node_modules/locomotive-scroll/src/locomotive-scroll.scss";
 
 function App() {
 	const navRef = useRef(null);
-	const cartRef = useRef(null);
 	const scrollRef = useRef(null);
 	const [scroll, setScroll] = useState<any>();
 	const [open, setOpen] = useState<boolean>(false);
@@ -50,24 +48,20 @@ function App() {
 			setTimeout(
 				() => {
 					scroll.start();
-					window.innerWidth > 1024 &&
-						IntroAnimation([navRef.current, cartRef.current]);
+					window.innerWidth > 1024 && IntroAnimation(navRef.current);
 				},
 				window.innerWidth < 1024 ? 0 : 1000
 			);
 		} else {
 			Splitting();
 			window.innerWidth > 1024 &&
-				[navRef.current, cartRef.current].forEach((el) =>
-					gsap.set(el, { visibility: "hidden" })
-				);
+				gsap.set(navRef.current, { visibility: "hidden" });
 		}
 	}, [scroll, preloaded]);
 
 	return (
 		<>
 			{!preloaded && <Preloader setPreloaded={setPreloaded} />}
-			<Cart ref={cartRef} />
 			<Nav ref={navRef} onClick={() => setOpen(!open)} />
 			<Menu
 				open={open}
