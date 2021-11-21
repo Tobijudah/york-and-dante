@@ -82,7 +82,7 @@ function App() {
 				<SectionFour />
 				<SectionFive />
 				<SectionSix />
-				<SectionSeven />
+				{/* <SectionSeven /> */}
 				<SectionEight />
 				<Credits scroll={scroll} />
 			</div>
