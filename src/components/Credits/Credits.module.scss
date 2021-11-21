@@ -1,12 +1,46 @@
 @import "../../common/include-media";
 
+.section {
+	background: #121212;
+}
+
+.marquee {
+	cursor: pointer;
+	border: 1px solid #dddddd;
+
+	@include media(">mobile") {
+		position: absolute !important;
+		height: 15.74vh !important;
+		transform: rotate(270deg);
+		transform-origin: 71vh 427%;
+		margin: 4vh 0;
+	}
+}
+
+.marqueeText {
+	color: #fff;
+	font: 300 8vh/185% "Neue Haas Grotesk Display Pro", Arial, Helvetica,
+		sans-serif;
+	transition: all 100ms linear;
+
+	@include media(">mobile") {
+		padding: 0 3.9vh;
+	}
+	@include media("<=mobile") {
+		font-size: 2.25rem;
+		line-height: 98.49%;
+		padding: 1.25rem 3.46875rem;
+	}
+}
+
 .credits {
-	width: 94vw;
+	width: 79.2vw;
 	height: 100vh;
 	display: grid;
 	grid-template-rows: repeat(10, 1fr);
 	grid-template-columns: repeat(20, 1fr);
-	background: #3a3a3a;
+	background: #121212;
+	margin-left: 14.8vw;
 }
 
 .textTypeOne {
@@ -41,8 +75,8 @@
 
 .quoteOne {
 	composes: textTypeOne;
-	grid-column-start: 3;
-	grid-column-end: 9;
+	grid-column-start: 1;
+	grid-column-end: 7;
 	grid-row-start: 2;
 	grid-row-end: 4;
 }
@@ -67,8 +101,8 @@
 
 .credit1 {
 	composes: box;
-	grid-column-start: 5;
-	grid-column-end: 9;
+	grid-column-start: 4;
+	grid-column-end: 8;
 	grid-row-start: 5;
 	grid-row-end: 7;
 }
@@ -105,8 +139,8 @@
 
 .box1 {
 	composes: box;
-	grid-column-start: 3;
-	grid-column-end: 7;
+	grid-column-start: 1;
+	grid-column-end: 5;
 	grid-row-start: -2;
 	grid-row-end: -3;
 }

@@ -1,22 +1,30 @@
 import React from "react";
 import Button from "../Button/Button";
 import S from "./Credits.module.scss";
+import Marquee from "react-fast-marquee";
 import { ReactComponent as GitHub } from "../../svgs/github.svg";
 import { ReactComponent as Behance } from "../../svgs/behance.svg";
 import { ReactComponent as Twitter } from "../../svgs/twitter.svg";
 import { ReactComponent as LinkedIn } from "../../svgs/linkedin.svg";
 
-type Credits = {
+type CreditsProps = {
 	scroll: any;
 };
 
-const Credits: React.FC<Credits> = ({ scroll }) => {
+const Credits: React.FC<CreditsProps> = ({ scroll }) => {
 	const handleOnClick = () => {
 		scroll.scrollTo(document.querySelector("#section-one"));
 	};
 
 	return (
-		<section data-scroll-section>
+		<section data-scroll-section className={S.section}>
+			<Marquee speed={15} pauseOnHover className={S.marquee}>
+				<p className={S.marqueeText}>Credits</p>
+				<p className={S.marqueeText}>Credits</p>
+				<p className={S.marqueeText}>Credits</p>
+				<p className={S.marqueeText}>Credits</p>
+				<p className={S.marqueeText}>Credits</p>
+			</Marquee>
 			<div className={S.credits}>
 				<p className={S.quoteOne}>
 					“On a certain day, I just felt like exploring designing a
@@ -26,7 +34,7 @@ const Credits: React.FC<Credits> = ({ scroll }) => {
 					“Tobiju, reached out. Bro, let me build this.”
 				</p>
 				<div className={S.button}>
-					<Button color="greige" onClick={handleOnClick} />
+					<Button color="white" onClick={handleOnClick} />
 				</div>
 				<div className={S.credit1}>
 					<p className={S.creditTitle}>Development & Motion</p>
