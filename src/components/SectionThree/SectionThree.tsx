@@ -1,6 +1,5 @@
 import gsap from "gsap";
 import S from "./SectionThree.module.scss";
-import image from "../../images/section-3.png";
 import React, { useEffect, useRef } from "react";
 import locomotiveScrub from "../../animations/utils/locomotive-scrub";
 import useIntersectionObserver from "../../hooks/useIntersectionObserver";
@@ -59,9 +58,9 @@ const SectionThree: React.FC<SectionThreeProps> = ({ scroll }) => {
 					<div className={S.imageContainer}>
 						<img
 							alt=""
-							src={image}
 							ref={imageRef}
 							className={S.image}
+							src="https://res.cloudinary.com/tobijudah/image/upload/q_auto,f_auto/v1637486752/it/2_mjmkcv.png"
 						/>
 					</div>
 					<div ref={SVGRef} className={S.svg}>

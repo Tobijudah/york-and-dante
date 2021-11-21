@@ -1,7 +1,6 @@
 import gsap from "gsap";
 import Marquee from "react-fast-marquee";
 import S from "./SectionFive.module.scss";
-import image from "../../images/section-5.png";
 import React, { useEffect, useRef } from "react";
 import { ReactComponent as Line } from "../../svgs/line.svg";
 import useIntersectionObserver from "../../hooks/useIntersectionObserver";
@@ -24,7 +23,7 @@ const SectionFive: React.FC = () => {
 	}, [isOnScreen]);
 
 	return (
-		<section id='section-five' data-scroll-section>
+		<section id="section-five" data-scroll-section>
 			<div id="target-element" className={S.section}>
 				<Marquee
 					speed={15}
@@ -46,7 +45,11 @@ const SectionFive: React.FC = () => {
 					>
 						The
 					</h2>
-					<img className={S.image} src={image} alt="" />
+					<img
+						className={S.image}
+						src="https://res.cloudinary.com/tobijudah/image/upload/q_auto,f_auto/v1637486753/it/4_xgr6j4.png"
+						alt=""
+					/>
 					<h2
 						data-scroll
 						className={S.title2}

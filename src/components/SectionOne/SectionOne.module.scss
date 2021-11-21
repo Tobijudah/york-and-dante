@@ -3,12 +3,15 @@
 .section {
 	width: 100vw;
 	height: 100vh;
-	background-image: url("../../images/section-1.png");
 	background-size: cover;
 	background-repeat: no-repeat;
 
+	@include media(">mobile") {
+		background-image: url("https://res.cloudinary.com/tobijudah/image/upload/q_auto,f_auto/v1637486753/it/1-desktop_orznd3.png");
+	}
 	@include media("<=mobile") {
 		padding: 3rem 1.5rem 0;
+		background-image: url("https://res.cloudinary.com/tobijudah/image/upload/q_auto,f_auto/v1637486752/it/1-mobile_lnwgdu.png");
 	}
 }
 

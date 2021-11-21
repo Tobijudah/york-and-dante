@@ -6,14 +6,7 @@ const SectionSix = () => {
 		<section data-scroll-section>
 			<div className={S.section}>
 				<div data-scroll data-scroll-speed='-10' className={S.videoWrapper}>
-					<video
-						loop
-						muted
-						autoPlay
-						playsInline
-						className={S.video}
-						src='https://res.cloudinary.com/tobijudah/video/upload/v1622885629/barn-and-bed/videos/section-six_cchpou.mp4'
-					></video>
+					<img src="https://res.cloudinary.com/tobijudah/image/upload/q_auto,f_auto/v1637486753/it/5_jhk3kg.png" alt="" className={S.img} />
 				</div>
 			</div>
 		</section>

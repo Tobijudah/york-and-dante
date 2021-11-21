@@ -1,13 +1,10 @@
 import React from "react";
 import Button from "../Button/Button";
 import S from "./SectionEight.module.scss";
-import image1 from '../../images/section-3.png';
-import image2 from '../../images/section-8-2.png';
-import image3 from '../../images/section-8-3.png';
 
 const SectionEight = () => {
 	return (
-		<section id='section-eight' data-scroll-section>
+		<section id="section-eight" data-scroll-section>
 			<div className={S.section}>
 				<div className={S.left}>
 					<p className={S.text}>
@@ -19,11 +16,23 @@ const SectionEight = () => {
 					</div>
 				</div>
 				<div className={S.right}>
-          <img className={S.image1} src={image1} alt=""/>
-          <img className={S.image2} src={image2} alt=""/>
-          <img className={S.image3} src={image3} alt=""/>
-          <p className={S.title}>Barn & Bed</p>
-        </div>
+					<img
+						className={S.image1}
+						src="https://res.cloudinary.com/tobijudah/image/upload/q_auto,f_auto/v1637486755/it/8-1_lvr5jx.png"
+						alt=""
+					/>
+					<img
+						className={S.image2}
+						src="https://res.cloudinary.com/tobijudah/image/upload/q_auto,f_auto/v1637486754/it/8-2_posszt.png"
+						alt=""
+					/>
+					<img
+						className={S.image3}
+						src="https://res.cloudinary.com/tobijudah/image/upload/q_auto,f_auto/v1637486755/it/8-3_okcfgq.png"
+						alt=""
+					/>
+					<p className={S.title}>Barn & Bed</p>
+				</div>
 			</div>
 		</section>
 	);
