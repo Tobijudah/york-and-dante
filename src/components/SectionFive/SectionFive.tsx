@@ -31,10 +31,10 @@ const SectionFive: React.FC = () => {
 					gradient={false}
 					className={S.marquee}
 				>
-					<p className={S.marqueeText}>Products</p>
-					<p className={S.marqueeText}>Products</p>
-					<p className={S.marqueeText}>Products</p>
-					<p className={S.marqueeText}>Products</p>
+					<p className={S.marqueeText}>Collections</p>
+					<p className={S.marqueeText}>Collections</p>
+					<p className={S.marqueeText}>Collections</p>
+					<p className={S.marqueeText}>Collections</p>
 				</Marquee>
 				<div className={S.main}>
 					<h2

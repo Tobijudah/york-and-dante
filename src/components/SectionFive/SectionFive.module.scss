@@ -3,8 +3,8 @@
 .section {
 	position: relative;
 	display: flex;
-	background-color: #4f5964;
-	color: #ffffff;
+	background-color: #d8d8d8;
+	color: #121212;
 
 	@include media(">mobile") {
 		width: 310vh;
@@ -19,12 +19,6 @@
 .marquee {
 	cursor: pointer;
 	border: 1px solid #313131;
-	&:hover {
-		color: transparent;
-		text-stroke: 1px rgb(255, 255, 255);
-		-webkit-text-stroke: 1px rgb(255, 255, 255);
-		transition: all 100ms linear;
-	}
 
 	@include media(">mobile") {
 		position: absolute !important;
@@ -36,15 +30,9 @@
 }
 
 .marqueeText {
-	font: 600 8vh/14.578vh "New York Extra Large", serif;
-	letter-spacing: -0.06em;
+	font: 300 8vh/185% "Neue Haas Grotesk Display Pro", Arial, Helvetica,
+		sans-serif;
 	transition: all 100ms linear;
-	&:hover {
-		color: inherit;
-		text-stroke: inherit;
-		-webkit-text-stroke: inherit;
-		transition: all 100ms linear;
-	}
 
 	@include media(">mobile") {
 		padding: 0 3.9vh;
@@ -214,7 +202,7 @@
 }
 
 .text {
-	color: #efefef;
+	color: #414141;
 	font: 500 2.35vh/150% "Neue Haas Grotesk Display Pro", Arial, Helvetica,
 		sans-serif;
 	white-space: pre-wrap;
