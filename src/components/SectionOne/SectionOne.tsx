@@ -18,7 +18,7 @@ const SectionOne: React.FC<SectionOne> = ({ scroll, preloaded }) => {
 			videoRef.current?.play();
 			SectionOneAnimation(
 				[subTextRef.current, buttonRef.current],
-				window.innerWidth < 1024 ? 0 : 10
+				window.innerWidth < 1024 ? 0 : 1
 			);
 		}
 	}, [preloaded]);
@@ -30,8 +30,8 @@ const SectionOne: React.FC<SectionOne> = ({ scroll, preloaded }) => {
 	};
 
 	return (
-		<section id="section-one" data-scroll-section className={S.section}>
-			<div className={S.textWrapper}>
+		<section id="section-one" data-scroll-section>
+			<div className={S.section}>
 				<h1
 					data-splitting=""
 					className={`${S.text} split-text hidden-init`}
@@ -44,24 +44,6 @@ const SectionOne: React.FC<SectionOne> = ({ scroll, preloaded }) => {
 				<div ref={buttonRef} className={`${S.button} hidden-init`}>
 					<Button onClick={handleOnClick} color="greige" />
 				</div>
-			</div>
-			<div className={S.videoWrapper}>
-				{window.innerWidth > 1024 ? (
-					<video
-						loop
-						muted
-						playsInline
-						ref={videoRef}
-						className={S.video}
-						src="https://res.cloudinary.com/tobijudah/video/upload/v1622885626/barn-and-bed/videos/section-one_vnmqej.mp4"
-					></video>
-				) : (
-					<img
-						alt=""
-						className={S.image}
-						src="https://res.cloudinary.com/tobijudah/image/upload/v1626870879/barn-and-bed/photos/section-1_mftakn.png"
-					/>
-				)}
 			</div>
 		</section>
 	);

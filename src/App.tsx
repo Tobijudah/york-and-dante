@@ -53,7 +53,7 @@ function App() {
 					window.innerWidth > 1024 &&
 						IntroAnimation([navRef.current, cartRef.current]);
 				},
-				window.innerWidth < 1024 ? 0 : 10000
+				window.innerWidth < 1024 ? 0 : 1000
 			);
 		} else {
 			Splitting();
