@@ -2,7 +2,7 @@ import React from "react";
 import S from "./SectionTwo.module.scss";
 import { ReactComponent as Signature } from "../../svgs/signature.svg";
 
-const SectionTwo = () => {
+const SectionTwo: React.FC = () => {
 	return (
 		<section id='section-two' data-scroll-section>
 			<div className={S.section}>

@@ -2,7 +2,7 @@ import React from "react";
 import Button from "../Button/Button";
 import S from "./SectionNine.module.scss";
 
-const SectionEight = () => {
+const SectionEight: React.FC = () => {
 	return (
 		<section id="section-eight" data-scroll-section>
 			<div className={S.section}>

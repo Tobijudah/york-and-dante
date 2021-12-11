@@ -3,12 +3,12 @@ import S from "./SectionOne.module.scss";
 import React, { useEffect, useRef } from "react";
 import SectionOneAnimation from "../../animations/section-one";
 
-type SectionOne = {
+type SectionOneProps = {
 	scroll: any;
 	preloaded: boolean;
 };
 
-const SectionOne: React.FC<SectionOne> = ({ scroll, preloaded }) => {
+const SectionOne: React.FC<SectionOneProps> = ({ scroll, preloaded }) => {
 	const buttonRef = useRef<HTMLDivElement>(null);
 	const videoRef = useRef<HTMLVideoElement>(null);
 	const subTextRef = useRef<HTMLParagraphElement>(null);

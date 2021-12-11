@@ -10,7 +10,7 @@ type PreloaderProps = {
 	setPreloaded: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-const Preloader = ({ setPreloaded }: PreloaderProps) => {
+const Preloader: React.FC<PreloaderProps> = ({ setPreloaded }) => {
 	const wordRef = useRef(null);
 	const letterRefs = useRefArray<HTMLDivElement>(7);
 	const preloaderRef = useRef(null);

@@ -4,7 +4,7 @@ import S from "./SectionSeven.module.scss";
 import { ReactComponent as Line } from "../../svgs/line.svg";
 import { ReactComponent as Plus } from "../../svgs/plus.svg";
 
-const SectionSeven = () => {
+const SectionSeven: React.FC = () => {
 	return (
 		<section data-scroll-section>
 			<div className={S.section}>

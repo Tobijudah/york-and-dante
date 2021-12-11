@@ -1,7 +1,7 @@
 import React from "react";
 import S from "./SectionSix.module.scss";
 
-const SectionSix = () => {
+const SectionSix: React.FC = () => {
 	return (
 		<section data-scroll-section>
 			<div className={S.section}>
