@@ -1,0 +1,72 @@
+@import "../../common/include-media";
+
+.section {
+	position: relative;
+	display: flex;
+	background: #121212;
+
+	@include media(">mobile") {
+		width: 213vh;
+		height: 100vh;
+		padding: 10.556vh 13.2vh 8.333vh;
+	}
+	@include media("<=mobile") {
+		flex-direction: column;
+		padding: 3rem 1.5rem 3.25rem;
+	}
+}
+
+.box {
+	display: flex;
+	flex-direction: column;
+
+	@include media(">mobile") {
+		width: 25%;
+		padding: 0 2.222vh;
+		border-left: 1px solid #ffffff;
+
+		&:last-of-type {
+			border-right: 1px solid #ffffff;
+		}
+	}
+
+	@include media("<=mobile") {
+		padding: 1.5rem 0 3rem;
+		border-top: 1px solid #ffffff;
+
+		&:last-of-type {
+			border-bottom: 1px solid #ffffff;
+		}
+	}
+}
+
+.title {
+	color: #ffffff;
+	font: 500 5.33vh/98.49% "New York Extra Large", serif;
+	letter-spacing: -0.06em;
+	white-space: pre-wrap;
+
+	@include media(">mobile") {
+		margin-bottom: 4.33vh;
+	}
+	@include media("<=mobile") {
+		font-size: 2.25rem;
+		margin-bottom: 2rem;
+	}
+}
+
+.text {
+	color: #dddddd;
+	font: 500 2.22vh/150% "Neue Haas Grotesk Display Pro", Arial, Helvetica,
+		sans-serif;
+	white-space: pre-wrap;
+
+	@include media("<=mobile") {
+		font-size: 1rem;
+		margin-bottom: 3.625rem;
+	}
+}
+
+.img {
+	margin-top: auto;
+}

@@ -14,9 +14,10 @@ import SectionTwo from "./components/SectionTwo/SectionTwo";
 import SectionSix from "./components/SectionSix/SectionSix";
 import SectionFour from "./components/SectionFour/SectionFour";
 import SectionFive from "./components/SectionFive/SectionFive";
+import SectionNine from "./components/SectionNine/SectionNine";
 import SectionThree from "./components/SectionThree/SectionThree";
 import SectionSeven from "./components/SectionSeven/SectionSeven";
-import SectionNine from "./components/SectionNine/SectionNine";
+import SectionEight from "./components/SectionEight/SectionEight";
 import "../node_modules/locomotive-scroll/src/locomotive-scroll.scss";
 
 function App() {
@@ -76,6 +77,7 @@ function App() {
 				<SectionFour />
 				<SectionFive />
 				<SectionSix />
+				<SectionEight />
 				<SectionSeven />
 				<SectionNine />
 				<Credits scroll={scroll} />
