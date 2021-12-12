@@ -18,7 +18,8 @@
 
 .marquee {
 	cursor: pointer;
-	border: 1px solid #414141;
+	border-top: 1px solid #414141;
+	border-bottom: 1px solid #414141;
 
 	@include media(">mobile") {
 		position: absolute !important;

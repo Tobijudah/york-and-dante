@@ -19,10 +19,10 @@ const Credits: React.FC<CreditsProps> = ({ scroll }) => {
 	return (
 		<section data-scroll-section className={S.section}>
 			<Marquee
-				speed={15}
 				pauseOnHover
 				gradient={false}
 				className={S.marquee}
+				speed={window.innerWidth > 600 ? 15 : 80}
 			>
 				<p className={S.marqueeText}>Credits</p>
 				<p className={S.marqueeText}>Credits</p>

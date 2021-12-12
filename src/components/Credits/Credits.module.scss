@@ -2,11 +2,16 @@
 
 .section {
 	background: #121212;
+
+	@include media('<=mobile') {
+		padding-top: 2rem;
+	};
 }
 
 .marquee {
 	cursor: pointer;
-	border: 1px solid #dddddd;
+	border-top: 1px solid #dddddd;
+	border-bottom: 1px solid #dddddd;
 
 	@include media(">mobile") {
 		position: absolute !important;

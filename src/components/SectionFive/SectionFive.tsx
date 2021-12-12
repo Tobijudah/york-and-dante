@@ -26,10 +26,10 @@ const SectionFive: React.FC = () => {
 		<section id="section-five" data-scroll-section>
 			<div id="target-element" className={S.section}>
 				<Marquee
-					speed={15}
 					pauseOnHover
 					gradient={false}
 					className={S.marquee}
+					speed={window.innerWidth > 600 ? 15 : 80}
 				>
 					<p className={S.marqueeText}>Collections</p>
 					<p className={S.marqueeText}>Collections</p>

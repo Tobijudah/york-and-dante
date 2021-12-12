@@ -10,10 +10,10 @@ const SectionSeven: React.FC = () => {
 			<div className={S.section}>
 				<div className={S.marqueeSection}>
 					<Marquee
-						speed={15}
 						pauseOnHover
 						gradient={false}
 						className={S.marquee}
+						speed={window.innerWidth > 600 ? 15 : 80}
 					>
 						<p className={S.marqueeText}>Finesse</p>
 						<p className={S.marqueeText}>Finesse</p>
