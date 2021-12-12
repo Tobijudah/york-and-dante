@@ -59,7 +59,11 @@ const SectionSeven: React.FC = () => {
 					<div className={S.down}>
 						<img
 							className={S.img}
-							src="https://res.cloudinary.com/tobijudah/image/upload/q_auto,f_auto/v1637522594/it/6_eda4xd.png"
+							src={
+								window.innerWidth > 600
+									? "https://res.cloudinary.com/tobijudah/image/upload/q_auto,f_auto/v1637522594/it/6_eda4xd.png"
+									: "https://res.cloudinary.com/tobijudah/image/upload/q_auto,f_auto/v1639309634/it/6-mobile_rk62d6.png"
+							}
 							alt=""
 						/>
 					</div>
