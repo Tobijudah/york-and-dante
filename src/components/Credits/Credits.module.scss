@@ -3,9 +3,9 @@
 .section {
 	background: #121212;
 
-	@include media('<=mobile') {
-		padding-top: 2rem;
-	};
+	@include media("<=mobile") {
+		padding: 2rem 0 3.75rem;
+	}
 }
 
 .marquee {
@@ -39,13 +39,21 @@
 }
 
 .credits {
-	width: 79.2vw;
-	height: 100vh;
-	display: grid;
-	grid-template-rows: repeat(10, 1fr);
-	grid-template-columns: repeat(20, 1fr);
 	background: #121212;
-	margin-left: 14.8vw;
+
+	@include media(">mobile") {
+		width: 79.2vw;
+		height: 100vh;
+		display: grid;
+		grid-template-rows: repeat(10, 1fr);
+		grid-template-columns: repeat(20, 1fr);
+		margin-left: 14.8vw;
+	}
+	@include media("<=mobile") {
+		display: flex;
+		flex-direction: column;
+		margin: 2.3125rem 1.5rem 0;
+	}
 }
 
 .textTypeOne {
@@ -53,16 +61,23 @@
 	font: 600 4vh/100.99% "New York Extra Large", serif;
 	letter-spacing: -0.06em;
 	white-space: pre-wrap;
+
+	@include media("<=mobile") {
+		font-size: 1.5rem;
+	}
 }
 
 .textTypeTwo {
-	color: #fff;
 	color: #e9e9e9;
 	text-transform: uppercase;
 	font: 600 1.78vh/150% "Neue Haas Grotesk Display Pro", Arial, Helvetica,
 		sans-serif;
 	letter-spacing: 0.105em;
 	white-space: pre-wrap;
+
+	@include media("<=mobile") {
+		font-size: 0.75rem;
+	}
 }
 
 .textTypeThree {
@@ -70,6 +85,10 @@
 	font: 500 2.22vh/150% "Neue Haas Grotesk Display Pro", Arial, Helvetica,
 		sans-serif;
 	white-space: pre-wrap;
+
+	@include media("<=mobile") {
+		font-size: 1rem;
+	}
 }
 
 .box {
@@ -80,90 +99,161 @@
 
 .quoteOne {
 	composes: textTypeOne;
-	grid-column-start: 1;
-	grid-column-end: 7;
-	grid-row-start: 2;
-	grid-row-end: 4;
+
+	@include media(">mobile") {
+		grid-column-start: 1;
+		grid-column-end: 7;
+		grid-row-start: 2;
+		grid-row-end: 4;
+	}
+	@include media("<=mobile") {
+		width: 85%;
+		margin-bottom: 3.5rem;
+	}
 }
 
 .quoteTwo {
 	composes: textTypeOne;
-	grid-column-start: -2;
-	grid-column-end: -8;
-	grid-row-start: 2;
-	grid-row-end: 4;
+
+	@include media(">mobile") {
+		grid-column-start: -2;
+		grid-column-end: -8;
+		grid-row-start: 2;
+		grid-row-end: 4;
+	}
+	@include media("<=mobile") {
+		width: 85%;
+		margin-bottom: 4rem;
+	}
 }
 
 .button {
 	display: flex;
-	justify-content: flex-start;
-	transform: scaleX(-1);
-	grid-column-start: -2;
-	grid-column-end: -5;
-	grid-row-start: 5;
-	grid-row-end: 7;
+
+	@include media(">mobile") {
+		justify-content: flex-start;
+		transform: scaleX(-1);
+		grid-column-start: -2;
+		grid-column-end: -5;
+		grid-row-start: 5;
+		grid-row-end: 7;
+	}
+	@include media("<=mobile") {
+		justify-content: center;
+		transform: rotate(-90deg);
+	}
 }
 
 .credit1 {
 	composes: box;
-	grid-column-start: 4;
-	grid-column-end: 8;
-	grid-row-start: 5;
-	grid-row-end: 7;
+
+	@include media(">mobile") {
+		grid-column-start: 4;
+		grid-column-end: 8;
+		grid-row-start: 5;
+		grid-row-end: 7;
+	}
+	@include media("<=mobile") {
+		margin-left: 4rem;
+		margin-bottom: 4.5rem;
+	}
 }
 
 .credit2 {
 	composes: box;
-	grid-column-start: -11;
-	grid-column-end: -7;
-	grid-row-start: 5;
-	grid-row-end: 7;
+
+	@include media(">mobile") {
+		grid-column-start: -11;
+		grid-column-end: -7;
+		grid-row-start: 5;
+		grid-row-end: 7;
+	}
+	@include media("<=mobile") {
+		margin-left: 4rem;
+		margin-bottom: 3.5rem;
+	}
 }
 
 .creditTitle {
 	composes: textTypeTwo;
-	margin-bottom: 1.33vh;
+
+	@include media(">mobile") {
+		margin-bottom: 1.33vh;
+	}
+	@include media("<=mobile") {
+		margin-bottom: 1.125rem;
+	}
 }
 
 .media {
 	display: flex;
 	column-gap: 1rem;
-	margin-top: 3.33vh;
 
 	& > svg {
 		cursor: pointer;
+	}
+
+	@include media(">mobile") {
+		margin-top: 3.33vh;
+	}
+	@include media("<=mobile") {
+		margin-top: 1.5rem;
 	}
 }
 
 .icon {
 	& > svg {
-		width: 4.44vh;
-		height: 4.44vh;
+		@include media(">mobile") {
+			width: 4.44vh;
+			height: 4.44vh;
+		}
+		@include media("<=mobile") {
+			width: 2.5rem;
+			height: 2.5rem;
+		}
 	}
 }
 
 .box1 {
 	composes: box;
-	grid-column-start: 1;
-	grid-column-end: 5;
-	grid-row-start: -2;
-	grid-row-end: -3;
+
+	@include media(">mobile") {
+		grid-column-start: 1;
+		grid-column-end: 5;
+		grid-row-start: -2;
+		grid-row-end: -3;
+	}
+	@include media("<=mobile") {
+		margin-bottom: 2rem;
+	}
 }
 
 .box2 {
 	composes: box;
-	grid-column-start: -2;
-	grid-column-end: -6;
-	grid-row-start: -2;
-	grid-row-end: -3;
-	text-align: right;
+
+	@include media(">mobile") {
+		grid-column-start: -2;
+		grid-column-end: -6;
+		grid-row-start: -2;
+		grid-row-end: -3;
+		text-align: right;
+	}
+	@include media("<=mobile") {
+		margin-bottom: 4rem;
+	}
 }
 
 .boxTitle {
 	composes: textTypeTwo;
 	color: #e9e9e9;
 	text-transform: uppercase;
-	margin-bottom: 1.11vh;
+
+	@include media(">mobile") {
+		margin-bottom: 1.11vh;
+	}
+	@include media(">mobile") {
+		margin-bottom: 0.75rem;
+	}
 }
 
 .bold {

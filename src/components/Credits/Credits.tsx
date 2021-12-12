@@ -35,12 +35,6 @@ const Credits: React.FC<CreditsProps> = ({ scroll }) => {
 					“On a certain day, I just felt like exploring designing a
 					site with a horizontal scroll”
 				</p>
-				<p className={S.quoteTwo}>
-					“Tobiju, reached out. Bro, let me build this.”
-				</p>
-				<div className={S.button}>
-					<Button color="white" onClick={handleOnClick} />
-				</div>
 				<div className={S.credit1}>
 					<p className={S.creditTitle}>Development & Motion</p>
 					<p className={S.textTypeOne}>Oluwatobiju</p>
@@ -91,6 +85,9 @@ const Credits: React.FC<CreditsProps> = ({ scroll }) => {
 						</a>
 					</div>
 				</div>
+				<p className={S.quoteTwo}>
+					“Tobiju, reached out. Bro, let me build this.”
+				</p>
 				<div className={S.box1}>
 					<p className={S.boxTitle}>image & video credits</p>
 					<p className={S.textTypeThree}>
@@ -104,6 +101,9 @@ const Credits: React.FC<CreditsProps> = ({ scroll }) => {
 					<p className={S.boxTitle}>fonts</p>
 					<p className={S.textTypeThree}>New York</p>
 					<p className={S.textTypeThree}>Neue Haas Grotesk</p>
+				</div>
+				<div className={S.button}>
+					<Button color="white" onClick={handleOnClick} />
 				</div>
 			</div>
 		</section>
