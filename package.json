@@ -8,10 +8,12 @@
   },
   "dependencies": {
     "gsap": "^3.6.1",
+    "history": "5",
     "locomotive-scroll": "^4.1.1",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "react-fast-marquee": "^1.1.2",
+    "react-router-dom": "6",
     "splitting": "^1.0.6",
     "vite-plugin-svgr": "^0.2.0"
   },
