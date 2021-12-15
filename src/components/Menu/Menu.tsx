@@ -1,5 +1,6 @@
 import gsap from "gsap";
 import S from "./Menu.module.scss";
+import { Link } from "react-router-dom";
 import React, { useEffect, useRef } from "react";
 import useStateRef from "../../hooks/useStateRef";
 import useRefArray from "../../hooks/useRefArray";
@@ -24,7 +25,7 @@ const Menu: React.FC<MenuProps> = ({ open, scroll, setOpen, preloaded }) => {
 		if (!preloaded && feDisplacementMapRefs.length !== 0) {
 			[...document.getElementsByClassName("menuItem")].forEach((el) => {
 				const id = parseInt(el.getAttribute("data-filter") as string);
-				gsap.set(el.children[3], {
+				gsap.set(el.children[el.children.length - 1], {
 					filter: `url("#filter-${id}")`,
 				});
 				el.addEventListener("mouseenter", () => {
@@ -66,7 +67,9 @@ const Menu: React.FC<MenuProps> = ({ open, scroll, setOpen, preloaded }) => {
 					"-=0.4"
 				)
 				.fromTo(
-					scope(".split-text .word > .char, .whitespace, .split-text > svg"),
+					scope(
+						".split-text .word > .char, .whitespace, .split-text > svg"
+					),
 					{
 						yPercent: 110,
 					},
@@ -93,7 +96,9 @@ const Menu: React.FC<MenuProps> = ({ open, scroll, setOpen, preloaded }) => {
 					"-=0.5"
 				)
 				.to(
-					scope(".split-text .word > .char, .whitespace, .split-text > svg"),
+					scope(
+						".split-text .word > .char, .whitespace, .split-text > svg"
+					),
 					{
 						yPercent: -110,
 						stagger: 0.005,
@@ -114,12 +119,15 @@ const Menu: React.FC<MenuProps> = ({ open, scroll, setOpen, preloaded }) => {
 	}, [open, feDisplacementMapRefs]);
 
 	const scrollTo = (target: string): void => {
-		setTimeout(() => {
-			scroll.scrollTo(document.querySelector(target), {
-				offset: (window.innerWidth / 100) * -6,
-			});
-			setOpen(false);
-		}, window.innerWidth > 1024 ? 0 : 500);
+		setTimeout(
+			() => {
+				scroll.scrollTo(document.querySelector(target), {
+					offset: (window.innerWidth / 100) * -6,
+				});
+				setOpen(false);
+			},
+			window.innerWidth > 1024 ? 0 : 500
+		);
 	};
 
 	const mouseEnter = (el: Element, id: number) => {
@@ -156,7 +164,7 @@ const Menu: React.FC<MenuProps> = ({ open, scroll, setOpen, preloaded }) => {
 				0
 			)
 			.to(
-				el.children[3],
+				el.children[el.children.length - 1],
 				{
 					duration: 0.75,
 					opacity: 1,
@@ -201,7 +209,7 @@ const Menu: React.FC<MenuProps> = ({ open, scroll, setOpen, preloaded }) => {
 				0
 			)
 			.to(
-				el.children[3],
+				el.children[el.children.length - 1],
 				{
 					duration: 0.35,
 					opacity: 0,
@@ -270,30 +278,36 @@ const Menu: React.FC<MenuProps> = ({ open, scroll, setOpen, preloaded }) => {
 				className={S.close}
 				onClick={() => setOpen(false)}
 			/>
-			<p
-				data-filter="0"
-				data-splitting=""
-				onClick={() => scrollTo("#section-two")}
-				className={`${S.menuItem} split-text menuItem`}
-			>
-				Our story <Icon className={S.icon} />
-			</p>
-			<p
-				data-filter="1"
-				data-splitting=""
-				onClick={() => scrollTo("#section-five")}
-				className={`${S.menuItem} split-text menuItem`}
-			>
-				The credenza <Icon className={S.icon} />
-			</p>
-			<p
-				data-filter="2"
-				data-splitting=""
-				onClick={() => scrollTo("#section-eight")}
-				className={`${S.menuItem} split-text menuItem`}
-			>
-				Contact us <Icon className={S.icon} />
-			</p>
+			<Link to="/">
+				<p
+					data-filter="0"
+					data-splitting=""
+					onClick={() => scrollTo("#section-two")}
+					className={`${S.menuItem} split-text menuItem`}
+				>
+					Home <Icon className={S.icon} />
+				</p>
+			</Link>
+			<Link to="/gallery">
+				<p
+					data-filter="1"
+					data-splitting=""
+					onClick={() => scrollTo("#section-five")}
+					className={`${S.menuItem} split-text menuItem`}
+				>
+					Gallery <Icon className={S.icon} />
+				</p>
+			</Link>
+			<Link to="/credits">
+				<p
+					data-filter="2"
+					data-splitting=""
+					onClick={() => scrollTo("#section-eight")}
+					className={`${S.menuItem} split-text menuItem`}
+				>
+					Credits <Icon className={S.icon} />
+				</p>
+			</Link>
 		</div>
 	);
 };
