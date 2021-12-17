@@ -10,12 +10,10 @@ type SectionOneProps = {
 
 const SectionOne: React.FC<SectionOneProps> = ({ scroll, preloaded }) => {
 	const buttonRef = useRef<HTMLDivElement>(null);
-	const videoRef = useRef<HTMLVideoElement>(null);
 	const subTextRef = useRef<HTMLParagraphElement>(null);
 
 	useEffect(() => {
 		if (preloaded) {
-			videoRef.current?.play();
 			SectionOneAnimation(
 				[subTextRef.current, buttonRef.current],
 				window.innerWidth < 1024 ? 0 : 1
