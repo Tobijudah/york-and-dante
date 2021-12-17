@@ -1,5 +1,6 @@
 import gsap from "gsap";
 import Splitting from "splitting";
+import { PageProps } from "../page.types";
 import Nav from "../../components/Nav/Nav";
 import LocomotiveScroll from "locomotive-scroll";
 import IntroAnimation from "../../animations/intro";
@@ -15,12 +16,7 @@ import SectionThree from "../../components/SectionThree/SectionThree";
 import SectionSeven from "../../components/SectionSeven/SectionSeven";
 import SectionEight from "../../components/SectionEight/SectionEight";
 
-type HomeProps = {
-	preloaded: boolean;
-	navOnClick: () => void;
-};
-
-const Home: React.FC<HomeProps> = ({ navOnClick, preloaded }) => {
+const Home: React.FC<PageProps> = ({ navOnClick, preloaded }) => {
 	const navRef = useRef(null);
 	const scrollRef = useRef(null);
 	const [scroll, setScroll] = useState<any>();
