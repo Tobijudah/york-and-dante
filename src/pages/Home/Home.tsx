@@ -45,6 +45,7 @@ const Home: React.FC<PageProps> = ({
 		} else if (preloaded && scroll) {
 			scroll.stop();
 			scroll.update();
+			const loadedAnimationDelay = window.innerWidth < 1024 ? 0.8 : 0.5;
 			setTimeout(
 				() => {
 					scroll.start();
@@ -53,7 +54,7 @@ const Home: React.FC<PageProps> = ({
 						IntroAnimation(navRef.current);
 					setAppLoaded(true);
 				},
-				window.innerWidth < 1024 || !appLoaded ? 0 : 0.5
+				!appLoaded ? 0 : loadedAnimationDelay
 			);
 		}
 	}, [scroll, preloaded]);
