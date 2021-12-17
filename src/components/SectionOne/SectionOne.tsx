@@ -5,10 +5,15 @@ import SectionOneAnimation from "../../animations/section-one";
 
 type SectionOneProps = {
 	scroll: any;
+	appLoaded: boolean;
 	preloaded: boolean;
 };
 
-const SectionOne: React.FC<SectionOneProps> = ({ scroll, preloaded }) => {
+const SectionOne: React.FC<SectionOneProps> = ({
+	scroll,
+	appLoaded,
+	preloaded,
+}) => {
 	const buttonRef = useRef<HTMLDivElement>(null);
 	const subTextRef = useRef<HTMLParagraphElement>(null);
 
@@ -16,7 +21,7 @@ const SectionOne: React.FC<SectionOneProps> = ({ scroll, preloaded }) => {
 		if (preloaded) {
 			SectionOneAnimation(
 				[subTextRef.current, buttonRef.current],
-				window.innerWidth < 1024 ? 0 : 1
+				window.innerWidth < 1024 || !appLoaded ? 0 : 0.5
 			);
 		}
 	}, [preloaded]);
