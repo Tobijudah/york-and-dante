@@ -1,10 +1,12 @@
 import gsap from "gsap";
+import splitting from "splitting";
 import RevealTextAnimation from "./reveal-text";
 gsap.config({
 	force3D: true,
 });
 
 const SectionOneAnimation = (elements: gsap.TweenTarget[], delay: number) => {
+	splitting();
 	const one = gsap.utils.selector("#section-one");
 	gsap.set(one(".hidden-init"), { visibility: "visible" });
 
@@ -13,14 +15,14 @@ const SectionOneAnimation = (elements: gsap.TweenTarget[], delay: number) => {
 		delay: delay,
 		duration: 1.5,
 		opacity: 0,
-    ease: "power2.inOut"
+		ease: "power2.inOut",
 	});
-  gsap.from(elements[1], {
+	gsap.from(elements[1], {
 		delay: delay,
 		duration: 1.5,
 		xPercent: 175,
-    ease: "power2.out"
-  })
+		ease: "power2.out",
+	});
 };
 
 export default SectionOneAnimation;
