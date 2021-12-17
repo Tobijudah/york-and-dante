@@ -1,5 +1,4 @@
 import gsap from "gsap";
-import Splitting from "splitting";
 import { PageProps } from "../page.types";
 import Nav from "../../components/Nav/Nav";
 import LocomotiveScroll from "locomotive-scroll";
@@ -16,7 +15,12 @@ import SectionThree from "../../components/SectionThree/SectionThree";
 import SectionSeven from "../../components/SectionSeven/SectionSeven";
 import SectionEight from "../../components/SectionEight/SectionEight";
 
-const Home: React.FC<PageProps> = ({ navOnClick, preloaded }) => {
+const Home: React.FC<PageProps> = ({
+	appLoaded,
+	preloaded,
+	navOnClick,
+	setAppLoaded,
+}) => {
 	const navRef = useRef(null);
 	const scrollRef = useRef(null);
 	const [scroll, setScroll] = useState<any>();
@@ -44,22 +48,31 @@ const Home: React.FC<PageProps> = ({ navOnClick, preloaded }) => {
 			setTimeout(
 				() => {
 					scroll.start();
-					window.innerWidth > 1024 && IntroAnimation(navRef.current);
+					!appLoaded &&
+						window.innerWidth > 1024 &&
+						IntroAnimation(navRef.current);
+					setAppLoaded(true);
 				},
-				window.innerWidth < 1024 ? 0 : 1000
+				window.innerWidth < 1024 || !appLoaded ? 0 : 0.5
 			);
-		} else {
-			Splitting();
-			window.innerWidth > 1024 &&
-				gsap.set(navRef.current, { visibility: "hidden" });
 		}
 	}, [scroll, preloaded]);
+
+	useEffect(() => {
+		!appLoaded &&
+			window.innerWidth > 1024 &&
+			gsap.set(navRef.current, { visibility: "hidden" });
+	}, []);
 
 	return (
 		<>
 			<Nav ref={navRef} onClick={navOnClick} />
 			<div ref={scrollRef} data-scroll-container>
-				<SectionOne scroll={scroll} preloaded={preloaded} />
+				<SectionOne
+					scroll={scroll}
+					appLoaded={appLoaded}
+					preloaded={preloaded}
+				/>
 				<SectionTwo />
 				<SectionThree scroll={scroll} />
 				<SectionFour />
