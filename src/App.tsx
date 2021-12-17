@@ -11,6 +11,7 @@ import "../node_modules/locomotive-scroll/src/locomotive-scroll.scss";
 function App() {
 	const [open, setOpen] = useState<boolean>(false);
 	const [preloaded, setPreloaded] = useState<boolean>(false);
+	const [appLoaded, setAppLoaded] = useState<boolean>(false);
 
 	return (
 		<main className={S.app}>
@@ -21,7 +22,9 @@ function App() {
 					path="/"
 					element={
 						<Home
+							appLoaded={appLoaded}
 							preloaded={preloaded}
+							setAppLoaded={setAppLoaded}
 							navOnClick={() => setOpen(!open)}
 						/>
 					}
@@ -30,7 +33,9 @@ function App() {
 					path="gallery"
 					element={
 						<Gallery
+							appLoaded={appLoaded}
 							preloaded={preloaded}
+							setAppLoaded={setAppLoaded}
 							navOnClick={() => setOpen(!open)}
 						/>
 					}
