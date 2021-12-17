@@ -3,6 +3,8 @@ import Home from "./pages/Home/Home";
 import "splitting/dist/splitting.css";
 import React, { useState } from "react";
 import Menu from "./components/Menu/Menu";
+import Gallery from "./pages/Gallery/Gallery";
+import { Routes, Route } from "react-router-dom";
 import Preloader from "./components/Preloader/Preloader";
 import "../node_modules/locomotive-scroll/src/locomotive-scroll.scss";
 
@@ -14,7 +16,26 @@ function App() {
 		<main className={S.app}>
 			{!preloaded && <Preloader setPreloaded={setPreloaded} />}
 			<Menu open={open} setOpen={setOpen} preloaded={preloaded} />
-			<Home navOnClick={() => setOpen(!open)} preloaded={preloaded} />
+			<Routes>
+				<Route
+					path="/"
+					element={
+						<Home
+							preloaded={preloaded}
+							navOnClick={() => setOpen(!open)}
+						/>
+					}
+				/>
+				<Route
+					path="gallery"
+					element={
+						<Gallery
+							preloaded={preloaded}
+							navOnClick={() => setOpen(!open)}
+						/>
+					}
+				/>
+			</Routes>
 		</main>
 	);
 }
