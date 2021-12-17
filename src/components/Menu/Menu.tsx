@@ -206,6 +206,15 @@ const Menu: React.FC<MenuProps> = ({ open, setOpen, preloaded }) => {
 			);
 	};
 
+	const onClick = (): void => {
+		setTimeout(
+			() => {
+				setOpen(false);
+			},
+			window.innerWidth > 1024 ? 0 : 500
+		);
+	};
+
 	return (
 		<div id="menu" ref={menuRef} className={S.menu}>
 			<svg className="hidden">
@@ -269,6 +278,7 @@ const Menu: React.FC<MenuProps> = ({ open, setOpen, preloaded }) => {
 				<p
 					data-filter="0"
 					data-splitting=""
+					onClick={onClick}
 					className={`${S.menuItem} split-text menuItem`}
 				>
 					Home <Icon className={S.icon} />
@@ -278,6 +288,7 @@ const Menu: React.FC<MenuProps> = ({ open, setOpen, preloaded }) => {
 				<p
 					data-filter="1"
 					data-splitting=""
+					onClick={onClick}
 					className={`${S.menuItem} split-text menuItem`}
 				>
 					Gallery <Icon className={S.icon} />
@@ -287,6 +298,7 @@ const Menu: React.FC<MenuProps> = ({ open, setOpen, preloaded }) => {
 				<p
 					data-filter="2"
 					data-splitting=""
+					onClick={onClick}
 					className={`${S.menuItem} split-text menuItem`}
 				>
 					Credits <Icon className={S.icon} />
