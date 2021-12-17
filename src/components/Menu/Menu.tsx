@@ -8,13 +8,12 @@ import { ReactComponent as Close } from "../../svgs/close.svg";
 import { ReactComponent as Icon } from "../../svgs/button-arrow.svg";
 
 type MenuProps = {
-	scroll: any;
 	open: boolean;
 	preloaded: boolean;
 	setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-const Menu: React.FC<MenuProps> = ({ open, scroll, setOpen, preloaded }) => {
+const Menu: React.FC<MenuProps> = ({ open, setOpen, preloaded }) => {
 	const menuRef = useRef<HTMLDivElement>(null);
 	const feDisplacementMapRefs = useRefArray<SVGFEDisplacementMapElement>(3);
 	const { ref: enterTimeline, setStateRef: setEnterTimeline } =
@@ -117,18 +116,6 @@ const Menu: React.FC<MenuProps> = ({ open, scroll, setOpen, preloaded }) => {
 				.set("#closeSVG > circle", { strokeDashoffset: -400 });
 		}
 	}, [open, feDisplacementMapRefs]);
-
-	const scrollTo = (target: string): void => {
-		setTimeout(
-			() => {
-				scroll.scrollTo(document.querySelector(target), {
-					offset: (window.innerWidth / 100) * -6,
-				});
-				setOpen(false);
-			},
-			window.innerWidth > 1024 ? 0 : 500
-		);
-	};
 
 	const mouseEnter = (el: Element, id: number) => {
 		const scale = { scale: 300 };
@@ -282,7 +269,6 @@ const Menu: React.FC<MenuProps> = ({ open, scroll, setOpen, preloaded }) => {
 				<p
 					data-filter="0"
 					data-splitting=""
-					onClick={() => scrollTo("#section-two")}
 					className={`${S.menuItem} split-text menuItem`}
 				>
 					Home <Icon className={S.icon} />
@@ -292,7 +278,6 @@ const Menu: React.FC<MenuProps> = ({ open, scroll, setOpen, preloaded }) => {
 				<p
 					data-filter="1"
 					data-splitting=""
-					onClick={() => scrollTo("#section-five")}
 					className={`${S.menuItem} split-text menuItem`}
 				>
 					Gallery <Icon className={S.icon} />
@@ -302,7 +287,6 @@ const Menu: React.FC<MenuProps> = ({ open, scroll, setOpen, preloaded }) => {
 				<p
 					data-filter="2"
 					data-splitting=""
-					onClick={() => scrollTo("#section-eight")}
 					className={`${S.menuItem} split-text menuItem`}
 				>
 					Credits <Icon className={S.icon} />
