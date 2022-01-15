@@ -57,6 +57,7 @@ const Home: React.FC<PageProps> = ({
 				!appLoaded ? 0 : loadedAnimationDelay
 			);
 		}
+		return () => scroll && scroll.destroy();
 	}, [scroll, preloaded]);
 
 	useEffect(() => {
