@@ -1,0 +1,55 @@
+.gallery {
+	position: absolute;
+	right: 0;
+	width: 94vw;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background: #f5f5f5;
+}
+
+.header {
+  position: fixed;
+	color: transparent;
+	font: 600 44.444vh/98.49% "New York Extra Large", serif;
+	letter-spacing: -0.01em;
+	text-stroke: 1.5px rgb(0, 0, 0);
+	-webkit-text-stroke: 1.5px rgb(0, 0, 0);
+	margin-left: -1rem;
+}
+
+.grid {
+  width: 100%;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+  column-gap: 6.67vh;
+  padding: 0 6.78vh;
+}
+
+.column {
+	display: flex;
+  flex-direction: column;
+  row-gap: 6.67vh;
+}
+
+.leftColumn {
+	composes: column;
+  margin-bottom: 10vh;
+} 
+
+.middleColumn {
+	composes: column;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+}
+
+.rightColumn {
+	composes: column;
+  margin-bottom: 10vh;
+}
+
+.image {
+  width: 41.167vh;
+  height: 46.67vh;
+  object-fit: cover;
+}
