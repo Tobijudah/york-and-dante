@@ -8,8 +8,7 @@ const SectionEight: React.FC = () => {
 			<div className={S.section}>
 				<div className={S.left}>
 					<p className={S.text}>
-						Visit our website @Barnandbed.com to see more exquisite
-						furnitures
+						Check out more pictures of our collections
 					</p>
 					<div className={S.button}>
 						<Button color="red" />
@@ -31,7 +30,7 @@ const SectionEight: React.FC = () => {
 						src="https://res.cloudinary.com/tobijudah/image/upload/q_auto,f_auto/v1637486755/it/8-3_okcfgq.png"
 						alt=""
 					/>
-					<p className={S.title}>Barn & Bed</p>
+					<p className={S.title}>York & Dante</p>
 				</div>
 			</div>
 		</section>

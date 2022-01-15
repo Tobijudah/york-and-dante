@@ -6,12 +6,13 @@ const SectionEight: React.FC = () => {
 		<section id="section-nine" data-scroll-section>
 			<div className={S.section}>
 				<div className={S.box}>
-					<p className={S.title}>Ardoniss</p>
+					<p className={S.title}>Chimela</p>
 					<p className={S.text}>
-						Our minimalist Barn & Bed chairs is crafted from
-						American poplar and metal tubing with a leather sling.
-						The frame is powder-coated steel coated in
-						environmentally friendly, lead-free paint.{" "}
+						Each piece of the Chimela has been designed to
+						accentuate the beauty of the female form, from the
+						intricate point d'esprit embroidery. The simplicity and
+						minimal approach is what makes this fashion collection
+						unique.
 					</p>
 					<img
 						className={S.img}
@@ -22,10 +23,11 @@ const SectionEight: React.FC = () => {
 				<div className={S.box}>
 					<p className={S.title}>Turbis</p>
 					<p className={S.text}>
-						Our minimalist Barn & Bed chairs is crafted from
-						American poplar and metal tubing with a leather sling.
-						The frame is powder-coated steel coated in
-						environmentally friendly, lead-free paint.{" "}
+						Designed by luchesse and crafted using luscious fabrics,
+						this Turbis collection is as opulent as it is versatile.
+						Versatile enough to take on any sexy occasion. Designs
+						of this collection are designed to create style you can
+						call your own.
 					</p>
 					<img
 						className={S.img}
@@ -34,12 +36,13 @@ const SectionEight: React.FC = () => {
 					/>
 				</div>
 				<div className={S.box}>
-					<p className={S.title}>Chimela</p>
+					<p className={S.title}>Ardoniss</p>
 					<p className={S.text}>
-						Our minimalist Barn & Bed chairs is crafted from
-						American poplar and metal tubing with a leather sling.
-						The frame is powder-coated steel coated in
-						environmentally friendly, lead-free paint.{" "}
+						Ardoniss is a fashion collection from luchesse; this
+						piece depicts the creative and innovative quality of
+						modern fashion. Ardoniss collection encompasses the
+						classical styles of tunics, dresses and trousers with 3D
+						appliqués adorning every hem.
 					</p>
 					<img
 						className={S.img}
@@ -48,12 +51,13 @@ const SectionEight: React.FC = () => {
 					/>
 				</div>
 				<div className={S.box}>
-					<p className={S.title}>Hoodlum</p>
+					<p className={S.title}>Plaid</p>
 					<p className={S.text}>
-						Our minimalist Barn & Bed chairs is crafted from
-						American poplar and metal tubing with a leather sling.
-						The frame is powder-coated steel coated in
-						environmentally friendly, lead-free paint.{" "}
+						Plaid is a clean, modern, and minimalistic suit style
+						fashion collection from Luchesse. The lines have been
+						refined to create a dressy uniform that can translate
+						day to night. The exclusive fabrics we use will fit
+						perfectly into your everyday work wardrobe.
 					</p>
 					<img
 						className={S.img}

@@ -4,20 +4,22 @@ import { ReactComponent as Signature } from "../../svgs/signature.svg";
 
 const SectionTwo: React.FC = () => {
 	return (
-		<section id='section-two' data-scroll-section>
+		<section id="section-two" data-scroll-section>
 			<div className={S.section}>
 				<div className={S.textWrapper}>
-					<h2 className={S.title}>The story behind the piece</h2>
+					<h2 className={S.title}>The story behind the brand</h2>
 					<p className={S.text}>
-						Barn & Bed is the first environmentally friendly chair
-						in the world with minimal design and modern pop-appeal.
-						It is made from recycled off-cuts of wood, a material
-						that is not harmful to human health or the regeneration
-						of nature. The chair has a cross-like profile, making it
-						a great shape for gathering around. It can be used both
-						indoors and outdoors and its simple contours fit so
-						harmoniously into the natural environment that it almost
-						seems to blend in with nature altogether.
+						York & Dante is a fashion brand from France with the
+						vision of making the fashion industry more aware of
+						environmental issues and promoting the use of recycled
+						and eco-friendly materials in the fashion world. The
+						100% organic cotton dresses are delicately printed using
+						a cutting-edge screen printer and special non-toxic inks
+						that will never fade or run even after washing. With a
+						focus on community and great service, we donate 2% of
+						all our profits to help preserve the world we live in.
+						We know you will love your fashion piece ... we
+						certainly do!
 					</p>
 					<Signature className={S.signature} />
 					<p className={S.person}>Lead designer</p>

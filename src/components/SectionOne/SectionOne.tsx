@@ -40,13 +40,13 @@ const SectionOne: React.FC<SectionOneProps> = ({
 					data-splitting=""
 					className={`${S.text} split-text hidden-init`}
 				>
-					The Credenza <sup className={S.sup}>&trade;</sup>
+					York & Dante <sup className={S.sup}>&reg;</sup>
 				</h1>
 				<p ref={subTextRef} className={`${S.subText} hidden-init`}>
-					Another piece from award winning furniture maker Barn & Bed
+					Natural Beauty, Fashionable Eco-Friendly Design.
 				</p>
 				<div ref={buttonRef} className={`${S.button} hidden-init`}>
-					<Button onClick={handleOnClick} color="greige" />
+					<Button onClick={handleOnClick} color="white" />
 				</div>
 			</div>
 		</section>

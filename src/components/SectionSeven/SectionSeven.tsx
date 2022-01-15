@@ -49,10 +49,10 @@ const SectionSeven: React.FC = () => {
 						</div>
 						<div className={S.right}>
 							<p className={S.smallText}>
-								Our minimalist Barn & Bed chairs is crafted from
-								American poplar and metal tubing with a leather
-								sling. The frame is powder-coated steel coated
-								in environmentally friendly, lead-free paint.{" "}
+								We believe that fashion should not be
+								intimidating, luxury is more than leather and
+								silk, and prices are not always the best
+								criteria to judge a good fashion brand.
 							</p>
 						</div>
 					</div>

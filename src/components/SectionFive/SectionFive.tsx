@@ -61,7 +61,7 @@ const SectionFive: React.FC = () => {
 					</h2>
 				</div>
 				<div className={S.sub}>
-					<p className={S.subText}>Comfy sofas</p>
+					<p className={S.subText}>Eco-friendly</p>
 					<div className={S.subRow}>
 						<Line
 							id={"lineRef"}
@@ -70,11 +70,11 @@ const SectionFive: React.FC = () => {
 							className={S.line1}
 						/>
 						<p ref={ref} className={S.subText}>
-							Cylindrical design
+							Wear with attitude
 						</p>
 					</div>
 					<div className={S.subRow}>
-						<p className={S.subText}>Arc back hinge</p>
+						<p className={S.subText}>Minimalistic</p>
 						<Line
 							id={"lineRef"}
 							width="11.22vh"
@@ -85,19 +85,20 @@ const SectionFive: React.FC = () => {
 				</div>
 				<div className={S.textWrapper}>
 					<p className={S.text}>
-						Awarded a Red Dot Design Prize, The Credenza chair is
-						made from a single, solid piece of rubber wood so there
-						are no joints or weak points. It has a minimalist but
-						attractive design with natural accents that give it an
-						organic feel. It's also made from FSC®-certified
-						cushions and uses only materials that are 100%
-						recyclable. As well as being easy to assemble, it has no
-						mechanical parts for a low service life and great
-						durability. Furthermore, This piece is designed with
-						care and consideration for global comfort in mind. The
-						frame’s form follows the contours of the body, offering
-						support for your back while alleviating pressure on your
-						spine and other joints.
+						Minimalism has arrived in a totally new silhouette. The
+						York & Dante collection is manufactured with the highest
+						quality working to blend the right amount of luxury,
+						exclusivity and simplicity. Our brand dedicates itself
+						to unique pieces that are standard in its product line
+						and can easily become your wardrobe's complement without
+						losing your personality or creativity. Our bond is to
+						create timeless pieces that provide ceaseless elegance.
+						The garments are built to be worn from the city to the
+						mountains: made of eco-friendly materials that are
+						handmade within an ethical manufacturing process. All
+						you need to do is add an attitude of confidence and our
+						pieces take care of the rest. Find your style and story
+						within this collection, and leave your mark on it.
 					</p>
 				</div>
 			</div>

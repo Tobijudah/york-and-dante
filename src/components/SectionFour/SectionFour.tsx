@@ -66,16 +66,21 @@ const SectionFour: React.FC = () => {
 						Made of Eco-Friendly materials sewn into the hem of
 						every piece
 					</h3>
-					<Line id={"verticalLineRef"} height="5.67vh" className={S.line} />
+					<Line
+						height="5.67vh"
+						className={S.line}
+						id={"verticalLineRef"}
+					/>
 					<p className={S.text}>
-						Our minimalist Barn & Bed chairs is crafted from
-						American poplar and metal tubing with a leather sling.
-						The frame is powder-coated steel coated in
-						environmentally friendly, lead-free paint. Our frame
-						tubes made from bio-based plastic; 82% plant-based and
-						18% mineral content. This makes it a sustainable and
-						recyclable product, that has been manufactured with care
-						for people and the planet.
+						Internally, the flannel fabric is created from recycled
+						bottles and organic hemp. Its outer shell is made from
+						regenerated cotton fibers that are softer than cotton
+						and sturdier than canvas. This allows our clothing to
+						avoid the harsh chemicals that would normally be used to
+						whiten. We like to think of it as taking the best of
+						everything nature has to offer, maximizing its positive
+						attributes while minimizing its negative
+						characteristics.
 					</p>
 				</div>
 			</div>
