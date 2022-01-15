@@ -12,7 +12,7 @@ type PreloaderProps = {
 
 const Preloader: React.FC<PreloaderProps> = ({ setPreloaded }) => {
 	const wordRef = useRef(null);
-	const letterRefs = useRefArray<HTMLDivElement>(7);
+	const letterRefs = useRefArray<HTMLDivElement>(9);
 	const preloaderRef = useRef(null);
 	const preloaderBgRef = useRef(null);
 	const preloaderContainerRef = useRef(null);
@@ -54,18 +54,18 @@ const Preloader: React.FC<PreloaderProps> = ({ setPreloaded }) => {
 		<section ref={preloaderContainerRef} className={S.preloaderContainer}>
 			<div ref={preloaderRef} className={S.preloader}>
 				<div ref={wordRef} className={S.word}>
-					<div className={S.barn}>
+					<div className={S.york}>
 						<div className={S.letter}>
 							<Alphabets
 								dataIndex={1}
-								letterIndex={2}
+								letterIndex={25}
 								ref={letterRefs[0]}
 							/>
 						</div>
 						<div className={S.letter}>
 							<Alphabets
 								dataIndex={2}
-								letterIndex={1}
+								letterIndex={15}
 								ref={letterRefs[1]}
 							/>
 						</div>
@@ -79,38 +79,51 @@ const Preloader: React.FC<PreloaderProps> = ({ setPreloaded }) => {
 						<div className={S.letter}>
 							<Alphabets
 								dataIndex={4}
-								letterIndex={14}
+								letterIndex={11}
 								ref={letterRefs[3]}
 							/>
 						</div>
 					</div>
 					<p className={S.and}>&</p>
-					<div className={S.bed}>
+					<div className={S.dante}>
 						<div className={S.letter}>
 							<Alphabets
 								dataIndex={5}
-								letterIndex={2}
+								letterIndex={4}
 								ref={letterRefs[4]}
 							/>
 						</div>
 						<div className={S.letter}>
 							<Alphabets
 								dataIndex={6}
-								letterIndex={5}
+								letterIndex={1}
 								ref={letterRefs[5]}
 							/>
 						</div>
 						<div className={S.letter}>
 							<Alphabets
 								dataIndex={7}
-								letterIndex={4}
+								letterIndex={14}
 								ref={letterRefs[6]}
+							/>
+						</div>
+						<div className={S.letter}>
+							<Alphabets
+								dataIndex={8}
+								letterIndex={20}
+								ref={letterRefs[7]}
+							/>
+						</div>
+						<div className={S.letter}>
+							<Alphabets
+								dataIndex={9}
+								letterIndex={5}
+								ref={letterRefs[8]}
 							/>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div ref={preloaderBgRef} className={S.preloaderBg} />
 		</section>
 	);
 };

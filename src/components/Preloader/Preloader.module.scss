@@ -29,7 +29,7 @@
 	z-index: 6;
 }
 
-.barn {
+.york {
 	display: inline-grid;
 	z-index: 1;
 
@@ -63,17 +63,17 @@
 	}
 }
 
-.bed {
+.dante {
 	display: inline-grid;
 	z-index: 1;
 
 	@include media(">mobile") {
 		gap: 0.56vh;
-		grid-template-columns: repeat(3, 8.89vh);
+		grid-template-columns: repeat(5, 8.89vh);
 	}
 	@include media("<=mobile") {
 		gap: 0.125rem;
-		grid-template-columns: repeat(3, 2rem);
+		grid-template-columns: repeat(5, 2rem);
 	}
 }
 
