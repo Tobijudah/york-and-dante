@@ -73,7 +73,7 @@ const Gallery: React.FC<PageProps> = ({
 			<Nav ref={navRef} onClick={navOnClick} />
 			<div className={S.gallery}>
 				<h1 className={S.header}>Gallery</h1>
-				<div ref={scrollRef} data-scroll-container>
+				<div ref={scrollRef} data-scroll data-scroll-container>
 					<div className={S.grid}>
 						<div
 							className={S.leftColumn}
@@ -83,10 +83,10 @@ const Gallery: React.FC<PageProps> = ({
 							{Array.from({ length: 11 }, (_, i) => (
 								<img
 									key={i}
+									className={S.image}
 									src={`https://res.cloudinary.com/tobijudah/image/upload/q_auto,f_auto/v1642240246/it/gallery_column_1/${
-										i + 1
+										11 - i
 									}.png`}
-									alt=""
 								/>
 							))}
 						</div>
@@ -94,10 +94,10 @@ const Gallery: React.FC<PageProps> = ({
 							{Array.from({ length: 11 }, (_, i) => (
 								<img
 									key={i}
+									className={S.image}
 									src={`https://res.cloudinary.com/tobijudah/image/upload/q_auto,f_auto/v1642240246/it/gallery_column_2/${
 										i + 1
 									}.png`}
-									alt=""
 								/>
 							))}
 						</div>
@@ -109,10 +109,10 @@ const Gallery: React.FC<PageProps> = ({
 							{Array.from({ length: 11 }, (_, i) => (
 								<img
 									key={i}
+									className={S.image}
 									src={`https://res.cloudinary.com/tobijudah/image/upload/q_auto,f_auto/v1642240246/it/gallery_column_3/${
-										i + 1
+										11 - i
 									}.png`}
-									alt=""
 								/>
 							))}
 						</div>
