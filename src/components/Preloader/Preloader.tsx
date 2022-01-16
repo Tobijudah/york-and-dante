@@ -109,7 +109,7 @@ const Preloader: React.FC<PreloaderProps> = ({ setPreloaded }) => {
 						</div>
 						<div className={S.letter}>
 							<Alphabets
-								dataIndex={8}
+								dataIndex={6}
 								letterIndex={20}
 								ref={letterRefs[7]}
 							/>
