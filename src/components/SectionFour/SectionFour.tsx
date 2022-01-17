@@ -21,9 +21,9 @@ const SectionFour: React.FC = () => {
 				strokeDashoffset: 0,
 			});
 			gsap.to("#scribbleRef", {
-				delay: 1,
-				duration: 4,
-				ease: "expo.out",
+				delay: 0.5,
+				duration: 2.5,
+				ease: "power3.out",
 				strokeDashoffset: 0,
 			});
 		}
