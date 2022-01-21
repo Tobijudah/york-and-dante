@@ -14,15 +14,14 @@ const Preloader: React.FC<PreloaderProps> = ({ setPreloaded }) => {
 	const wordRef = useRef(null);
 	const letterRefs = useRefArray<HTMLDivElement>(9);
 	const preloaderRef = useRef(null);
-	const preloaderBgRef = useRef(null);
 	const preloaderContainerRef = useRef(null);
 
 	useEffect(() => {
+		if (letterRefs.length === 0) return;
 		const preload = () => {
 			const preloaderDuration = PreloaderAnimation([
 				preloaderRef.current,
 				wordRef.current,
-				preloaderBgRef.current,
 			]);
 			let alphabetsDuration: number | undefined;
 			letterRefs &&
@@ -42,7 +41,6 @@ const Preloader: React.FC<PreloaderProps> = ({ setPreloaded }) => {
 				);
 			}
 		};
-		window.addEventListener("resize", preload);
 		setTimeout(() => {
 			preload();
 		}, 1500);
