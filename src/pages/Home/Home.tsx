@@ -81,7 +81,7 @@ const Home: React.FC<PageProps> = ({
 				<SectionFour />
 				<SectionFive />
 				<SectionSix />
-				<SectionEight />
+				<SectionEight windowWidth={windowWidth} />
 				<SectionSeven />
 				<SectionNine />
 				<Credits scroll={scroll} />

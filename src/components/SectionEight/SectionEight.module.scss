@@ -17,25 +17,50 @@
 }
 
 .box {
+	position: relative;
 	display: flex;
 	flex-direction: column;
 
 	@include media(">mobile") {
 		width: 25%;
 		padding: 0 2.222vh;
-		border-left: 1px solid #ffffff;
-
-		&:last-of-type {
-			border-right: 1px solid #ffffff;
-		}
 	}
-
 	@include media("<=mobile") {
 		padding: 1.5rem 0 3rem;
-		border-top: 1px solid #ffffff;
+	}
+}
 
-		&:last-of-type {
-			border-bottom: 1px solid #ffffff;
+.line {
+	position: absolute;
+
+	@include media(">mobile") {
+		left: 0;
+		width: 1px;
+		height: 100%;
+
+		&:last-child {
+			right: 0;
+			left: unset;
+		}
+
+		& > line {
+			stroke-dasharray: 81.111vw;
+			stroke-dashoffset: -81.111vw;
+		}
+	}
+	@include media("<=mobile") {
+		top: 0;
+		width: 100%;
+		height: 1px;
+
+		&:last-child {
+			bottom: 0;
+			top: unset;
+		}
+
+		& > line {
+			stroke-dasharray: calc(100vw - 3rem);
+			stroke-dashoffset: calc(100vw - 3rem);
 		}
 	}
 }
