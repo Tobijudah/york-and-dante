@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 
 const useIntersectionObserver = (
-	ref: React.MutableRefObject<HTMLElement | null>,
+	ref: React.MutableRefObject<Element | null>,
 	threshold: number
 ) => {
 	const [isIntersecting, setIsIntersecting] = useState<boolean>(false);
 
 	useEffect(() => {
+		if (!ref) return;
 		const intersectionObserver = new IntersectionObserver(
 			([entry]) => {
 				setIsIntersecting(entry.isIntersecting ?? false);
