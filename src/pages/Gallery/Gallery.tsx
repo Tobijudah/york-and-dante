@@ -6,18 +6,17 @@ import Nav from "../../components/Nav/Nav";
 import { GalleryData } from "./GalleryData";
 import LocomotiveScroll from "locomotive-scroll";
 import IntroAnimation from "../../animations/intro";
-import useWindowWidth from "../../hooks/useWindowWidth";
 import React, { useEffect, useRef, useState } from "react";
 
 const Gallery: React.FC<PageProps> = ({
 	appLoaded,
 	navOnClick,
 	preloaded,
+	windowWidth,
 	setAppLoaded,
 }) => {
 	const navRef = useRef(null);
 	const scrollRef = useRef(null);
-	const windowWidth = useWindowWidth();
 	const [scroll, setScroll] = useState<any>();
 
 	const preloadImages = () => {

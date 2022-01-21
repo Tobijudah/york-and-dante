@@ -5,10 +5,12 @@ import React, { useState } from "react";
 import Menu from "./components/Menu/Menu";
 import Gallery from "./pages/Gallery/Gallery";
 import { Routes, Route } from "react-router-dom";
+import useWindowWidth from "./hooks/useWindowWidth";
 import Preloader from "./components/Preloader/Preloader";
 import "../node_modules/locomotive-scroll/src/locomotive-scroll.scss";
 
 function App() {
+	const windowWidth = useWindowWidth();
 	const [open, setOpen] = useState<boolean>(false);
 	const [preloaded, setPreloaded] = useState<boolean>(false);
 	const [appLoaded, setAppLoaded] = useState<boolean>(false);
@@ -24,6 +26,7 @@ function App() {
 						<Home
 							appLoaded={appLoaded}
 							preloaded={preloaded}
+							windowWidth={windowWidth}
 							setAppLoaded={setAppLoaded}
 							navOnClick={() => setOpen(!open)}
 						/>
@@ -35,6 +38,7 @@ function App() {
 						<Gallery
 							appLoaded={appLoaded}
 							preloaded={preloaded}
+							windowWidth={windowWidth}
 							setAppLoaded={setAppLoaded}
 							navOnClick={() => setOpen(!open)}
 						/>

@@ -19,6 +19,7 @@ const Home: React.FC<PageProps> = ({
 	appLoaded,
 	preloaded,
 	navOnClick,
+	windowWidth,
 	setAppLoaded,
 }) => {
 	const navRef = useRef(null);
