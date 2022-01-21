@@ -3,7 +3,7 @@ import S from "./SectionEight.module.scss";
 
 const SectionEight: React.FC = () => {
 	return (
-		<section id="section-nine" data-scroll-section>
+		<section id="section-eight" data-scroll-section>
 			<div className={S.section}>
 				<div className={S.box}>
 					<p className={S.title}>Chimela</p>
