@@ -54,7 +54,7 @@
 	box-sizing: border-box;
 }
 
-html.has-scroll-smooth {
+html[data-scroll-direction] {
 	overflow: hidden;
 	position: fixed;
 	left: 0;
