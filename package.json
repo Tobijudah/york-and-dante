@@ -21,6 +21,7 @@
     "vite-plugin-svgr": "^0.2.0"
   },
   "devDependencies": {
+    "@types/history": "^5.0.0",
     "@types/imagesloaded": "^4.1.2",
     "@types/react": "^17.0.37",
     "@types/react-dom": "^17.0.11",
