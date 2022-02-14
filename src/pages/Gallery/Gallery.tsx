@@ -10,8 +10,8 @@ import React, { useEffect, useRef, useState } from "react";
 
 const Gallery: React.FC<PageProps> = ({
 	appLoaded,
-	navOnClick,
 	preloaded,
+	navOnClick,
 	windowWidth,
 	setAppLoaded,
 }) => {
