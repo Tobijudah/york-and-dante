@@ -74,22 +74,28 @@ const Gallery: React.FC<PageProps> = ({
 	useEffect(() => {
 		if (preloaded && scroll) {
 			gsap.set("#gallery img", { delay: 0.5, visibility: "visible" });
+			gsap.to("#gallery h1", {
+				delay: 0.25,
+				duration: 1.5,
+				opacity: 1,
+				ease: "power2.out",
+			})
 			gsap.from("#leftColumn > img", {
-				delay: windowWidth <= 600 ? 0 : 0.1,
+				delay: windowWidth <= 600 ? 0.5 : 0.6,
 				stagger: 0.05,
 				duration: 1.5,
 				ease: "expo.out",
 				y: -window.innerHeight,
 			});
 			gsap.from("#middleColumn > img", {
-				delay: windowWidth <= 600 ? 0.7 : 0.75,
+				delay: windowWidth <= 600 ? 1.2 : 1.25,
 				stagger: 0.05,
 				duration: 1.5,
 				ease: "expo.out",
 				y: window.innerHeight,
 			});
 			gsap.from("#rightColumn > img", {
-				delay: 0.35,
+				delay: 0.85,
 				stagger: 0.05,
 				duration: 1.5,
 				ease: "expo.out",
