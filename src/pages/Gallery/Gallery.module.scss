@@ -91,9 +91,11 @@
 	@include media(">mobile") {
 		width: 41.167vh;
 		height: 46.67vh;
+		visibility: hidden;
 	}
 	@include media("<=mobile") {
 		width: 100%;
 		height: auto;
+		visibility: hidden;
 	}
 }

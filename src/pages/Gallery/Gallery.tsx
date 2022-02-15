@@ -71,6 +71,33 @@ const Gallery: React.FC<PageProps> = ({
 			gsap.set(navRef.current, { visibility: "hidden" });
 	}, []);
 
+	useEffect(() => {
+		if (preloaded && scroll) {
+			gsap.set("#gallery img", { delay: 0.5, visibility: "visible" });
+			gsap.from("#leftColumn > img", {
+				delay: windowWidth <= 600 ? 0 : 0.1,
+				stagger: 0.05,
+				duration: 1.5,
+				ease: "expo.out",
+				y: -window.innerHeight,
+			});
+			gsap.from("#middleColumn > img", {
+				delay: windowWidth <= 600 ? 0.7 : 0.75,
+				stagger: 0.05,
+				duration: 1.5,
+				ease: "expo.out",
+				y: window.innerHeight,
+			});
+			gsap.from("#rightColumn > img", {
+				delay: 0.35,
+				stagger: 0.05,
+				duration: 1.5,
+				ease: "expo.out",
+				y: -window.innerHeight,
+			});
+		}
+	}, [preloaded, scroll]);
+
 	const mobileColumn1 = [...GalleryData].splice(0, 16);
 	const mobileColumn2 = [...GalleryData].splice(16, 16);
 	const desktopColumn1 = [...GalleryData].splice(0, 11);
@@ -80,16 +107,17 @@ const Gallery: React.FC<PageProps> = ({
 	return (
 		<>
 			<Nav ref={navRef} onClick={navOnClick} />
-			<div className={S.gallery}>
+			<div id="gallery" className={S.gallery}>
 				<h1 className={S.header}>Gallery</h1>
 				<div ref={scrollRef} data-scroll data-scroll-container>
 					<div className={S.grid}>
 						{windowWidth > 600 && (
 							<>
 								<div
-									className={S.desktopColumn}
 									data-scroll
+									id="leftColumn"
 									data-scroll-speed={-20}
+									className={S.desktopColumn}
 								>
 									{desktopColumn1.map((image, i) => (
 										<img
@@ -100,7 +128,10 @@ const Gallery: React.FC<PageProps> = ({
 										/>
 									))}
 								</div>
-								<div className={S.middleColumn}>
+								<div
+									id="middleColumn"
+									className={S.middleColumn}
+								>
 									{desktopColumn2.map((image, i) => (
 										<img
 											key={i}
@@ -111,9 +142,10 @@ const Gallery: React.FC<PageProps> = ({
 									))}
 								</div>
 								<div
-									className={S.desktopColumn}
 									data-scroll
+									id="rightColumn"
 									data-scroll-speed={-20}
+									className={S.desktopColumn}
 								>
 									{desktopColumn3.map((image, i) => (
 										<img
@@ -129,9 +161,10 @@ const Gallery: React.FC<PageProps> = ({
 						{windowWidth <= 600 && (
 							<>
 								<div
-									className={S.leftColumn}
 									data-scroll
+									id="leftColumn"
 									data-scroll-speed={-20}
+									className={S.leftColumn}
 								>
 									{mobileColumn1.map((image, i) => (
 										<img
@@ -142,7 +175,10 @@ const Gallery: React.FC<PageProps> = ({
 										/>
 									))}
 								</div>
-								<div className={S.rightColumn}>
+								<div
+									id="middleColumn"
+									className={S.rightColumn}
+								>
 									{mobileColumn2.map((image, i) => (
 										<img
 											key={i}
