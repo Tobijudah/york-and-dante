@@ -22,7 +22,7 @@ const Gallery: React.FC<PageProps> = ({
 	const preloadImages = () => {
 		return new Promise((resolve) => {
 			imagesLoaded(
-				document.querySelectorAll(".gallery-image"),
+				document.querySelectorAll("#gallery img"),
 				{ background: true },
 				resolve
 			);
@@ -50,7 +50,7 @@ const Gallery: React.FC<PageProps> = ({
 			});
 			scroll.stop();
 			scroll.update();
-			const loadedAnimationDelay = windowWidth < 1024 ? 0.8 : 0.5;
+			const appHasLoadedAnimationDelay = windowWidth < 1024 ? 0.8 : 0.5;
 			setTimeout(
 				() => {
 					scroll.start();
@@ -59,7 +59,7 @@ const Gallery: React.FC<PageProps> = ({
 						IntroAnimation(navRef.current);
 					setAppLoaded(true);
 				},
-				!appLoaded ? 0 : loadedAnimationDelay
+				!appLoaded ? 0 : appHasLoadedAnimationDelay
 			);
 		}
 		return () => scroll && scroll.destroy();
