@@ -38,7 +38,7 @@ function App() {
 	const onExit = () => {
 		gsap.to("#banner", {
 			yPercent: 0,
-			delay: 0.15,
+			delay: windowWidth <= 1024 && open ? 0.55 : 0.15,
 			duration: 0.6,
 			ease: "power2.out",
 		});
@@ -61,7 +61,7 @@ function App() {
 						<CSSTransition
 							nodeRef={ref}
 							unmountOnExit
-							timeout={1000}
+							timeout={2500}
 							onExit={onExit}
 							in={match != null}
 							onEntering={onEnter}
