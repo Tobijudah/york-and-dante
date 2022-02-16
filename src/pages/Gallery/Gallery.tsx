@@ -50,12 +50,12 @@ const Gallery: React.FC<PageProps> = ({
 			});
 			scroll.stop();
 			scroll.update();
-			const loadedAnimationDelay = window.innerWidth < 1024 ? 0.8 : 0.5;
+			const loadedAnimationDelay = windowWidth < 1024 ? 0.8 : 0.5;
 			setTimeout(
 				() => {
 					scroll.start();
 					!appLoaded &&
-						window.innerWidth > 1024 &&
+						windowWidth > 1024 &&
 						IntroAnimation(navRef.current);
 					setAppLoaded(true);
 				},
@@ -67,7 +67,7 @@ const Gallery: React.FC<PageProps> = ({
 
 	useEffect(() => {
 		!appLoaded &&
-			window.innerWidth > 1024 &&
+			windowWidth > 1024 &&
 			gsap.set(navRef.current, { visibility: "hidden" });
 	}, []);
 
