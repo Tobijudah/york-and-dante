@@ -20,7 +20,7 @@
 	}
 	@include media("<=mobile") {
 		width: 100vw;
-		height: calc(100vh - 3.75rem);
+		height: calc(100% - 3.75rem);
 		gap: 3rem;
 		padding: 8.0625rem 0 18.1875rem 1.5rem;
 		border-top: 1px solid #000;
