@@ -48,9 +48,6 @@ const Home: React.FC<PageProps> = ({
 					tablet: {
 						smooth: true,
 					},
-					smartphone: {
-						smooth: true,
-					},
 					reloadOnContextChange: true,
 				})
 			);
