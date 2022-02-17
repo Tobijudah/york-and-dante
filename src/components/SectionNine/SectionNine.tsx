@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "../Button/Button";
+import { Link } from "react-router-dom";
 import S from "./SectionNine.module.scss";
 
 const SectionEight: React.FC = () => {
@@ -10,9 +11,11 @@ const SectionEight: React.FC = () => {
 					<p className={S.text}>
 						Check out more pictures of our collections
 					</p>
-					<div className={S.button}>
-						<Button color="red" />
-					</div>
+					<Link to="/gallery">
+						<div className={S.button}>
+							<Button color="red" />
+						</div>
+					</Link>
 				</div>
 				<div className={S.right}>
 					<img

@@ -1,3 +1,5 @@
+@import "./common/include-media";
+
 .app {
 	background-color: rgb(250, 238, 224);
 	overflow: hidden;
@@ -10,5 +12,21 @@
 
 	&[data-name="Gallery"] {
 		background: #f5f5f5;
+	}
+
+	@include media(">mobile") {
+		&[data-name="Home"] {
+			div[data-scroll-container] {
+				height: 100vh;
+				display: inline-block;
+				white-space: nowrap;
+				section[data-scroll-section] {
+					display: inline-block !important;
+					vertical-align: top !important;
+					white-space: nowrap !important;
+					height: 100% !important;
+				}
+			}
+		}
 	}
 }
