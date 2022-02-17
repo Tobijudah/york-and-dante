@@ -63,18 +63,17 @@ html[data-scroll-direction] {
 	right: 0;
 	top: 0;
 	bottom: 0;
+}
 
-	& > body {
-		overflow: hidden;
-	}
+html[data-page="credits"] {
+	overflow: auto;
+	position: initial;
 }
 
 body {
+	overflow: hidden;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	@include media(">mobile") {
-		overflow: hidden;
-	}
 }
 
 code {

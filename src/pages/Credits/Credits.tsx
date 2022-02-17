@@ -26,9 +26,8 @@ const Credits: React.FC<PageProps> = ({
 	}, [preloaded]);
 
 	useEffect(() => {
-		document
-			.querySelector("html")
-			?.removeAttribute("data-scroll-direction");
+		const html = document.querySelector("html");
+		if (html) html.setAttribute("data-page", "credits");
 	}, []);
 
 	return (
