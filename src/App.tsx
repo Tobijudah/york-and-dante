@@ -4,6 +4,7 @@ import Home from "./pages/Home/Home";
 import "splitting/dist/splitting.css";
 import { Route } from "react-router-dom";
 import Menu from "./components/Menu/Menu";
+import Credits from "./pages/Credits/Credits";
 import Gallery from "./pages/Gallery/Gallery";
 import Banner from "./components/Banner/Banner";
 import React, { useEffect, useState } from "react";
@@ -21,6 +22,7 @@ function App() {
 	const routes = [
 		{ path: "/", name: "Home", Component: Home },
 		{ path: "/gallery", name: "Gallery", Component: Gallery },
+		{ path: "/credits", name: "Credits", Component: Credits },
 	];
 
 	const onEnter = () => {

@@ -1,3 +1,5 @@
+@import "./common/include-media";
+
 @font-face {
 	font-family: "Neue Haas Grotesk Display Pro";
 	font-style: normal;
@@ -61,12 +63,18 @@ html[data-scroll-direction] {
 	right: 0;
 	top: 0;
 	bottom: 0;
+
+	& > body {
+		overflow: hidden;
+	}
 }
 
 body {
-	overflow: hidden;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	@include media(">mobile") {
+		overflow: hidden;
+	}
 }
 
 code {

@@ -1,0 +1,271 @@
+@import "../../common/include-media";
+
+.section {
+	background: #121212;
+
+	@include media(">mobile") {
+		width: 94vw;
+		margin-left: auto;
+	}
+	@include media("<=mobile") {
+		padding: 3.75rem 0 7.75rem;
+	}
+}
+
+:global(.enter-active) .marquee {
+	opacity: 0;
+}
+
+.marquee {
+	cursor: pointer;
+	border-top: 1px solid #dddddd;
+	border-bottom: 1px solid #dddddd;
+
+	@include media(">mobile") {
+		position: absolute !important;
+		height: 15.74vh !important;
+		transform: rotate(270deg);
+		transform-origin: 71vh 427%;
+		margin: 4vh 0;
+	}
+}
+
+.marqueeText {
+	color: #fff;
+	font: 300 8vh/185% "Neue Haas Grotesk Display Pro", Arial, Helvetica,
+		sans-serif;
+	transition: all 100ms linear;
+
+	@include media(">mobile") {
+		padding: 0 3.9vh;
+	}
+	@include media("<=mobile") {
+		font-size: 2.25rem;
+		line-height: 98.49%;
+		padding: 1.25rem 3.46875rem;
+	}
+}
+
+.credits {
+	background: #121212;
+
+	@include media(">mobile") {
+		width: 79.2vw;
+		height: 100vh;
+		display: grid;
+		grid-template-rows: repeat(10, 1fr);
+		grid-template-columns: repeat(20, 1fr);
+		margin-left: 14.8vw;
+	}
+	@include media("<=mobile") {
+		display: flex;
+		flex-direction: column;
+		margin: 2.3125rem 1.5rem 0;
+	}
+}
+
+.textTypeOne {
+	color: #fff;
+	font: 600 4vh/100.99% "New York Extra Large", serif;
+	letter-spacing: -0.06em;
+	white-space: pre-wrap;
+
+	@include media("<=mobile") {
+		font-size: 1.5rem;
+	}
+}
+
+.textTypeTwo {
+	color: #e9e9e9;
+	text-transform: uppercase;
+	font: 600 1.78vh/150% "Neue Haas Grotesk Display Pro", Arial, Helvetica,
+		sans-serif;
+	letter-spacing: 0.105em;
+	white-space: pre-wrap;
+
+	@include media("<=mobile") {
+		font-size: 0.75rem;
+	}
+}
+
+.textTypeThree {
+	color: #fff;
+	font: 500 2.22vh/150% "Neue Haas Grotesk Display Pro", Arial, Helvetica,
+		sans-serif;
+	white-space: pre-wrap;
+
+	@include media("<=mobile") {
+		font-size: 1rem;
+	}
+}
+
+.box {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+}
+
+.quoteOne {
+	composes: textTypeOne;
+
+	@include media(">mobile") {
+		grid-column-start: 1;
+		grid-column-end: 7;
+		grid-row-start: 2;
+		grid-row-end: 4;
+	}
+	@include media("<=mobile") {
+		width: 85%;
+		margin-bottom: 3.5rem;
+	}
+}
+
+.quoteTwo {
+	composes: textTypeOne;
+
+	@include media(">mobile") {
+		grid-column-start: -2;
+		grid-column-end: -8;
+		grid-row-start: 2;
+		grid-row-end: 4;
+	}
+	@include media("<=mobile") {
+		width: 85%;
+		margin-bottom: 4rem;
+	}
+}
+
+.button {
+	display: flex;
+
+	@include media(">mobile") {
+		justify-content: flex-start;
+		transform: scaleX(-1);
+		grid-column-start: -2;
+		grid-column-end: -5;
+		grid-row-start: 5;
+		grid-row-end: 7;
+	}
+	@include media("<=mobile") {
+		justify-content: center;
+		transform: rotate(-90deg);
+	}
+}
+
+.credit1 {
+	composes: box;
+
+	@include media(">mobile") {
+		grid-column-start: 4;
+		grid-column-end: 8;
+		grid-row-start: 5;
+		grid-row-end: 7;
+	}
+	@include media("<=mobile") {
+		margin-left: 4rem;
+		margin-bottom: 4.5rem;
+	}
+}
+
+.credit2 {
+	composes: box;
+
+	@include media(">mobile") {
+		grid-column-start: -11;
+		grid-column-end: -7;
+		grid-row-start: 5;
+		grid-row-end: 7;
+	}
+	@include media("<=mobile") {
+		margin-left: 4rem;
+		margin-bottom: 3.5rem;
+	}
+}
+
+.creditTitle {
+	composes: textTypeTwo;
+
+	@include media(">mobile") {
+		margin-bottom: 1.33vh;
+	}
+	@include media("<=mobile") {
+		margin-bottom: 1.125rem;
+	}
+}
+
+.media {
+	display: flex;
+	column-gap: 1rem;
+
+	& > svg {
+		cursor: pointer;
+	}
+
+	@include media(">mobile") {
+		margin-top: 3.33vh;
+	}
+	@include media("<=mobile") {
+		margin-top: 1.5rem;
+	}
+}
+
+.icon {
+	& > svg {
+		@include media(">mobile") {
+			width: 4.44vh;
+			height: 4.44vh;
+		}
+		@include media("<=mobile") {
+			width: 2.5rem;
+			height: 2.5rem;
+		}
+	}
+}
+
+.box1 {
+	composes: box;
+
+	@include media(">mobile") {
+		grid-column-start: 1;
+		grid-column-end: 5;
+		grid-row-start: -2;
+		grid-row-end: -3;
+	}
+	@include media("<=mobile") {
+		margin-bottom: 2rem;
+	}
+}
+
+.box2 {
+	composes: box;
+
+	@include media(">mobile") {
+		grid-column-start: -2;
+		grid-column-end: -6;
+		grid-row-start: -2;
+		grid-row-end: -3;
+		text-align: right;
+	}
+	@include media("<=mobile") {
+		margin-bottom: 4rem;
+	}
+}
+
+.boxTitle {
+	composes: textTypeTwo;
+	color: #e9e9e9;
+	text-transform: uppercase;
+
+	@include media(">mobile") {
+		margin-bottom: 1.11vh;
+	}
+	@include media(">mobile") {
+		margin-bottom: 0.75rem;
+	}
+}
+
+.bold {
+	color: inherit;
+	font-weight: 600;
+	text-decoration: none;
+}
