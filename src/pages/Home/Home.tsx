@@ -1,4 +1,5 @@
 import gsap from "gsap";
+import imagesLoaded from "imagesloaded";
 import { PageProps } from "../page.types";
 import Nav from "../../components/Nav/Nav";
 import LocomotiveScroll from "locomotive-scroll";
@@ -26,6 +27,16 @@ const Home: React.FC<PageProps> = ({
 	const scrollRef = useRef(null);
 	const [scroll, setScroll] = useState<any>();
 
+	const preloadImages = () => {
+		return new Promise((resolve) => {
+			imagesLoaded(
+				document.querySelectorAll("#home img"),
+				{ background: true },
+				resolve
+			);
+		});
+	};
+
 	useEffect(() => {
 		if (preloaded && !scroll) {
 			setScroll(
@@ -44,6 +55,9 @@ const Home: React.FC<PageProps> = ({
 				})
 			);
 		} else if (preloaded && scroll) {
+			Promise.all([preloadImages()]).then(() => {
+				scroll.update();
+			});
 			scroll.stop();
 			scroll.update();
 			const loadedAnimationDelay = window.innerWidth < 1024 ? 0.8 : 0.5;
@@ -70,7 +84,7 @@ const Home: React.FC<PageProps> = ({
 	return (
 		<>
 			<Nav ref={navRef} onClick={navOnClick} />
-			<div ref={scrollRef} data-scroll-container>
+			<div id="home" ref={scrollRef} data-scroll-container>
 				<SectionOne
 					scroll={scroll}
 					appLoaded={appLoaded}
