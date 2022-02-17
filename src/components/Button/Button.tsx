@@ -3,28 +3,20 @@ import S from "./Button.module.scss";
 import { ReactComponent as Arrow } from "../../svgs/arrow.svg";
 
 type ButtonProps = {
-	text?: boolean;
+	text?: string;
 	onClick?: () => void;
-	color: "red" | "greige" | "white";
+	use: "section-one" | "section-nine" | "credits";
 };
 
-const Button: React.FC<ButtonProps> = ({ text, color, onClick }) => {
+const Button: React.FC<ButtonProps> = ({ use, text, onClick }) => {
 	return (
-		<button
-			onClick={onClick}
-			className={`${S[text ? "large" : ""]} ${S.button}`}
-		>
-			{text ? (
-				<p className={S.text}>Buy</p>
-			) : (
-				<Arrow
-					width="10vh"
-					className={S.arrow}
-					stroke={color === "red" ? "#ffffff" : "#000000"}
-				/>
-			)}
-			<div className={`${S[color]} ${S.background}`} />
-		</button>
+		<div className={`${S[use]} ${S.buttonContainer}`}>
+			<button onClick={onClick} className={S.button}>
+				<Arrow width="10vh" className={S.arrow} />
+				<div className={S.background} />
+			</button>
+			<p className={S.text}>{text}</p>
+		</div>
 	);
 };
 

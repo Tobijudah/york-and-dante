@@ -1,5 +1,58 @@
 @import "../../common/include-media";
 
+.buttonContainer {
+	height: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.section-one {
+	.background {
+		background-color: #ffffff;
+	}
+	.arrow {
+		stroke: #000;
+	}
+	.text {
+		color: #000;
+	}
+}
+
+.section-nine {
+	.button {
+		background-color: rgb(238, 106, 106);
+	}
+	.background {
+		background-color: #ff4040;
+	}
+	.arrow {
+		stroke: #fff;
+		transform: rotate(-30deg);
+	}
+	.text {
+		color: #000;
+	}
+}
+
+.credits {
+	.background {
+		background-color: #ffffff;
+	}
+	.arrow {
+		stroke: #000;
+		@include media(">mobile") {
+			transform: scaleX(-1);
+		}
+		@include media("<=mobile") {
+			transform: rotate(-90deg);
+		}
+	}
+	.text {
+		color: #fff;
+	}
+}
+
 .button {
 	cursor: pointer;
 	position: relative;
@@ -11,7 +64,7 @@
 	transition: transform 300ms ease;
 
 	&:hover > div {
-		transform: scale(1.35);
+		transform: scale(0.75);
 	}
 
 	@include media(">mobile") {
@@ -34,47 +87,28 @@
 	transition: transform 350ms ease;
 }
 
-.large {
-	@include media(">mobile") {
-		width: 20vh;
-		height: 20vh;
-	}
-	@include media("<=mobile") {
-		width: 9.625rem;
-		height: 9.625rem;
-	}
-}
-
-.red {
-	background-color: #ff4040;
-}
-
-.greige {
-	background-color: #d0c2c2;
-}
-
-.white {
-	background-color: #ffffff;
-}
-
 .text {
 	width: fit-content;
-	color: #ffffff;
-	font: 700 2.2vh/150% "Neue Haas Grotesk Display Pro", Arial, Helvetica,
+	font: 500 1.78vh/150% "Neue Haas Grotesk Display Pro", Arial, Helvetica,
 		sans-serif;
-	letter-spacing: 0.265em;
+	letter-spacing: 0.1em;
 	text-transform: uppercase;
+	white-space: nowrap;
 	z-index: 2;
 
-	@include media('<=mobile') {
-		font-size: 1.075rem;
-	};
+	@include media(">mobile") {
+		margin-top: 0.75rem;
+	}
+	@include media("<=mobile") {
+		margin-top: 1.34vh;
+		font-size: 1rem;
+	}
 }
 
 .arrow {
 	z-index: 2;
 
-	@include media('<=mobile') {
+	@include media("<=mobile") {
 		width: 4.15rem;
-	};
+	}
 }
