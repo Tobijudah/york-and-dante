@@ -6,14 +6,13 @@ import { Route } from "react-router-dom";
 import Menu from "./components/Menu/Menu";
 import Gallery from "./pages/Gallery/Gallery";
 import Banner from "./components/Banner/Banner";
+import React, { useEffect, useState } from "react";
 import useWindowWidth from "./hooks/useWindowWidth";
 import { CSSTransition } from "react-transition-group";
 import Preloader from "./components/Preloader/Preloader";
-import React, { useEffect, useRef, useState } from "react";
 import "../node_modules/locomotive-scroll/src/locomotive-scroll.scss";
 
 function App() {
-	const ref = useRef(null);
 	const windowWidth = useWindowWidth();
 	const [open, setOpen] = useState<boolean>(false);
 	const [preloaded, setPreloaded] = useState<boolean>(false);
@@ -59,7 +58,6 @@ function App() {
 				<Route key={path} exact path={path}>
 					{({ match }) => (
 						<CSSTransition
-							nodeRef={ref}
 							unmountOnExit
 							timeout={2500}
 							onExit={onExit}
