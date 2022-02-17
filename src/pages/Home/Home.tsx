@@ -4,7 +4,6 @@ import { PageProps } from "../page.types";
 import Nav from "../../components/Nav/Nav";
 import LocomotiveScroll from "locomotive-scroll";
 import IntroAnimation from "../../animations/intro";
-import Credits from "../../components/Credits/Credits";
 import React, { useEffect, useRef, useState } from "react";
 import SectionOne from "../../components/SectionOne/SectionOne";
 import SectionTwo from "../../components/SectionTwo/SectionTwo";
@@ -98,7 +97,6 @@ const Home: React.FC<PageProps> = ({
 				<SectionEight windowWidth={windowWidth} />
 				<SectionSeven />
 				<SectionNine />
-				<Credits scroll={scroll} />
 			</div>
 		</>
 	);
