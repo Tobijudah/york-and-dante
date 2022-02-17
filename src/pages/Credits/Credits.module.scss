@@ -137,10 +137,10 @@
 
 .button {
 	display: flex;
+	align-items: center;
 
 	@include media(">mobile") {
 		justify-content: flex-start;
-		transform: scaleX(-1);
 		grid-column-start: -2;
 		grid-column-end: -5;
 		grid-row-start: 5;
@@ -148,7 +148,6 @@
 	}
 	@include media("<=mobile") {
 		justify-content: center;
-		transform: rotate(-90deg);
 	}
 }
 

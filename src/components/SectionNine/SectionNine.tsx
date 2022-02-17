@@ -13,7 +13,7 @@ const SectionEight: React.FC = () => {
 					</p>
 					<Link to="/gallery">
 						<div className={S.button}>
-							<Button color="red" />
+							<Button use="section-nine" text="go to gallery" />
 						</div>
 					</Link>
 				</div>

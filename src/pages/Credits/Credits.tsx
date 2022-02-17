@@ -119,7 +119,7 @@ const Credits: React.FC<PageProps> = ({
 						<p className={S.textTypeThree}>Neue Haas Grotesk</p>
 					</div>
 					<Link className={S.button} to="/">
-						<Button color="white" />
+						<Button use="credits" text="back to home" />
 					</Link>
 				</div>
 			</section>

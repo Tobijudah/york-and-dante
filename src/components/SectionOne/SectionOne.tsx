@@ -46,7 +46,11 @@ const SectionOne: React.FC<SectionOneProps> = ({
 					Natural Beauty, Fashionable Eco-Friendly Design.
 				</p>
 				<div ref={buttonRef} className={`${S.button} hidden-init`}>
-					<Button onClick={handleOnClick} color="white" />
+					<Button
+						text="explore"
+						use="section-one"
+						onClick={handleOnClick}
+					/>
 				</div>
 			</div>
 		</section>
