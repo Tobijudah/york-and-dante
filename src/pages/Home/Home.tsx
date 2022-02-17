@@ -44,12 +44,12 @@ const Home: React.FC<PageProps> = ({
 					el: scrollRef.current,
 					direction: "horizontal",
 					gestureDirection: "both",
-					tablet: {
-						smooth: true,
-					},
-					smartphone: {
-						smooth: true,
-					},
+					// tablet: {
+					// 	smooth: true,
+					// },
+					// smartphone: {
+					// 	smooth: true,
+					// },
 					reloadOnContextChange: true,
 				})
 			);
