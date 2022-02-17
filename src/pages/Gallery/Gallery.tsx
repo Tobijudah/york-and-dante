@@ -35,12 +35,12 @@ const Gallery: React.FC<PageProps> = ({
 				new LocomotiveScroll({
 					smooth: true,
 					el: scrollRef.current,
-					tablet: {
-						smooth: true,
-					},
-					smartphone: {
-						smooth: true,
-					},
+					// tablet: {
+					// 	smooth: true,
+					// },
+					// smartphone: {
+					// 	smooth: true,
+					// },
 					reloadOnContextChange: true,
 				})
 			);

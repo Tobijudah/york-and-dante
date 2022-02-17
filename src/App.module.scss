@@ -15,9 +15,9 @@
 	}
 
 	@include media("<=mobile") {
-		&[data-name="Credits"] {
+		// &[data-name="Credits"] {
 			height: initial;
-		}
+		// }
 	}
 
 	@include media(">mobile") {

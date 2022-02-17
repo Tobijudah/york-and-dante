@@ -66,6 +66,12 @@ html[data-scroll-direction] {
 
 	& > body {
 		overflow: hidden;
+		@include media("<=mobile") {
+			overflow: auto;
+		}
+	}
+	@include media("<=mobile") {
+		overflow: auto;
 	}
 }
 
