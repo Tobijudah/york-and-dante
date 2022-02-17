@@ -50,7 +50,7 @@ const Gallery: React.FC<PageProps> = ({
 			});
 			scroll.stop();
 			scroll.update();
-			const appHasLoadedAnimationDelay = windowWidth < 1024 ? 0.8 : 0.5;
+			const appHasLoadedAnimationDelay = windowWidth <= 1024 ? 0.8 : 0.5;
 			setTimeout(
 				() => {
 					scroll.start();
@@ -85,7 +85,7 @@ const Gallery: React.FC<PageProps> = ({
 				.from(
 					"#leftColumn > img",
 					{
-						delay: windowWidth <= 600 ? 0 : 0.1,
+						delay: windowWidth <= 1024 ? 0 : 0.1,
 						stagger: 0.05,
 						duration: 1.5,
 						ease: "expo.out",
@@ -96,7 +96,7 @@ const Gallery: React.FC<PageProps> = ({
 				.from(
 					"#middleColumn > img",
 					{
-						delay: windowWidth <= 600 ? 0.7 : 0.75,
+						delay: windowWidth <= 1024 ? 0.7 : 0.75,
 						stagger: 0.05,
 						duration: 1.5,
 						ease: "expo.out",
@@ -131,7 +131,7 @@ const Gallery: React.FC<PageProps> = ({
 				<h1 className={S.header}>Gallery</h1>
 				<div ref={scrollRef} data-scroll data-scroll-container>
 					<div className={S.grid}>
-						{windowWidth > 600 && (
+						{windowWidth > 1024 && (
 							<>
 								<div
 									data-scroll
@@ -178,7 +178,7 @@ const Gallery: React.FC<PageProps> = ({
 								</div>
 							</>
 						)}
-						{windowWidth <= 600 && (
+						{windowWidth <= 1024 && (
 							<>
 								<div
 									data-scroll

@@ -24,7 +24,7 @@ const SectionEight: React.FC<SectionEightProps> = ({ windowWidth }) => {
 		refs.forEach((ref, i) => {
 			if (linesVisibility[i]) {
 				gsap.to(ref.current?.firstChild, {
-					delay: windowWidth > 600 ? 0.5 : 0.2,
+					delay: windowWidth > 1024 ? 0.5 : 0.2,
 					duration: 2.5,
 					ease: "expo.out",
 					strokeDashoffset: 0,

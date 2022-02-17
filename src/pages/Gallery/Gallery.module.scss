@@ -11,6 +11,9 @@
 	@include media(">mobile") {
 		width: 94vw;
 	}
+	@include media("<=mobile") {
+		width: 100%;
+	}
 }
 
 .header {

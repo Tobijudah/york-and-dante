@@ -22,7 +22,7 @@ const Credits: React.FC<CreditsProps> = ({ scroll }) => {
 				pauseOnHover
 				gradient={false}
 				className={S.marquee}
-				speed={window.innerWidth > 600 ? 15 : 80}
+				speed={window.innerWidth > 1024 ? 15 : 80}
 			>
 				<p className={S.marqueeText}>Credits</p>
 				<p className={S.marqueeText}>Credits</p>

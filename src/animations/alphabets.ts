@@ -11,8 +11,8 @@ const AlphabetsAnimation = (
 ) => {
 	const indexNumber = Number(index);
 	const letterNumber = Number(letter);
-	const unit = window.innerWidth > 600 ? "vh" : "rem";
-	const translateNumber = window.innerWidth > 600 ? -7.2267 : -1.626;
+	const unit = window.innerWidth > 1024 ? "vh" : "rem";
+	const translateNumber = window.innerWidth > 1024 ? -7.2267 : -1.626;
 
 	const alphabets = gsap.timeline({ delay: delay + 1 });
 

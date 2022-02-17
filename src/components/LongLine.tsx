@@ -15,7 +15,7 @@ export const LongLine = React.forwardRef<
 			{...props}
 			xmlns="http://www.w3.org/2000/svg"
 		>
-			{props.windowWidth > 600 ? (
+			{props.windowWidth > 1024 ? (
 				<line
 					x1="0.5"
 					x2="0.500032"

@@ -60,7 +60,7 @@ const Home: React.FC<PageProps> = ({
 			});
 			scroll.stop();
 			scroll.update();
-			const loadedAnimationDelay = window.innerWidth < 1024 ? 0.8 : 0.5;
+			const loadedAnimationDelay = window.innerWidth <= 1024 ? 0.8 : 0.5;
 			setTimeout(
 				() => {
 					scroll.start();

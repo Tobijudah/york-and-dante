@@ -13,7 +13,7 @@ const SectionSeven: React.FC = () => {
 						pauseOnHover
 						gradient={false}
 						className={S.marquee}
-						speed={window.innerWidth > 600 ? 15 : 80}
+						speed={window.innerWidth > 1024 ? 15 : 80}
 					>
 						<p className={S.marqueeText}>Finesse</p>
 						<p className={S.marqueeText}>Finesse</p>
@@ -60,7 +60,7 @@ const SectionSeven: React.FC = () => {
 						<img
 							className={S.img}
 							src={
-								window.innerWidth > 600
+								window.innerWidth > 1024
 									? "https://res.cloudinary.com/tobijudah/image/upload/q_auto,f_auto/v1637522594/it/6_eda4xd.png"
 									: "https://res.cloudinary.com/tobijudah/image/upload/q_auto,f_auto/v1639309634/it/6-mobile_rk62d6.png"
 							}

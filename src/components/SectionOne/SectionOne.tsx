@@ -18,7 +18,7 @@ const SectionOne: React.FC<SectionOneProps> = ({
 	const subTextRef = useRef<HTMLParagraphElement>(null);
 
 	useEffect(() => {
-		const loadedAnimationDelay = window.innerWidth < 1024 ? 3.3 : 3;
+		const loadedAnimationDelay = window.innerWidth <= 1024 ? 3.3 : 3;
 		if (preloaded) {
 			SectionOneAnimation(
 				[subTextRef.current, buttonRef.current],
