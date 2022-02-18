@@ -23,7 +23,7 @@
 		padding-bottom: 1vh;
 	}
 	@include media("<=mobile") {
-		font-size: 3.5rem;
+		font-size: 3.25rem;
 		// padding: 1.9375rem 0 0.75rem;
 	}
 }
@@ -36,6 +36,6 @@
 	white-space: pre-wrap;
 
 	@include media("<=mobile") {
-		font-size: 1rem;
+		font-size: 0.8rem;
 	}
 }
