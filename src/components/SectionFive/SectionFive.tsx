@@ -6,8 +6,8 @@ import { ReactComponent as Line } from "../../svgs/line.svg";
 import useIntersectionObserver from "../../hooks/useIntersectionObserver";
 
 const SectionFive: React.FC = () => {
-	const title1ScrollSpeed = window.innerWidth <= 1024 ? 2.5 : 1.2;
-	const title2ScrollSpeed = window.innerWidth <= 1024 ? -5 : -1.2;
+	const title1ScrollSpeed = window.innerWidth <= 1024 ? -2 : 1.2;
+	const title2ScrollSpeed = window.innerWidth <= 1024 ? 5 : -1.2;
 
 	const ref = useRef<HTMLParagraphElement>(null);
 	const isOnScreen = useIntersectionObserver(ref, 1);

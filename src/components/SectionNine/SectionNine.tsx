@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import S from "./SectionNine.module.scss";
 
 const SectionEight: React.FC = () => {
+	const textScrollSpeed = window.innerWidth <= 1024 ? -5 : 3;
+
 	return (
 		<section id="section-nine" data-scroll-section>
 			<div className={S.section}>
@@ -33,7 +35,14 @@ const SectionEight: React.FC = () => {
 						src="https://res.cloudinary.com/tobijudah/image/upload/q_auto,f_auto/v1637486755/it/8-3_okcfgq.png"
 						alt=""
 					/>
-					<p className={S.title}>York & Dante</p>
+					<p
+						data-scroll
+						className={S.title}
+						data-scroll-direction="horizontal"
+						data-scroll-speed={textScrollSpeed}
+					>
+						York & Dante
+					</p>
 				</div>
 			</div>
 		</section>
