@@ -63,7 +63,7 @@
 }
 
 .up {
-	width: 100%;
+	width: 125vh;
 	display: flex;
 	justify-content: space-between;
 
@@ -138,7 +138,7 @@
 
 	@include media(">mobile") {
 		width: 50%;
-		margin: 11.556vh 16vh 0 19.333vh;
+		margin: 11.556vh 0 0 19.333vh;
 	}
 	@include media("<=mobile") {
 		margin: 3rem 0 2.1875rem;
