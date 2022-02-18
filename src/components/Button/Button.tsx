@@ -11,7 +11,7 @@ type ButtonProps = {
 const Button: React.FC<ButtonProps> = ({ use, text, onClick }) => {
 	return (
 		<div className={`${S[use]} ${S.buttonContainer}`}>
-			<button onClick={onClick} className={S.button}>
+			<button aria-label={text} onClick={onClick} className={S.button}>
 				<Arrow width="10vh" className={S.arrow} />
 				<div className={S.background} />
 			</button>
