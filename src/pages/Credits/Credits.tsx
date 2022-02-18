@@ -29,7 +29,7 @@ const Credits: React.FC<PageProps> = ({
 
 	useEffect(() => {
 		if (preloaded) {
-			splitting({ by: "words" });
+			splitting({ by: "words", target: "#credits .split-text" });
 			const delay = appLoaded ? 3 : 0;
 			const credits = gsap.utils.selector("#credits");
 			gsap.set(credits(".hidden-init"), { visibility: "visible" });
