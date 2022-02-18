@@ -103,8 +103,9 @@ const Gallery: React.FC<PageProps> = ({
 						y: window.innerHeight,
 					},
 					1.5
-				)
-				.from(
+				);
+			if (windowWidth > 1024) {
+				intro.from(
 					"#rightColumn > img",
 					{
 						delay: 0.35,
@@ -115,6 +116,7 @@ const Gallery: React.FC<PageProps> = ({
 					},
 					1.5
 				);
+			}
 		}
 	}, [preloaded, scroll]);
 
