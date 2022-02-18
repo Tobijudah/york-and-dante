@@ -46,8 +46,6 @@ const Preloader: React.FC<PreloaderProps> = ({ windowWidth, setPreloaded }) => {
 		setTimeout(() => {
 			preload();
 		}, 1500);
-
-		return () => window.removeEventListener("resize", preload);
 	}, [letterRefs]);
 
 	return (
