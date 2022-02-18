@@ -6,6 +6,7 @@
 	font-weight: 300;
 	src: local("Neue Haas Grotesk Display Pro"),
 		url("./fonts/NeueHaasDisplayThin.woff") format("woff");
+	font-display: swap;
 }
 
 @font-face {
@@ -14,6 +15,7 @@
 	font-weight: 500;
 	src: local("Neue Haas Grotesk Display Pro"),
 		url("./fonts/NeueHaasDisplayRoman.woff") format("woff");
+	font-display: swap;
 }
 
 @font-face {
@@ -22,14 +24,7 @@
 	font-weight: 600;
 	src: local("Neue Haas Grotesk Display Pro"),
 		url("./fonts/NeueHaasDisplayMediu.woff") format("woff");
-}
-
-@font-face {
-	font-family: "Neue Haas Grotesk Display Pro";
-	font-style: normal;
-	font-weight: 700;
-	src: local("Neue Haas Grotesk Display Pro"),
-		url("./fonts/NeueHaasDisplayBold.woff") format("woff");
+	font-display: swap;
 }
 
 @font-face {
@@ -39,6 +34,7 @@
 	src: local("New York Extra Large"),
 		url("https://fonts.cdnfonts.com/s/39339/NewYorkExtraLargeMedium.woff")
 			format("woff");
+	font-display: swap;
 }
 
 @font-face {
@@ -48,6 +44,7 @@
 	src: local("New York Extra Large"),
 		url("https://fonts.cdnfonts.com/s/39339/NewYorkExtraLargeBold.woff")
 			format("woff");
+	font-display: swap;
 }
 
 * {
