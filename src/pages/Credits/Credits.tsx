@@ -1,3 +1,5 @@
+import gsap from "gsap";
+import splitting from "splitting";
 import S from "./Credits.module.scss";
 import { Link } from "react-router-dom";
 import Marquee from "react-fast-marquee";
@@ -14,7 +16,6 @@ const Credits: React.FC<PageProps> = ({
 	appLoaded,
 	preloaded,
 	navOnClick,
-	windowWidth,
 	setAppLoaded,
 }) => {
 	const navRef = useRef(null);
@@ -22,6 +23,29 @@ const Credits: React.FC<PageProps> = ({
 	useEffect(() => {
 		if (preloaded) {
 			setAppLoaded(true);
+		}
+	}, [preloaded]);
+
+	useEffect(() => {
+		if (preloaded) {
+			splitting({ by: "words" });
+			const delay = appLoaded ? 3 : 0;
+			const credits = gsap.utils.selector("#credits");
+			gsap.set(credits(".hidden-init"), { visibility: "visible" });
+			gsap.from(credits(".split-text .word, .whitespace"), {
+				delay: 0.25 + delay,
+				duration: 0.75,
+				opacity: 0,
+				yPercent: 50,
+				stagger: 0.025,
+				ease: "power2.out",
+			});
+			gsap.to(`.${S.animateOpacity}`, {
+				delay: 1 + delay,
+				duration: 1.25,
+				opacity: 1,
+				stagger: 0.05,
+			});
 		}
 	}, [preloaded]);
 
@@ -47,66 +71,110 @@ const Credits: React.FC<PageProps> = ({
 					<p className={S.marqueeText}>Credits</p>
 				</Marquee>
 				<div className={S.credits}>
-					<p className={S.quoteOne}>
+					<p
+						data-splitting=""
+						className={`${S.quoteOne} split-text hidden-init`}
+					>
 						“On a certain day, I just felt like exploring designing
 						a site with a horizontal scroll”
 					</p>
 					<div className={S.credit1}>
-						<p className={S.creditTitle}>Development & Motion</p>
-						<p className={S.textTypeOne}>Oluwatobiju</p>
-						<p className={S.textTypeOne}>Judah</p>
+						<p
+							data-splitting=""
+							className={`${S.creditTitle} split-text hidden-init`}
+						>
+							Design & Art direction
+						</p>
+						<p
+							data-splitting=""
+							className={`${S.textTypeOne} split-text hidden-init`}
+						>
+							Enyinnaya
+						</p>
+						<p
+							data-splitting=""
+							className={`${S.textTypeOne} split-text hidden-init`}
+						>
+							Felix
+						</p>
 						<div className={S.media}>
 							<a
-								className={S.icon}
-								href="https://twitter.com/tobijudah"
-							>
-								<Twitter />
-							</a>
-							<a
-								className={S.icon}
-								href="https://www.linkedin.com/in/oluwatobiju-judah-omotosho/"
-							>
-								<LinkedIn />
-							</a>
-							<a
-								className={S.icon}
-								href="https://github.com/Tobijudah"
-							>
-								<GitHub />
-							</a>
-						</div>
-					</div>
-					<div className={S.credit2}>
-						<p className={S.creditTitle}>Design & Art direction</p>
-						<p className={S.textTypeOne}>Enyinnaya</p>
-						<p className={S.textTypeOne}>Felix</p>
-						<div className={S.media}>
-							<a
-								className={S.icon}
+								className={`${S.animateOpacity} ${S.icon}`}
 								href="https://twitter.com/P_h_i_l_i_x"
 							>
 								<Twitter />
 							</a>
 							<a
-								className={S.icon}
+								className={`${S.animateOpacity} ${S.icon}`}
 								href="https://www.linkedin.com/in/felix-enyinnaya-b2593b173/"
 							>
 								<LinkedIn />
 							</a>
 							<a
-								className={S.icon}
+								className={`${S.animateOpacity} ${S.icon}`}
 								href="https://www.behance.net/felixenyinnayadesign"
 							>
 								<Behance />
 							</a>
 						</div>
 					</div>
-					<p className={S.quoteTwo}>
+					<div className={S.credit2}>
+						<p
+							data-splitting=""
+							className={`${S.creditTitle} split-text hidden-init`}
+						>
+							Development & Motion
+						</p>
+						<p
+							data-splitting=""
+							className={`${S.textTypeOne} split-text hidden-init`}
+						>
+							Oluwatobiju
+						</p>
+						<p
+							data-splitting=""
+							className={`${S.textTypeOne} split-text hidden-init`}
+						>
+							Judah
+						</p>
+						<div className={S.media}>
+							<a
+								className={`${S.animateOpacity} ${S.icon}`}
+								href="https://twitter.com/tobijudah"
+							>
+								<Twitter />
+							</a>
+							<a
+								className={`${S.animateOpacity} ${S.icon}`}
+								href="https://www.linkedin.com/in/oluwatobiju-judah-omotosho/"
+							>
+								<LinkedIn />
+							</a>
+							<a
+								className={`${S.animateOpacity} ${S.icon}`}
+								href="https://github.com/Tobijudah"
+							>
+								<GitHub />
+							</a>
+						</div>
+					</div>
+					<p
+						data-splitting=""
+						className={`${S.quoteTwo} split-text hidden-init`}
+					>
 						“Tobiju, reached out. Bro, let me build this.”
 					</p>
 					<div className={S.box1}>
-						<p className={S.boxTitle}>image & video credits</p>
-						<p className={S.textTypeThree}>
+						<p
+							data-splitting=""
+							className={`${S.boxTitle} split-text hidden-init`}
+						>
+							image & video credits
+						</p>
+						<p
+							data-splitting=""
+							className={`${S.textTypeThree} split-text hidden-init`}
+						>
 							<a className={S.bold} href="">
 								Cottonbro
 							</a>{" "}
@@ -114,11 +182,26 @@ const Credits: React.FC<PageProps> = ({
 						</p>
 					</div>
 					<div className={S.box2}>
-						<p className={S.boxTitle}>fonts</p>
-						<p className={S.textTypeThree}>New York</p>
-						<p className={S.textTypeThree}>Neue Haas Grotesk</p>
+						<p
+							data-splitting=""
+							className={`${S.boxTitle} split-text hidden-init`}
+						>
+							fonts
+						</p>
+						<p
+							data-splitting=""
+							className={`${S.textTypeThree} split-text hidden-init`}
+						>
+							New York
+						</p>
+						<p
+							data-splitting=""
+							className={`${S.textTypeThree} split-text hidden-init`}
+						>
+							Neue Haas Grotesk
+						</p>
 					</div>
-					<Link className={S.button} to="/">
+					<Link className={`${S.animateOpacity} ${S.button}`} to="/">
 						<Button use="credits" text="back to home" />
 					</Link>
 				</div>
