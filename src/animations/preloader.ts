@@ -25,12 +25,20 @@ const PreloaderAnimation = (elements: gsap.TweenTarget[]) => {
 			},
 			"-=0.8"
 		)
+		.eventCallback("onStart", () => {
+			gsap.set("[data-name]", {
+				opacity: 0,
+			});
+		})
 		.eventCallback("onComplete", () => {
 			gsap.set("#banner", {
 				yPercent: 100,
 			});
 			gsap.set(".hidden-init", {
 				visibility: "hidden",
+			});
+			gsap.set("[data-name]", {
+				opacity: 1,
 			});
 			preloader.kill();
 		});
