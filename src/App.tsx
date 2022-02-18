@@ -45,12 +45,6 @@ function App() {
 		});
 	};
 
-	useEffect(() => {
-		gsap.set("#banner", {
-			yPercent: 100,
-		});
-	}, []);
-
 	return (
 		<main className={S.app}>
 			{!preloaded && (
