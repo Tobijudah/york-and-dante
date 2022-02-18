@@ -53,6 +53,7 @@ const Credits: React.FC<PageProps> = ({
 	useEffect(() => {
 		const html = document.querySelector("html");
 		if (html) html.setAttribute("data-page", "credits");
+		return () => html?.removeAttribute("data-page");
 	}, []);
 
 	return (
