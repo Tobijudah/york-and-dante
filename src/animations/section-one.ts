@@ -23,6 +23,11 @@ const SectionOneAnimation = (elements: gsap.TweenTarget[], delay: number) => {
 		xPercent: 175,
 		ease: "power2.out",
 	});
+	gsap.from(elements[2], {
+		duration: 1.5,
+		delay: delay + 1,
+		opacity: 0,
+	});
 };
 
 export default SectionOneAnimation;

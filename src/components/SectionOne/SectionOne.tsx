@@ -21,7 +21,7 @@ const SectionOne: React.FC<SectionOneProps> = ({
 		const loadedAnimationDelay = window.innerWidth <= 1024 ? 3.3 : 3;
 		if (preloaded) {
 			SectionOneAnimation(
-				[subTextRef.current, buttonRef.current],
+				[subTextRef.current, buttonRef.current, "#section-one button + p"],
 				!appLoaded ? 0 : loadedAnimationDelay
 			);
 		}
