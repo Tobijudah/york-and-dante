@@ -76,9 +76,10 @@ const Home: React.FC<PageProps> = ({
 
 	useEffect(() => {
 		!appLoaded &&
+			navRef.current &&
 			windowWidth > 1024 &&
 			gsap.set(navRef.current, { visibility: "hidden" });
-	}, []);
+	}, [navRef.current]);
 
 	return (
 		<>
