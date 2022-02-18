@@ -77,8 +77,7 @@ const Credits: React.FC<PageProps> = ({
 						data-splitting=""
 						className={`${S.quoteOne} split-text hidden-init`}
 					>
-						“On a certain day, I just felt like exploring designing
-						a site with a horizontal scroll”
+						An exploration of a horizontal scroll experience using the Golden cannon grid
 					</p>
 					<div className={S.credit1}>
 						<p
@@ -164,7 +163,7 @@ const Credits: React.FC<PageProps> = ({
 						data-splitting=""
 						className={`${S.quoteTwo} split-text hidden-init`}
 					>
-						“Tobiju, reached out. Bro, let me build this.”
+						Transitions. Motion. Interaction. with GSAP and Locomotive
 					</p>
 					<div className={S.box1}>
 						<p
