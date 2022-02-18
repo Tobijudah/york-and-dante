@@ -7,18 +7,20 @@ type SectionOneProps = {
 	scroll: any;
 	appLoaded: boolean;
 	preloaded: boolean;
+	windowWidth: number;
 };
 
 const SectionOne: React.FC<SectionOneProps> = ({
 	scroll,
 	appLoaded,
 	preloaded,
+	windowWidth,
 }) => {
 	const buttonRef = useRef<HTMLDivElement>(null);
 	const subTextRef = useRef<HTMLParagraphElement>(null);
 
 	useEffect(() => {
-		const loadedAnimationDelay = window.innerWidth <= 1024 ? 3.3 : 3;
+		const loadedAnimationDelay = windowWidth <= 1024 ? 3.3 : 3;
 		if (preloaded) {
 			SectionOneAnimation(
 				[subTextRef.current, buttonRef.current, "#section-one button + p"],
@@ -29,7 +31,7 @@ const SectionOne: React.FC<SectionOneProps> = ({
 
 	const handleOnClick = () => {
 		scroll.scrollTo(document.querySelector("#section-two"), {
-			offset: (window.innerWidth / 100) * -6,
+			offset: (windowWidth / 100) * -6,
 		});
 	};
 

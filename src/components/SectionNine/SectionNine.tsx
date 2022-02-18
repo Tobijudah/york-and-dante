@@ -3,8 +3,12 @@ import Button from "../Button/Button";
 import { Link } from "react-router-dom";
 import S from "./SectionNine.module.scss";
 
-const SectionEight: React.FC = () => {
-	const textScrollSpeed = window.innerWidth <= 1024 ? -5 : 3;
+type SectionEightProps = {
+	windowWidth: number;
+};
+
+const SectionEight: React.FC<SectionEightProps> = ({ windowWidth }) => {
+	const textScrollSpeed = windowWidth <= 1024 ? -5 : 3;
 
 	return (
 		<section id="section-nine" data-scroll-section>

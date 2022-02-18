@@ -7,10 +7,11 @@ import AlphabetsAnimation from "../../animations/alphabets";
 import PreloaderAnimation from "../../animations/preloader";
 
 type PreloaderProps = {
+	windowWidth: number;
 	setPreloaded: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-const Preloader: React.FC<PreloaderProps> = ({ setPreloaded }) => {
+const Preloader: React.FC<PreloaderProps> = ({ windowWidth, setPreloaded }) => {
 	const wordRef = useRef(null);
 	const letterRefs = useRefArray<HTMLDivElement>(9);
 	const preloaderRef = useRef(null);
@@ -30,7 +31,8 @@ const Preloader: React.FC<PreloaderProps> = ({ setPreloaded }) => {
 						preloaderDuration,
 						ref.current,
 						ref.current.getAttribute("data-letter")!,
-						ref.current.getAttribute("data-index")!
+						ref.current.getAttribute("data-index")!,
+						windowWidth
 					);
 				});
 			if (!!alphabetsDuration) {

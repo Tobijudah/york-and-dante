@@ -5,9 +5,13 @@ import React, { useEffect, useRef } from "react";
 import { ReactComponent as Line } from "../../svgs/line.svg";
 import useIntersectionObserver from "../../hooks/useIntersectionObserver";
 
-const SectionFive: React.FC = () => {
-	const title1ScrollSpeed = window.innerWidth <= 1024 ? -7.5 : 1.2;
-	const title2ScrollSpeed = window.innerWidth <= 1024 ? 5 : -1.2;
+type SectionFiveProps = {
+	windowWidth: number;
+};
+
+const SectionFive: React.FC<SectionFiveProps> = ({ windowWidth }) => {
+	const title1ScrollSpeed = windowWidth <= 1024 ? -7.5 : 1.2;
+	const title2ScrollSpeed = windowWidth <= 1024 ? 5 : -1.2;
 
 	const ref = useRef<HTMLParagraphElement>(null);
 	const isOnScreen = useIntersectionObserver(ref, 1);
@@ -29,7 +33,7 @@ const SectionFive: React.FC = () => {
 					pauseOnHover
 					gradient={false}
 					className={S.marquee}
-					speed={window.innerWidth > 1024 ? 15 : 80}
+					speed={windowWidth > 1024 ? 15 : 80}
 				>
 					<p className={S.marqueeText}>Collections</p>
 					<p className={S.marqueeText}>Collections</p>

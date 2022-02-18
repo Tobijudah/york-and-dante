@@ -10,10 +10,16 @@ import { ReactComponent as Icon } from "../../svgs/button-arrow.svg";
 type MenuProps = {
 	open: boolean;
 	preloaded: boolean;
+	windowWidth: number;
 	setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-const Menu: React.FC<MenuProps> = ({ open, setOpen, preloaded }) => {
+const Menu: React.FC<MenuProps> = ({
+	open,
+	setOpen,
+	preloaded,
+	windowWidth,
+}) => {
 	const menuRef = useRef<HTMLDivElement>(null);
 	const feDisplacementMapRefs = useRefArray<SVGFEDisplacementMapElement>(3);
 	const { ref: enterTimeline, setStateRef: setEnterTimeline } =
@@ -211,7 +217,7 @@ const Menu: React.FC<MenuProps> = ({ open, setOpen, preloaded }) => {
 			() => {
 				setOpen(false);
 			},
-			window.innerWidth > 1024 ? 0 : 500
+			windowWidth > 1024 ? 0 : 500
 		);
 	};
 

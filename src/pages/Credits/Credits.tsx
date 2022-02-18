@@ -16,6 +16,7 @@ const Credits: React.FC<PageProps> = ({
 	appLoaded,
 	preloaded,
 	navOnClick,
+	windowWidth,
 	setAppLoaded,
 }) => {
 	const navRef = useRef(null);
@@ -62,7 +63,7 @@ const Credits: React.FC<PageProps> = ({
 					pauseOnHover
 					gradient={false}
 					className={S.marquee}
-					speed={window.innerWidth > 1024 ? 15 : 80}
+					speed={windowWidth > 1024 ? 15 : 80}
 				>
 					<p className={S.marqueeText}>Credits</p>
 					<p className={S.marqueeText}>Credits</p>

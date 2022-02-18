@@ -53,8 +53,18 @@ function App() {
 
 	return (
 		<main className={S.app}>
-			{!preloaded && <Preloader setPreloaded={setPreloaded} />}
-			<Menu open={open} setOpen={setOpen} preloaded={preloaded} />
+			{!preloaded && (
+				<Preloader
+					windowWidth={windowWidth}
+					setPreloaded={setPreloaded}
+				/>
+			)}
+			<Menu
+				open={open}
+				setOpen={setOpen}
+				preloaded={preloaded}
+				windowWidth={windowWidth}
+			/>
 			<Banner />
 			{routes.map(({ name, path, Component }) => (
 				<Route key={path} exact path={path}>

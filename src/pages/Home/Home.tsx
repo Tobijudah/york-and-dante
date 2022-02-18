@@ -59,12 +59,12 @@ const Home: React.FC<PageProps> = ({
 			});
 			scroll.stop();
 			scroll.update();
-			const loadedAnimationDelay = window.innerWidth <= 1024 ? 0.8 : 0.5;
+			const loadedAnimationDelay = windowWidth <= 1024 ? 0.8 : 0.5;
 			setTimeout(
 				() => {
 					scroll.start();
 					!appLoaded &&
-						window.innerWidth > 1024 &&
+						windowWidth > 1024 &&
 						IntroAnimation(navRef.current);
 					setAppLoaded(true);
 				},
@@ -76,7 +76,7 @@ const Home: React.FC<PageProps> = ({
 
 	useEffect(() => {
 		!appLoaded &&
-			window.innerWidth > 1024 &&
+			windowWidth > 1024 &&
 			gsap.set(navRef.current, { visibility: "hidden" });
 	}, []);
 
@@ -88,15 +88,16 @@ const Home: React.FC<PageProps> = ({
 					scroll={scroll}
 					appLoaded={appLoaded}
 					preloaded={preloaded}
+					windowWidth={windowWidth}
 				/>
 				<SectionTwo />
 				<SectionThree scroll={scroll} />
 				<SectionFour />
-				<SectionFive />
+				<SectionFive windowWidth={windowWidth} />
 				<SectionSix />
 				<SectionEight windowWidth={windowWidth} />
-				<SectionSeven />
-				<SectionNine />
+				<SectionSeven windowWidth={windowWidth} />
+				<SectionNine windowWidth={windowWidth} />
 			</div>
 		</>
 	);
