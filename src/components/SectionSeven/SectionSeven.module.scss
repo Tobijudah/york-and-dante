@@ -67,7 +67,11 @@
 	display: flex;
 	justify-content: space-between;
 
+	@include media(">mobile") {
+		width: 125vh;
+	}
 	@include media("<=mobile") {
+		width: 100%;
 		flex-direction: column;
 		margin-top: 2.4375rem;
 	}
@@ -170,8 +174,8 @@
 		height: 66.556vh;
 		margin-top: auto;
 	}
-	@include media('<=mobile') {
+	@include media("<=mobile") {
 		width: 100%;
 		height: 100%;
-	};
+	}
 }
