@@ -11,7 +11,7 @@ type SectionFiveProps = {
 
 const SectionFive: React.FC<SectionFiveProps> = ({ windowWidth }) => {
 	const title1ScrollSpeed = windowWidth <= 1024 ? -7.5 : 1.2;
-	const title2ScrollSpeed = windowWidth <= 1024 ? 5 : -1.2;
+	const title2ScrollSpeed = windowWidth <= 1024 ? 6 : -1.2;
 
 	const ref = useRef<HTMLParagraphElement>(null);
 	const isOnScreen = useIntersectionObserver(ref, 1);
@@ -47,7 +47,7 @@ const SectionFive: React.FC<SectionFiveProps> = ({ windowWidth }) => {
 						data-scroll-direction="horizontal"
 						data-scroll-speed={title1ScrollSpeed}
 					>
-						The
+						New
 					</h2>
 					<img
 						className={S.image}
@@ -61,7 +61,7 @@ const SectionFive: React.FC<SectionFiveProps> = ({ windowWidth }) => {
 						data-scroll-target="#target-element"
 						data-scroll-speed={title2ScrollSpeed}
 					>
-						Credenza
+						Collection
 					</h2>
 				</div>
 				<div className={S.sub}>
